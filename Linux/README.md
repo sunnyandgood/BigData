@@ -31,25 +31,27 @@
 
 
 * [Bash Shell脚本](https://github.com/sunnyandgood/BigBata/tree/master/Linux/BashShell%E8%84%9A%E6%9C%AC)
-    * 
-    
-    
-    
-    
-    
-    
-    
+    * [Bash Shell脚本初步](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/Bash%20Shell%E8%84%9A%E6%9C%AC%E5%88%9D%E6%AD%A5.md)
+    * [创建一个 Bash Shell 脚本](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%20Bash%20Shell%20%E8%84%9A%E6%9C%AC.md)
+    * [Linux的echo 命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/Linux%E7%9A%84echo%20%E5%91%BD%E4%BB%A4.md)
+    * [在 Bash 脚本中使用变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E5%9C%A8%20Bash%20%E8%84%9A%E6%9C%AC%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F.md)
+    * [Linux的exec命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/Linux%E7%9A%84exec%E5%91%BD%E4%BB%A4.md)
+    * [脚本中的反引号](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E5%8F%8D%E5%BC%95%E5%8F%B7%20.md)
+    * [获取命令输出结果的另一种方式](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E8%8E%B7%E5%8F%96%E5%91%BD%E4%BB%A4%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E7%9A%84%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E5%BC%8F%20.md)
+    * [重定向输入和输出](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E9%87%8D%E5%AE%9A%E5%90%91%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA%20.md)
+    * [管道](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E7%AE%A1%E9%81%93%20.md)
+    * [数学运算](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%20.md)
+    * [脚本退出(exit命令)](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E8%84%9A%E6%9C%AC%E9%80%80%E5%87%BA.md)
+    * [命令执行顺序控制](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%8E%A7%E5%88%B6.md)
+    * [Linux的grep命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/Linux%E7%9A%84grep%E5%91%BD%E4%BB%A4.md)
+    * [变量设置模式](https://github.com/sunnyandgood/BigBata/blob/master/Linux/BashShell%E8%84%9A%E6%9C%AC/%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE%E6%A8%A1%E5%BC%8F.md)
 
-* [分支语句](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/Branch%20statement)
-  * [命令的退出码](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/%E5%91%BD%E4%BB%A4%E7%9A%84%E9%80%80%E5%87%BA%E7%A0%81.md)
-  * [脚本中的控制结构语句](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84%E8%AF%AD%E5%8F%A5.md)
-  * [if…then 语句](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/if%E2%80%A6then%E8%AF%AD%E5%8F%A5.md)
-  * [if…then…else 语句](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/if%E2%80%A6then%E2%80%A6else%E8%AF%AD%E5%8F%A5.md)
-  * [多重 if 语句](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/%E5%A4%9A%E9%87%8D%20if%20%E8%AF%AD%E5%8F%A5.md)
-  * [使用 test 命令(数值比较、字符串比较、文件比较)](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/%E4%BD%BF%E7%94%A8%20test%20%E5%91%BD%E4%BB%A4.md)
-  * [复合条件](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/%E5%A4%8D%E5%90%88%E6%9D%A1%E4%BB%B6.md)
-  * [case 分支语句](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Branch%20statement/case%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.md)
+
+* [分支语句](https://github.com/sunnyandgood/BigBata/tree/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5)
+    * 
   
+
+
 
 * [循环语句](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/Circular%20statement)
   * [for 循环](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Circular%20statement/for%20%E5%BE%AA%E7%8E%AF.md)
