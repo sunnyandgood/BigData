@@ -10,53 +10,53 @@
 * 三、修改配置文件（5个）
 	* 第一个：hadoop-env.sh
     
-	      #在27行修改
-	      export JAVA_HOME=/usr/java/jdk1.7.0_55
+		      #在27行修改
+		      export JAVA_HOME=/usr/java/jdk1.7.0_55
 		
 	* 第二个：core-site.xml
   
-	      <configuration>
-		<!-- 指定HDFS老大（namenode）的通信地址 -->
-		<property>
-		    <name>fs.defaultFS</name>
-		    <value>hdfs://itcast01:9000</value>
-		</property>
-		<!-- 指定hadoop运行时产生文件的存储路径 -->
-		<property>
-		    <name>hadoop.tmp.dir</name>
-		    <value>/cloud/hadoop-2.2.0/tmp</value>
-		</property>
-	      </configuration>
+		      <configuration>
+			<!-- 指定HDFS老大（namenode）的通信地址 -->
+			<property>
+			    <name>fs.defaultFS</name>
+			    <value>hdfs://itcast01:9000</value>
+			</property>
+			<!-- 指定hadoop运行时产生文件的存储路径 -->
+			<property>
+			    <name>hadoop.tmp.dir</name>
+			    <value>/cloud/hadoop-2.2.0/tmp</value>
+			</property>
+		      </configuration>
 		
 	* 第三个：hdfs-site.xml
   
-	      <configuration>
-		<!-- 设置hdfs副本数量 -->
-		<property>
-		    <name>dfs.replication</name>
-		    <value>1</value>
-		</property>
-	      </configuration>
+		      <configuration>
+			<!-- 设置hdfs副本数量 -->
+			<property>
+			    <name>dfs.replication</name>
+			    <value>1</value>
+			</property>
+		      </configuration>
 		
 	* 第四个：mapred-site.xml.template 需要重命名： mv mapred-site.xml.template mapred-site.xml
   
-	      <configuration>
-		<!-- 通知框架MR使用YARN -->
-		<property>
-		    <name>mapreduce.framework.name</name>
-		    <value>yarn</value>
-		</property>
-	      </configuration>
+		      <configuration>
+			<!-- 通知框架MR使用YARN -->
+			<property>
+			    <name>mapreduce.framework.name</name>
+			    <value>yarn</value>
+			</property>
+		      </configuration>
 		
 	* 第五个：yarn-site.xml
 	
-		<configuration>
-			<!-- reducer取数据的方式是mapreduce_shuffle -->
-			<property>
-				<name>yarn.nodemanager.aux-services</name>
-				<value>mapreduce_shuffle</value>
-			</property>
-		</configuration>
+			<configuration>
+				<!-- reducer取数据的方式是mapreduce_shuffle -->
+				<property>
+					<name>yarn.nodemanager.aux-services</name>
+					<value>mapreduce_shuffle</value>
+				</property>
+			</configuration>
 	
 * 四、将hadoop添加到环境变量
 
