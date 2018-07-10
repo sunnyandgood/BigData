@@ -2,9 +2,9 @@
 当用户每次启动一个终端或使用 bash 命令启动一个新的 Shell 进程时，系统都会执行用户工作目录下的.bashrc 配置文件，此文件可以配置用户专用的环境变量、自定义函数和命令别名等信息。
 
 * Linux 文件/目录管理类命令
-  * [Linux的cd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cd%E5%91%BD%E4%BB%A4.md)(文件系统目录切换)  
+  * [Linux的cd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux%E7%9A%84cd%E5%91%BD%E4%BB%A4.md)  
 
-  * [Linux的ls命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84ls%E5%91%BD%E4%BB%A4.md)(显示文件和目录信息)
+  * [Linux的ls命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ls命令.md)
   * [Linux的touch命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84touch%E5%91%BD%E4%BB%A4.md)(创建一个空文件)
   * [Linux的cp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cp%E5%91%BD%E4%BB%A4.md)(复制文件)
   * [Linux的mv命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84mv%E5%91%BD%E4%BB%A4.md)(重命名文件)
