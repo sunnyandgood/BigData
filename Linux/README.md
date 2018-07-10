@@ -17,16 +17,15 @@
 
 
 * [Linux 环境变量](https://github.com/sunnyandgood/BigBata/tree/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
-  * 
-  
-  
-  
-  
+    * [Linux环境变量的概念](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5.md)
+    * [Linux设置环境变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%20.md)
+    * [Linux 中设置环境变量的几个文件](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%20%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%87%E4%BB%B6.md)
+    * [Linux安装JDK](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%E5%AE%89%E8%A3%85JDK.md)
+    * [在Linux系统上执行Java 程序](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/%E5%9C%A8Linux%E7%B3%BB%E7%BB%9F%E4%B8%8A%E6%89%A7%E8%A1%8CJava%20%E7%A8%8B%E5%BA%8F.md)
 
-* [Linux要点](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/LinuxKeyPoints)
-  * [Linux数组变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxKeyPoints/Linux%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F.md)
-  * [Linux命令别名](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxKeyPoints/Linux%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D.md)
-  * [Linux umask文件创建时的权限的缺省模式](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxKeyPoints/Linux%20umask%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E6%97%B6%E7%9A%84%E6%9D%83%E9%99%90%E7%9A%84%E7%BC%BA%E7%9C%81%E6%A8%A1%E5%BC%8F.md)
+  
+* [Linux要点](https://github.com/sunnyandgood/BigBata/tree/master/Linux/Linux%E8%A6%81%E7%82%B9)
+    * 
 
 
 * [Bash Shell脚本](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/BashShellScript)
