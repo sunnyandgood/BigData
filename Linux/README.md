@@ -69,19 +69,19 @@
 
 
 * [Linux客户端输入](https://github.com/sunnyandgood/BigBata/tree/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5)
-    * 
+    * [命令行参数](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0.md)
+    * [系统参数变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F.md)
+    * [读取用户输入](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E8%AF%BB%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5.md)
     
     
     
 
-* [重定向](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/Reorientation)
-  * [输入和输出](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA.md)
-  * [在脚本中重定向输出](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E9%87%8D%E5%AE%9A%E5%90%91%E8%BE%93%E5%87%BA.md)
-  * [在脚本中重新定向输入](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E9%87%8D%E6%96%B0%E5%AE%9A%E5%90%91%E8%BE%93%E5%85%A5.md)
-  * [创建重定向描述符](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/创建重定向描述符.md)
-  * [阻止命令输出](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/阻止命令输出.md)
-  * [创建临时文件](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/创建临时文件.md)
-  * [消息处理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Reorientation/消息处理.md)
+* [重定向](https://github.com/sunnyandgood/BigBata/tree/master/Linux/%E9%87%8D%E6%96%B0%E5%AE%9A%E5%90%91)
+    * 
+    
+    
+    
+    
 
 * [在脚本中创建函数](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/Create%20a%20function%20in%20a%20script)
   * [脚本函数](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Create%20a%20function%20in%20a%20script/脚本函数.md)
