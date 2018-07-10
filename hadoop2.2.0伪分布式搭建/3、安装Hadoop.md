@@ -8,10 +8,10 @@
 		tar -zxvf hadoop-2.2.0.tar.gz -C /cloud/
 		
 * 三、修改配置文件（5个）
-	* 第一个：hadoop-env.sh
+	* 第一个：hadoop-2.2.0/etc/hadoop/hadoop-env.sh
     
 		      #在27行修改
-		      export JAVA_HOME=/usr/java/jdk1.7.0_55
+		      export JAVA_HOME=/mnt/softWare/jdk1.7.0_80
 		
 	* 第二个：core-site.xml
   
