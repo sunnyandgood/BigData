@@ -200,7 +200,7 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
             <td>内核分配给进程的系统记号</td>
          </tr>
          <tr>
-            <td>S</td>
+            <th rowspan="5">S</th>
             <td>进程的状态：</td>
          </tr>
          <tr>
@@ -240,6 +240,8 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
 * 2、层级显示所有进程信息：
 
       .......
+      [root@localhost ~]# ps -efH
+      UID        PID  PPID  C STIME TTY          TIME CMD
       root         1     0  0 09:03 ?        00:00:01 /sbin/init
       root       361     1  0 09:03 ?        00:00:00   /sbin/udevd -d
       root      2063   361  0 09:04 ?        00:00:00     /sbin/udevd -d
