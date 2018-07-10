@@ -67,7 +67,11 @@
 
 		vim /etc/profile
 		
-		export JAVA_HOME=/usr/java/jdk1.7.0_55
+		export JAVA_HOME=/mnt/softWare/jdk1.7.0_80
+		export JRE_HOME=/mnt/softWare/jdk1.7.0_80/jre
+		export CLASS_PASS=.:$JAVA_HOME/lib:$JRE_HOME/lib
+		export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+
 		export HADOOP_HOME=/cloud/hadoop-2.2.0
 		export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
 	
