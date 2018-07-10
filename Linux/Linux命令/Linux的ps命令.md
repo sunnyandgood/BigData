@@ -73,61 +73,196 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
       
 ## ps命令 应用实例
 * 1、显示所有进程信息
+     * `ps -A`例
+      
+            [root@localhost ~]# ps -A
+              PID TTY          TIME CMD
+                1 ?        00:00:01 init
+                2 ?        00:00:00 kthreadd
+                3 ?        00:00:00 migration/0
+                4 ?        00:00:00 ksoftirqd/0
+                5 ?        00:00:00 migration/0
+                6 ?        00:00:00 watchdog/0
+                7 ?        00:00:00 events/0
+                8 ?        00:00:00 cgroup
+                9 ?        00:00:00 khelper
+               10 ?        00:00:00 netns
+            ······························
 
-      [root@localhost ~]# ps -A
-        PID TTY          TIME CMD
-          1 ?        00:00:01 init
-          2 ?        00:00:00 kthreadd
-          3 ?        00:00:00 migration/0
-          4 ?        00:00:00 ksoftirqd/0
-          5 ?        00:00:00 migration/0
-          6 ?        00:00:00 watchdog/0
-          7 ?        00:00:00 events/0
-          8 ?        00:00:00 cgroup
-          9 ?        00:00:00 khelper
-         10 ?        00:00:00 netns
-      ······························
+       * ps命令显示的字段含义：
 
-    * ps命令显示的字段含义：
-    
-    
-    <table>
-       <tr>
-          <td>字段</td>
-          <td>说明</td>
-       </tr>
-       <tr>
-          <td>PID</td>
-          <td>进程的ID号，Process ID</td>
-       </tr>
-       <tr>
-          <td>TTY</td>
-          <td>运行在哪个终端</td>
-       </tr>
-       <tr>
-          <td>TIME</td>
-          <td>进程已经使用的CPU时间</td>
-       </tr>
-       <tr>
-          <td>CMD</td>
-          <td>启动进程的命令</td>
-       </tr>
-    </table>
 
-* 2、显示指定用户进程
+          <table>
+             <tr>
+                <td>字段</td>
+                <td>说明</td>
+             </tr>
+             <tr>
+                <td>PID</td>
+                <td>进程的ID号，Process ID</td>
+             </tr>
+             <tr>
+                <td>TTY</td>
+                <td>运行在哪个终端</td>
+             </tr>
+             <tr>
+                <td>TIME</td>
+                <td>进程已经使用的CPU时间</td>
+             </tr>
+             <tr>
+                <td>CMD</td>
+                <td>启动进程的命令</td>
+             </tr>
+          </table>
+
+   * `ps -ef`例
+   
+            [root@localhost ~]# ps -ef
+            UID        PID  PPID  C STIME TTY          TIME CMD
+            root         1     0  0 09:03 ?        00:00:01 /sbin/init
+            root         2     0  0 09:03 ?        00:00:00 [kthreadd]
+            root         3     2  0 09:03 ?        00:00:00 [migration/0]
+            root         4     2  0 09:03 ?        00:00:00 [ksoftirqd/0]
+            root         5     2  0 09:03 ?        00:00:00 [migration/0]
+            root         6     2  0 09:03 ?        00:00:00 [watchdog/0]
+            root         7     2  0 09:03 ?        00:00:00 [events/0]
+            root         8     2  0 09:03 ?        00:00:00 [cgroup]
+            root         9     2  0 09:03 ?        00:00:00 [khelper]
+            root        10     2  0 09:03 ?        00:00:00 [netns]
+            ...........
+         
+      * ps命令显示的字段含义：
+      
+      <table>
+         <tr>
+            <td>字段</td>
+            <td>说明</td>
+         </tr>
+         <tr>
+            <td>UID</td>
+            <td>启动进程的用户名称</td>
+         </tr>
+         <tr>
+            <td>PID</td>
+            <td>进程的ID号，Process ID</td>
+         </tr>
+         <tr>
+            <td>PPID</td>
+            <td>父进程的进程号，如果此进程是由另外一个进程启动</td>
+         </tr>
+         <tr>
+            <td>C</td>
+            <td>整个进程生命周期期间的CPU利用率</td>
+         </tr>
+         <tr>
+            <td>STIME</td>
+            <td>进程启动时的系统时间</td>
+         </tr>
+         <tr>
+            <td>TTY</td>
+            <td>运行在哪个终端</td>
+         </tr>
+         <tr>
+            <td>TIME</td>
+            <td>进程已经使用的CPU时间</td>
+         </tr>
+         <tr>
+            <td>CMD</td>
+            <td>启动进程的命令</td>
+         </tr>
+      </table>
+   
+   * `ps -lef`例
+   
+            [root@localhost ~]# ps -lef
+            F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
+            4 S root         1     0  0  80   0 -   725 -      09:03 ?        00:00:01 /sbin/init
+            1 S root         2     0  0  80   0 -     0 -      09:03 ?        00:00:00 [kthreadd]
+            1 S root         3     2  0 -40   - -     0 -      09:03 ?        00:00:00 [migration/0]
+            1 S root         4     2  0  80   0 -     0 -      09:03 ?        00:00:00 [ksoftirqd/0]
+            1 S root         5     2  0 -40   - -     0 -      09:03 ?        00:00:00 [migration/0]
+            5 S root         6     2  0 -40   - -     0 -      09:03 ?        00:00:00 [watchdog/0]
+            1 S root         7     2  0  80   0 -     0 -      09:03 ?        00:00:00 [events/0]
+            1 S root         8     2  0  80   0 -     0 -      09:03 ?        00:00:00 [cgroup]
+            1 S root         9     2  0  80   0 -     0 -      09:03 ?        00:00:00 [khelper]
+            1 S root        10     2  0  80   0 -     0 -      09:03 ?        00:00:00 [netns]
+            ...................
+
+     *  参数-l使输出增加了多个字段：ps命令显示的字段含义：
+     
+     <table>
+         <tr>
+            <td>字段</td>
+            <td>说明</td>
+         </tr>
+         <tr>
+            <td>F</td>
+            <td>内核分配给进程的系统记号</td>
+         </tr>
+         <tr>
+            <td>S</td>
+            <td>进程的状态：</td>
+         </tr>
+         <tr>
+            <td>S：进程处于休眠状态</td>
+         </tr>
+         <tr>
+            <td>R：进程可以运行，等待状态</td>
+         </tr>
+         <tr>
+            <td>Z：进程处于僵化状态，进程已经结束，但是启动父进程不存在</td>
+         </tr>
+         <tr>
+            <td>T：代表停止</td>
+         </tr>
+         <tr>
+            <td>PRI</td>
+            <td>进程的优先级：数字越大优先级越低</td>
+         </tr>
+         <tr>
+            <td>NI</td>
+            <td>谦让度高优先级低</td>
+         </tr>
+         <tr>
+            <td>ADDR</td>
+            <td>进程的内存地址</td>
+         </tr>
+         <tr>
+            <td>SZ</td>
+            <td>进程启动需要的交换空间大小</td>
+         </tr>
+         <tr>
+            <td>WCHAN</td>
+            <td>进程休眠的内核函数的地址</td>
+         </tr>
+      </table>
+
+* 2、层级显示所有进程信息：
+
+      .......
+      root         1     0  0 09:03 ?        00:00:01 /sbin/init
+      root       361     1  0 09:03 ?        00:00:00   /sbin/udevd -d
+      root      2063   361  0 09:04 ?        00:00:00     /sbin/udevd -d
+      root      2064   361  0 09:04 ?        00:00:00     /sbin/udevd -d
+      root      1300     1  0 09:03 ?        00:00:00   /usr/sbin/vmware-vmblock-fuse
+                                                -o subtype=vmware-vmblock,default_permis
+      root      1321     1  0 09:03 ?        00:00:13   /usr/sbin/vmtoolsd
+      .......
+
+* 3、显示指定用户进程
 ````
 
 ````
-* 3、显示所有进程信息，包括其执行的命令
+* 4、显示所有进程信息，包括其执行的命令
 ````
 
 ````
-* 4、列出进程的详细信息（aux参数）
+* 5、列出进程的详细信息（aux参数）
 ````
 
 ````
 aux参数非常强大，可以自定义其输出格式，如果其后不加任何参数，则系统会给出警告，并按照默认格式输出。
-* 5、配合 grep 命令 筛选需要的结果
+* 6、配合 grep 命令 筛选需要的结果
 ````
 
 ````
