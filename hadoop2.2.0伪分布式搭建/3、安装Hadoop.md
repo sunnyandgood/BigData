@@ -22,7 +22,7 @@
 			<!-- 指定HDFS老大（namenode）的通信地址 -->
 			<property>
 					<name>fs.defaultFS</name>
-					<value>hdfs://itcast01:9000</value>
+					<value>hdfs://hadoop01:9000</value>
 			</property>
 			<!-- 指定hadoop运行时产生文件的存储路径 -->
 			<property>
