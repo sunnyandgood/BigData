@@ -12,7 +12,7 @@
 		vim /etc/sysconfig/network
 		
 		NETWORKING=yes 
-		HOSTNAME=itcast01    ###
+		HOSTNAME=hadoop01    ###
 
 * 3、修改IP——两种方式：
    * 第一种：通过Linux图形界面进行修改（强烈推荐）
@@ -37,9 +37,9 @@
 
 		vim /etc/hosts
 			
-		192.168.1.44	itcast01
+		192.168.1.44	hadoop01
 	
-* 5、关闭防火墙
+* 5、关闭防火墙(Linux里)
 
 		#查看防火墙状态
 		service iptables status
