@@ -41,19 +41,19 @@
 
 * 第二步：安装JDK 
 
-<1>从SUN下载jdk-1_5_0_14-linux-i586-rpm.bin或jdk-1_5_0_14-linux-i586.bin 
+<1>从SUN下载jdk-1.7.0_80-linux-i586-rpm.bin或jdk-1.7.0_80-linux-i586.bin 
 
      在/usr下新建java文件夹，将安装包放在/usr/java目录下 
      # mkdir /usr/java 
    
 <2>安装JDK  
 
-   * jdk-1_5_0_14-linux-i586-rpm.bin文件安装 
+   * jdk-1.7.0_80-linux-i586-rpm.bin文件安装 
 
           # cd /usr/java 
-          # chmod 777 jdk-1_5_0_14-linux-i586-rpm.bin ← 修改为可执行 
-          # ./jdk-1_5_0_14-linux-i586-rpm.bin ← 选择yes同意上面的协议 
-          # rpm -ivh jdk-1_5_0_14-linux-i586.rpm ← 选择yes直到安装完毕 
+          # chmod 777 jdk-1.7.0_80-linux-i586-rpm.bin ← 修改为可执行 
+          # ./jdk-1.7.0_80-linux-i586-rpm.bin ← 选择yes同意上面的协议 
+          # rpm -ivh jdk-1.7.0_80-linux-i586.rpm ← 选择yes直到安装完毕 
 
    * jdk-1_5_0_14-linux-i586.bin文件安装 
 
@@ -68,8 +68,8 @@
 
        * a、在 profile 配置文件最后添加以下内容：
 
-                export JAVA_HOME=/usr/local/jdk1.8.0_51
-                export JRE_HOME=/usr/local/jdk1.8.0_51/jre
+                export JAVA_HOME=/usr/local/jdk1.7.0_80
+                export JRE_HOME=/usr/local/jdk1.7.0_80/jre
                 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
                 export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
 
@@ -84,8 +84,8 @@
 * 2>配置环境变量的第二种方式：
         在/etc/profile.d 目录下创建一个脚本文件，如：java.sh，在脚本中添加下面的配置信息保存并退出，因为/etc/profile 配置文件在执行式会将/etc/profile.d 目录下的*.sh 文件都执行一遍，同样可以是配置生效。
         
-                export JAVA_HOME=/usr/local/jdk1.8.0_51
-                export JRE_HOME=/usr/local/jdk1.8.0_51/jre
+                export JAVA_HOME=/usr/local/jdk1.7.0_80
+                export JRE_HOME=/usr/local/jdk1.7.0_80/jre
                 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
                 export CLASS_PATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
 
