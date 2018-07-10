@@ -16,8 +16,7 @@
 
 * 3、修改IP——两种方式：
    * 第一种：通过Linux图形界面进行修改（强烈推荐）
-      * 进入Linux图形界面 -> 右键点击右上方的两个小电脑 -> 点击Edit connections -> 选中当前网络System eth0 -> 点击edit按钮 -> 选择IPv4 -> 
-					method选择为manual -> 点击add按钮 -> 添加IP：192.168.1.119 子网掩码：255.255.255.0 网关：192.168.1.1 -> apply
+      * 进入Linux图形界面 -> 右键点击右上方的两个小电脑 -> 点击Edit connections -> 选中当前网络System eth0 -> 点击edit按钮 -> 选择IPv4 -> method选择为manual -> 点击add按钮 -> 添加IP：192.168.1.119 子网掩码：255.255.255.0 网关：192.168.1.1 -> apply
    * 第二种：修改配置文件方式（屌丝程序猿专用）
     
               vim /etc/sysconfig/network-scripts/ifcfg-eth0
