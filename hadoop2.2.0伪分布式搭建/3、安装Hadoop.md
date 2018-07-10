@@ -15,18 +15,18 @@
 		
 	* 第二个：core-site.xml
   
-		      <configuration>
-			<!-- 指定HDFS老大（namenode）的通信地址 -->
-			<property>
-			    <name>fs.defaultFS</name>
-			    <value>hdfs://itcast01:9000</value>
-			</property>
-			<!-- 指定hadoop运行时产生文件的存储路径 -->
-			<property>
-			    <name>hadoop.tmp.dir</name>
-			    <value>/cloud/hadoop-2.2.0/tmp</value>
-			</property>
-		      </configuration>
+                     <configuration>
+				<!-- 指定HDFS老大（namenode）的通信地址 -->
+				<property>
+				    <name>fs.defaultFS</name>
+				    <value>hdfs://itcast01:9000</value>
+				</property>
+				<!-- 指定hadoop运行时产生文件的存储路径 -->
+				<property>
+				    <name>hadoop.tmp.dir</name>
+				    <value>/cloud/hadoop-2.2.0/tmp</value>
+				</property>
+		   </configuration>
 		
 	* 第三个：hdfs-site.xml
   
