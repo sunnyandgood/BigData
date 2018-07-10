@@ -23,20 +23,20 @@
   * [Linux的head命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的head命令.md)(显示文档结尾内容)
 
 * Linux 磁盘管理类命令
-  * [Linux的df命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84df%E5%91%BD%E4%BB%A4.md)(显示指定的文件系统的可用空间等信息)
-  * [Linux的du命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84du%E5%91%BD%E4%BB%A4.md)(显示目录或文件的大小)
+  * [Linux的df命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的df命令.md)(显示指定的文件系统的可用空间等信息)
+  * [Linux的du命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的du命令.md)(显示目录或文件的大小)
 
 * Linux 系统管理类命令
-  * [Linux的ps命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84ps%E5%91%BD%E4%BB%A4.md)(列出系统中当前运行的那些进程)
-  * [Linux的kill命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84kill%E5%91%BD%E4%BB%A4.md)(用于杀掉执行中的程序或工作)
-  * [Linux的top命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84top%E5%91%BD%E4%BB%A4.md)(实时动态显示 Linux进程 的动态信息)
-  * [Linux的free命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84free%E5%91%BD%E4%BB%A4.md)(显示内存状态)
-  * [Linux的clear命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84clear%E5%91%BD%E4%BB%A4.md)(清除控制台内容)
-  * [Linux的wc命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84wc%E5%91%BD%E4%BB%A4.md)(统计指定文件中的字节数、字数、行数，并将统计结果显示输出)
-  * [Linux的stat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84stat%E5%91%BD%E4%BB%A4.md)(显示inode内容)
-  * [Linux的which命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84which%E5%91%BD%E4%BB%A4.md)(查找文件)
-  * [Linux的whoami命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84whoami%E5%91%BD%E4%BB%A4.md)(显示自身用户名)
+  * [Linux的ps命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ps命令.md)(列出系统中当前运行的那些进程)
+  * [Linux的kill命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的kill命令.md)(用于杀掉执行中的程序或工作)
+  * [Linux的top命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的top命令.md)(实时动态显示 Linux进程 的动态信息)
+  * [Linux的free命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的free命令.md)(显示内存状态)
+  * [Linux的clear命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的clear命令.md)(清除控制台内容)
+  * [Linux的wc命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的wc命令.md)(统计指定文件中的字节数、字数、行数，并将统计结果显示输出)
+  * [Linux的stat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的stat命令.md)(显示inode内容)
+  * [Linux的which命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的which命令.md)(查找文件)
+  * [Linux的whoami命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的whoami命令.md)(显示自身用户名)
 
 * Linux 网络类命令
-  * [Linux的scp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84scp%E5%91%BD%E4%BB%A4.md)(跨主机之间的文件和目录的复制)
-  * [Linux的netstat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84netstat%E5%91%BD%E4%BB%A4.md)(检验主机端口的网络连接情况)
+  * [Linux的scp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的scp命令.md)(跨主机之间的文件和目录的复制)
+  * [Linux的netstat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的netstat命令.md)(检验主机端口的网络连接情况)
