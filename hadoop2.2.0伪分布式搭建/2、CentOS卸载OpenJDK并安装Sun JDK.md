@@ -62,6 +62,7 @@
                 # ./jdk-1_5_0_14-linux-i586.bin ← 选择yes直到安装完毕 
 
 第三步：配置环境变量 
+
 <1># vi /etc/profile 
 <2>在最后加入以下几行： 
 export JAVA_HOME=/usr/java/jdk1.6.0_10 
