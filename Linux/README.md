@@ -87,17 +87,16 @@
     
     
 * [在脚本中创建函数](https://github.com/sunnyandgood/BigBata/tree/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0)
-   * 
+   * [脚本函数](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E8%84%9A%E6%9C%AC%E5%87%BD%E6%95%B0.md)
+   * [函数的返回值](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC.md)
+   * [函数中的变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F.md)
+   * [在函数中使用数组](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%9C%A8%E5%87%BD%E6%95%B0%E4%B8%AD%E4%BD%BF%E7%94%A8%E6%95%B0%E7%BB%84.md)
+   * [函数实现递归](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%87%BD%E6%95%B0%E5%AE%9E%E7%8E%B0%E9%80%92%E5%BD%92.md)
+   * [创建函数库](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BA%93.md)
+   * [在命令行使用函数](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%9C%A8%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%88%9B%E5%BB%BA%E5%87%BD%E6%95%B0/%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0.md)
 
 
-
-
-
-
-当用户每次启动一个终端或使用 bash 命令启动一个新的 Shell 进程时，系统都会执行用户工作目录下的.bashrc 配置文件，
-此文件可以配置用户专用的环境变量、自定义函数和命令别名等信息。
 * Linux 文件/目录管理类命令
-
   * [Linux的cd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cd%E5%91%BD%E4%BB%A4.md)(文件系统目录切换)  
 
   * [Linux的ls命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84ls%E5%91%BD%E4%BB%A4.md)(显示文件和目录信息)
