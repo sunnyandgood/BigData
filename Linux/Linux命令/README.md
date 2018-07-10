@@ -16,11 +16,11 @@
   * [Linux的tree命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的tree命令.md)(列出指定目录下的所有文件，包括子目录里的文件)
 
 * Linux 文件编辑类命令
-  * [Linux的cat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cat%E5%91%BD%E4%BB%A4.md)(显示文件内容)
-  * [Linux的more命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84more%E5%91%BD%E4%BB%A4.md)(以一页一页的形式显示)
-  * [Linux的less命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84less%E5%91%BD%E4%BB%A4.md)(随意地浏览文件)
-  * [Linux的tail命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84tail%E5%91%BD%E4%BB%A4.md)(从指定点开始将文件写到标准输出)
-  * [Linux的head命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84head%E5%91%BD%E4%BB%A4.md)(显示文档结尾内容)
+  * [Linux的cat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的cat命令.md)(显示文件内容)
+  * [Linux的more命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的more命令.md)(以一页一页的形式显示)
+  * [Linux的less命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的less命令.md)(随意地浏览文件)
+  * [Linux的tail命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的tail命令.md)(从指定点开始将文件写到标准输出)
+  * [Linux的head命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的head命令.md)(显示文档结尾内容)
 
 * Linux 磁盘管理类命令
   * [Linux的df命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84df%E5%91%BD%E4%BB%A4.md)(显示指定的文件系统的可用空间等信息)
