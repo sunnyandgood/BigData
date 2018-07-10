@@ -5,15 +5,10 @@
 
 
 * [Linux 命令大全](http://www.runoob.com/linux/linux-command-manual.html)
-* [Linux 系统的权限管理](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/AuthorityManagementOfLinuxSystem)
-  * [Linux 安全机制](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%20%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6.md)
-  * [Linux用户管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.md)
-  * [Linux 安全机制](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%20%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6.md)
-  * [Linux用户管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.md)
-  * [Linux用户组管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86.md)
-  * [Linux文件权限说明](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E.md)
-  * [Linux文件权限管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.md)
-  * [Linux文件所属管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/AuthorityManagementOfLinuxSystem/Linux%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%AE%A1%E7%90%86.md)
+
+
+* [Linux 系统的权限管理](https://github.com/sunnyandgood/BigBata/tree/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86)
+  * 
 
 * [Linux 环境变量](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/LinuxEnvironmentVariable)
   * [Linux环境变量的概念](https://github.com/sunnyandgood/BigBata/edit/master/Linux%20/LinuxEnvironmentVariable/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5.md)
