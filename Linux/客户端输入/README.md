@@ -5,7 +5,7 @@
 用来获得脚本处理的数据，这些数据包括参数和命令行选项等等。
 下面的内容是采用不同的方式从客户端获取数据。
 
-### [命令行参数](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Client%20input/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0.md)
-### [系统参数变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Client%20input/%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F.md)
-### [读取用户输入](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Client%20input/%E8%AF%BB%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5.md)
+### [命令行参数](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0.md)
+### [系统参数变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E7%B3%BB%E7%BB%9F%E5%8F%82%E6%95%B0%E5%8F%98%E9%87%8F.md)
+### [读取用户输入](https://github.com/sunnyandgood/BigBata/blob/master/Linux/%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BE%93%E5%85%A5/%E8%AF%BB%E5%8F%96%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5.md)
 
