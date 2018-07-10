@@ -89,15 +89,15 @@
                 export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
                 export CLASS_PATH=.:$JAVA_HOME/lib:$JRE_HOME/lib
 
-        * a、如果为 JDK 配置的单独的配置文件，那么在/etc/profile 文件中的配置信息就可以删除掉了，建议使用第二种方式，Liunx 系统核心的配置文件我们尽量不要修改和添加信息，为每一个需要配置环境变量的应用创建一个单独的配置文件，便于维护，修改和删除都不会影响原有的核心配置文件。
+   * a、如果为 JDK 配置的单独的配置文件，那么在/etc/profile 文件中的配置信息就可以删除掉了，建议使用第二种方式，Liunx 系统核心的配置文件我们尽量不要修改和添加信息，为每一个需要配置环境变量的应用创建一个单独的配置文件，便于维护，修改和删除都不会影响原有的核心配置文件。
         
-        * b、为了确保 JAVA_HOME 配置立即生效，运行 profile 脚本
+   * b、为了确保 JAVA_HOME 配置立即生效，运行 profile 脚本
         
                 source /etc/profile
                 或者
                 . /etc/profile
                 
-        * c、在控制台输入 java 和 javac 命令检查 JDK 是否安装成功。
+   * c、在控制台输入 java 和 javac 命令检查 JDK 是否安装成功。
         
 ### JDK安装成功！
 
