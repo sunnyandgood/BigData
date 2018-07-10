@@ -8,14 +8,20 @@
 
 
 * [Linux 系统的权限管理](https://github.com/sunnyandgood/BigBata/tree/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86)
-  * 
+   * [Linux 安全机制](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%20%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6.md)
+   * [Linux用户管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.md)
+   * [Linux用户组管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86.md)
+   * [Linux文件权限说明](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E.md)
+   * [Linux文件权限管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86.md)
+   * [Linux文件所属管理](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E6%96%87%E4%BB%B6%E6%89%80%E5%B1%9E%E7%AE%A1%E7%90%86.md)
 
-* [Linux 环境变量](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/LinuxEnvironmentVariable)
-  * [Linux环境变量的概念](https://github.com/sunnyandgood/BigBata/edit/master/Linux%20/LinuxEnvironmentVariable/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5.md)
-  * [Linux设置环境变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxEnvironmentVariable/Linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%20.md)
-  * [Linux 中设置环境变量的几个文件](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxEnvironmentVariable/Linux%20%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%87%E4%BB%B6.md)
-  * [Linux安装JDK](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxEnvironmentVariable/Linux%E5%AE%89%E8%A3%85JDK.md)
-  * [在Linux系统上执行Java 程序](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxEnvironmentVariable/%E5%9C%A8Linux%E7%B3%BB%E7%BB%9F%E4%B8%8A%E6%89%A7%E8%A1%8CJava%20%E7%A8%8B%E5%BA%8F.md)
+
+* [Linux 环境变量](https://github.com/sunnyandgood/BigBata/tree/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+  * 
+  
+  
+  
+  
 
 * [Linux要点](https://github.com/sunnyandgood/BigBata/tree/master/Linux%20/LinuxKeyPoints)
   * [Linux数组变量](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/LinuxKeyPoints/Linux%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F.md)
