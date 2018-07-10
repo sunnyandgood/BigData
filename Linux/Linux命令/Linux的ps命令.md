@@ -66,7 +66,8 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
 
       T状态（traced ）代表 停止状态，对应Linux系统中 的停止状态(进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行运行) 
 
-      Z状态（zombie）代表 僵死状态，对应Linux系统中 的僵死状态(进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放) 
+      Z状态（zombie）代表 僵死状态，对应Linux系统中 的僵死状态(进程已终止, 但进程描述符存在, 
+                                                                          直到父进程调用wait4()系统调用后释放) 
 
       这五个字母与Linux 进程状态一一对应，从其输出即可看出相应进程的运行情况。
       
@@ -89,6 +90,7 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
 
     * ps命令显示的字段含义：
     
+    
     <table>
        <tr>
           <td>字段</td>
@@ -109,9 +111,6 @@ ps命令 是Process Status的缩写，用来列出系统中当前运行的那些
        <tr>
           <td>CMD</td>
           <td>启动进程的命令</td>
-       </tr>
-       <tr>
-          <td></td>
        </tr>
     </table>
 
