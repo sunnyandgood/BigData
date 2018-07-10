@@ -8,27 +8,32 @@
 		tar -zxvf hadoop-2.2.0.tar.gz -C /cloud/
 		
 * 三、修改配置文件（5个）`hadoop-2.2.0/etc/hadoop/`目录下
-	* 第一个：hadoop-env.sh
+   * 第一个：hadoop-env.sh
+      
+        ````
+		#在27行修改
+		export JAVA_HOME=/mnt/softWare/jdk1.7.0_80
+        ````
+
+   * 第二个：core-site.xml
     
-		      #在27行修改
-		      export JAVA_HOME=/mnt/softWare/jdk1.7.0_80
-		
-	* 第二个：core-site.xml
-  
-                     <configuration>
-				<!-- 指定HDFS老大（namenode）的通信地址 -->
-				<property>
-				    <name>fs.defaultFS</name>
-				    <value>hdfs://itcast01:9000</value>
-				</property>
-				<!-- 指定hadoop运行时产生文件的存储路径 -->
-				<property>
-				    <name>hadoop.tmp.dir</name>
-				    <value>/cloud/hadoop-2.2.0/tmp</value>
-				</property>
-		   </configuration>
-		
-	* 第三个：hdfs-site.xml
+        ````
+         <configuration>
+			<!-- 指定HDFS老大（namenode）的通信地址 -->
+			<property>
+					<name>fs.defaultFS</name>
+					<value>hdfs://itcast01:9000</value>
+			</property>
+			<!-- 指定hadoop运行时产生文件的存储路径 -->
+			<property>
+					<name>hadoop.tmp.dir</name>
+					<value>/cloud/hadoop-2.2.0/tmp</value>
+			</property>
+		</configuration>
+
+        ````
+   
+   * 第三个：hdfs-site.xml
   
 		      <configuration>
 			<!-- 设置hdfs副本数量 -->
