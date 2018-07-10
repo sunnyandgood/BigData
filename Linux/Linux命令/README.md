@@ -2,19 +2,18 @@
 当用户每次启动一个终端或使用 bash 命令启动一个新的 Shell 进程时，系统都会执行用户工作目录下的.bashrc 配置文件，此文件可以配置用户专用的环境变量、自定义函数和命令别名等信息。
 
 * Linux 文件/目录管理类命令
-  * [Linux的cd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux%E7%9A%84cd%E5%91%BD%E4%BB%A4.md)  
-
-  * [Linux的ls命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ls命令.md)
-  * [Linux的touch命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84touch%E5%91%BD%E4%BB%A4.md)(创建一个空文件)
-  * [Linux的cp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cp%E5%91%BD%E4%BB%A4.md)(复制文件)
-  * [Linux的mv命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84mv%E5%91%BD%E4%BB%A4.md)(重命名文件)
-  * [Linux的rm命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84rm%E5%91%BD%E4%BB%A4.md)(删除文件)
-  * [Linux的ln命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84ln%E5%91%BD%E4%BB%A4.md)(为某一个文件在另外一个位置建立一个同步的链接)
-  * [Linux的pwd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84pwd%E5%91%BD%E4%BB%A4.md)(显示工作目录)
-  * [Linux的scp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84scp%E5%91%BD%E4%BB%A4.md)(跨主机之间的文件和目录的复制)
-  * [Linux的mkdir命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84mkdir%E5%91%BD%E4%BB%A4.md)(创建目录)
-  * [Linux的rmdir命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84rmdir%E5%91%BD%E4%BB%A4.md)(删除空的目录)
-  * [Linux的tree命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84tree%E5%91%BD%E4%BB%A4.md)(列出指定目录下的所有文件，包括子目录里的文件)
+  * [Linux的cd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux%E7%9A%84cd%E5%91%BD%E4%BB%A4.md)(文件系统目录切换)
+  * [Linux的ls命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ls命令.md)(显示文件和目录信息)
+  * [Linux的touch命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的touch命令)(创建一个空文件)
+  * [Linux的cp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的cp命令)(复制文件)
+  * [Linux的mv命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的mv命令)(重命名文件)
+  * [Linux的rm命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ln命令)(删除文件)
+  * [Linux的ln命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的mv命令)(为某一个文件在另外一个位置建立一个同步的链接)
+  * [Linux的pwd命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的pwd命令)(显示工作目录)
+  * [Linux的scp命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的scp命令)(跨主机之间的文件和目录的复制)
+  * [Linux的mkdir命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的mkdir命令)(创建目录)
+  * [Linux的rmdir命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的rmdir命令)(删除空的目录)
+  * [Linux的tree命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的tree命令)(列出指定目录下的所有文件，包括子目录里的文件)
 
 * Linux 文件编辑类命令
   * [Linux的cat命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/Linux%E7%9A%84cat%E5%91%BD%E4%BB%A4.md)(显示文件内容)
