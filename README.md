@@ -130,6 +130,10 @@
         * [Linux的du命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的du命令.md)(显示目录或文件的大小)
 
     * Linux 系统管理类命令
+    
+           进程是正在执行的程序实例，执行程序时，内核会将程序代码首先加载到虚拟内存，为程序变量分配内存空间，并为进程建立记账数据结构，
+           用于记录与进程相关的各种信息，如进程ID，用户ID，组ID以及进程的各种状态，运行或终止状态。
+    
         * [Linux的ps命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的ps命令.md)(列出系统中当前运行的那些进程)
         * [Linux的kill命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的kill命令.md)(用于杀掉执行中的程序或工作)
         * [Linux的top命令](https://github.com/sunnyandgood/BigBata/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的top命令.md)(实时动态显示 Linux进程 的动态信息)
