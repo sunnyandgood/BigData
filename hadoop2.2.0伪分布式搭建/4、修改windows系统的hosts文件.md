@@ -1,9 +1,11 @@
 ## 修改windows系统的hosts文件
 
 * hosts文件的默认位置：
-　　
-        C:\WINDOWS\system32\drivers\etc\
-  
+
+````　　
+     C:\WINDOWS\system32\drivers\etc\
+````
+
 * Hosts文件具有系统属性,系统默认是不显示此文件的。
    * 显示系统文件的方法是:
 
