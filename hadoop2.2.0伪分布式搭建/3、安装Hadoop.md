@@ -103,9 +103,9 @@
 		27803 ResourceManager
 		27512 DataNode
 	
-		http://192.168.1.44:50070  (HDFS管理界面)
+		http://192.168.1.119:50070  (HDFS管理界面)
 		在这个文件中添加linux主机名和IP的映射关系
 		C:\Windows\System32\drivers\etc\hosts
-		192.168.1.119	itcast
+		192.168.1.119	hadoop01
 		
-		http://192.168.1.44:8088 （MR管理界面）
+		http://192.168.1.119:8088 （MR管理界面）
