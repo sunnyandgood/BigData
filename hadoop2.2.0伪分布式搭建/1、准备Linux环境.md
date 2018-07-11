@@ -29,7 +29,7 @@
               ONBOOT="yes"
               TYPE="Ethernet"
               UUID="ce22eeca-ecde-4536-8cc2-ef0dc36d4a8c"
-              IPADDR="192.168.1.44"       ###
+              IPADDR="192.168.1.119"       ###
               NETMASK="255.255.255.0"      ###
               GATEWAY="192.168.1.1"        ###
 			
@@ -37,7 +37,7 @@
 
 		vim /etc/hosts
 			
-		192.168.1.44	hadoop01
+		192.168.1.119	hadoop01
 	
 * 5、关闭防火墙(Linux里)
 
