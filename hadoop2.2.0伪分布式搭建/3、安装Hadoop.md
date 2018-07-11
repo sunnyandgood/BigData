@@ -35,13 +35,13 @@
    
    * 第三个：hdfs-site.xml
   
-		      <configuration>
+          <configuration>
 			<!-- 设置hdfs副本数量 -->
 			<property>
 			    <name>dfs.replication</name>
 			    <value>1</value>
 			</property>
-		      </configuration>
+         </configuration>
 		
 	* 第四个：mapred-site.xml.template 需要重命名： mv mapred-site.xml.template mapred-site.xml
   
