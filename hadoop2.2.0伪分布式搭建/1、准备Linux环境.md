@@ -1,6 +1,6 @@
 ## 准备Linux环境
 
-* 1、
+* 1、准备Linux环境
 
   * 步骤一、点击VMware快捷方式，右键打开文件所在位置 -> 双击vmnetcfg.exe -> VMnet1 host-only ->修改subnet ip 设置网段：192.168.1.0 子网掩码：255.255.255.0 -> apply -> ok
 
