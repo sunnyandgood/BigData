@@ -29,11 +29,12 @@
       # hdfs dfs -ls / （或hadoop fs -ls /）               查看HDFS根目录
       # hdfs dfs -mkdir /test                             在根目录创建一个目录test
       # hdfs dfs -mkdir /test1                            在根目录创建一个目录test1
-      #hadoop fs -put ./test.txt /test　                  将根目录下test.txt文件上传到/test下
+      # hadoop fs -put ./test.txt /test　                  将根目录下test.txt文件上传到/test下
            或#hadoop fs -copyFromLocal ./test.txt /test   
-      #hadoop fs -get /test/test.txt .                    将/test目录下的test.txt文件下载到当前目录
+      # hadoop fs -get /test/test.txt .                    将/test目录下的test.txt文件下载到当前目录
            或#hadoop fs -getToLocal /test/test.txt .
-      #hadoop fs -cp /test/test.txt /test1                将/test目录下的test.txt复制到/test1目录下
-      #hadoop fs -rm /test1/test.txt                      将/test1目录下的test.txt文件删除
-      #hadoop fs -mv /test/test.txt /test1                将/test目录下的test.txt移动到/test1目录下
-      #hadoop fs -rmr /test1                              
+      # hadoop fs -cp /test/test.txt /test1                将/test目录下的test.txt复制到/test1目录下
+      # hadoop fs -rm /test1/test.txt                      将/test1目录下的test.txt文件删除
+      # hadoop fs -mv /test/test.txt /test1                将/test目录下的test.txt移动到/test1目录下
+      # hadoop fs -rmr /test1                              将/test1文件夹（空的）删除------（已弃用）
+            （换用）# hadoop fs rm -r /test1
