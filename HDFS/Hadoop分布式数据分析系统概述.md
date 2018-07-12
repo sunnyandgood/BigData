@@ -89,7 +89,7 @@
     
     * MapReduce可以通过Java、C等其他语言对数据进行查询分析。
     
-    * MapReduce分为两个阶段，map阶段和reduce阶段，map阶段将原始数据进行过滤操作，以键/值对的方式输出，map阶段的输出是reduce阶段的输入，reduce阶段对数据对数据处理后输出最终的结果。
+    * MapReduce分为两个阶段，map阶段和reduce阶段，map阶段将原始数据进行过滤操作，以键/值对的方式输出，map阶段的输出是reduce阶段的输入，reduce阶段对数据处理后输出最终的结果。
     
     * MapReduce处理的数据文件保存在HDFS上，并且最终的计算结果同样会保存到HDFS上。
     
