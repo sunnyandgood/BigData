@@ -1,4 +1,4 @@
-## 配置ssh免登陆
+## 配置ssh免密登陆
 
 * 生成ssh免登陆密钥
 
@@ -15,6 +15,6 @@
             cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
             或
             ssh-copy-id -i localhost 
-## ssh免登陆原理
+## ssh免密登陆原理
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/hadoop2.2.0%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/img/ssh%E5%85%8D%E7%99%BB%E9%99%86%E5%8E%9F%E7%90%86.png"/></div>
