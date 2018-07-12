@@ -37,4 +37,4 @@
       # hadoop fs -rm /test1/test.txt                      将/test1目录下的test.txt文件删除
       # hadoop fs -mv /test/test.txt /test1                将/test目录下的test.txt移动到/test1目录下
       # hadoop fs -rmr /test1                              将/test1文件夹（空的）删除------（已弃用）
-            （换用）# hadoop fs rm -r /test1
+            （换用）# hadoop fs -rm -r /test1
