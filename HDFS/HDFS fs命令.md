@@ -33,7 +33,7 @@
            或#hadoop fs -copyFromLocal ./test.txt /test   
       #hadoop fs -get /test/test.txt .                    将/test目录下的test.txt文件下载到当前目录
            或#hadoop fs -getToLocal /test/test.txt .
-      #hadoop fs -cp /test/test.txt /test1
-      #hadoop fs -rm /test1/test.txt
-      #hadoop fs -mv /test/test.txt /test1
-      #hadoop fs -rmr /test1   
+      #hadoop fs -cp /test/test.txt /test1                将/test目录下的test.txt复制到/test1目录下
+      #hadoop fs -rm /test1/test.txt                      将/test1目录下的test.txt文件删除
+      #hadoop fs -mv /test/test.txt /test1                将/test目录下的test.txt移动到/test1目录下
+      #hadoop fs -rmr /test1                              
