@@ -24,7 +24,19 @@
 
 * 8、失败的数据节点将被记录，以后不再连接。
 
+
      <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%E8%AF%BB%E8%BF%87%E7%A8%8B.png"/></div>
+
+
+          public static void main(String[] args) throws Exception {
+               // TODO Auto-generated method stub
+               
+               FileSystem fs = FileSystem.get(new URI("hdfs://hadoop01:9000"),new Configuration());
+               InputStream in = fs.open(new Path("/dianying.mp4"));
+               OutputStream out = new  FileOutputStream(new File("c:/dianying.mp4"));
+               IOUtils.copyBytes(in, out, 4096, true);		
+	     }
+
 
 ### 三、HDFS写过程
 
@@ -41,8 +53,29 @@
 * 6、当客户端结束写入数据，则调用stream的close函数。此操作将所有的数据块写入pipeline中的数据节点，并等待ack queue返回成功。最后通知元数据节点写入完毕。
 
 * 7、如果数据节点在写入的过程中失败，关闭pipeline，将ack queue中的数据块放入data queue的开始，当前的数据块在已经写入的数据节点中被元数据节点赋予新的标示，则错误节点重启后能够察觉其数据块是过时的，会被删除。失败的数据节点从pipeline中移除，另外的数据块则写入pipeline中的另外两个数据节点。元数据节点则被通知此数据块是复制块数不足，将来会再创建第三份备份。
-
+ 
     <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%E5%86%99%E8%BF%87%E7%A8%8B.png"/></div>
+
+
+     	FileSystem fs=null;
+	
+          @Before
+          public void init() throws Exception{
+               fs= FileSystem.get(new URI("hdfs://hadoop01:9000"),new Configuration(),"root");
+          }
+
+          @Test
+          public void testUpLoad() throws Exception{
+               OutputStream out = fs.create(new Path("/Xshellqqq"));
+               InputStream in = new FileInputStream(new File("c:/Xshell-5.0.1337p.exe"));
+               IOUtils.copyBytes(in, out, 4096, true);
+          }
+
+          @Test
+          public void testCopyFromLocalFile() throws IllegalArgumentException, IOException{
+               fs.copyFromLocalFile(new Path("c:/Xshell-5.0.1337p.exe"), new Path("/1132/Xshellaaa"));
+          }
+
 
 ### 四、问题
 
