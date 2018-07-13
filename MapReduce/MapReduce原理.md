@@ -60,3 +60,88 @@
 ### 例子：实现WordCountApp
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/wordCount.png"/></div>
+
+* WordCountMapper类
+
+        package com.mr;
+
+        import java.io.IOException;
+
+        import org.apache.hadoop.io.LongWritable;
+        import org.apache.hadoop.io.Text;
+        import org.apache.hadoop.mapreduce.Mapper;
+
+        public class WordCountMapper extends Mapper<LongWritable, Text, Text, LongWritable> {
+          @Override
+          protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, 
+          LongWritable>.Context context)throws IOException, InterruptedException {
+            System.out.println(key);
+            String hang=value.toString();
+            String[] strings=hang.split(" ");
+            for(String string : strings){
+              context.write(new Text(string), new LongWritable(1));
+            }
+          }
+        }
+
+
+* WordCountReducer类
+
+          package com.mr;
+
+          import java.io.IOException;
+
+          import org.apache.hadoop.io.LongWritable;
+          import org.apache.hadoop.io.Text;
+          import org.apache.hadoop.mapreduce.Reducer;
+
+          public class WordCountReducer extends Reducer<Text, LongWritable, Text, LongWritable>{
+
+            @Override
+            protected void reduce(Text key2, Iterable<LongWritable> value2,
+                Reducer<Text, LongWritable, Text, LongWritable>.Context context) throws IOException, 
+                InterruptedException {
+              long sum=0;
+
+              for(LongWritable i :value2){
+                sum += i.get();
+              }
+
+              context.write(key2,new LongWritable(sum));
+            }
+          }
+
+* MRClient类
+
+      package com.mr;
+
+      import org.apache.hadoop.conf.Configuration;
+      import org.apache.hadoop.fs.Path;
+      import org.apache.hadoop.io.LongWritable;
+      import org.apache.hadoop.io.Text;
+      import org.apache.hadoop.mapreduce.Job;
+      import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+      import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+
+      public class MRClient {
+
+        public static void main(String[] args) throws Exception {
+          // TODO Auto-generated method stub
+          Configuration configuration=new Configuration();
+          Job job=Job.getInstance(configuration);
+          //设置当前作业主函数所在类
+          job.setJarByClass(MRClient.class);
+
+          job.setMapperClass(WordCountMapper.class);
+          job.setMapOutputKeyClass(Text.class);
+          job.setMapOutputValueClass(LongWritable.class);
+          FileInputFormat.setInputPaths(job, "hdfs://hadoop01:9000/words");
+
+          job.setReducerClass(WordCountReducer.class);
+          job.setOutputKeyClass(Text.class);
+          job.setOutputValueClass(LongWritable.class);
+          FileOutputFormat.setOutputPath(job,new Path("hdfs://hadoop01:9000/out"));
+          //提交作业，参数：true为显示计算过程，false不显示计算过程
+          job.waitForCompletion(true);		
+        }
+      }
