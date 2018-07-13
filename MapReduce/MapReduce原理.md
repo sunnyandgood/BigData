@@ -34,7 +34,6 @@
       
       * 2.3、把reduce的输出保存到文件中。
       
-* 例子：实现WordCountApp
 
 ### map、reduce键值对格式
 
@@ -57,3 +56,7 @@
         <td>k3,v3</td>
      </tr>
   </table>
+
+### 例子：实现WordCountApp
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/wordCount.png"/></div>
