@@ -38,6 +38,9 @@
 
 ### map、reduce键值对格式
 
+<div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/Map%E4%B8%8EReduce%E5%87%BD%E6%95%B0.png
+"/></div>
+
   <table>
      <tr>
         <td>函数</td>
