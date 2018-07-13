@@ -57,6 +57,8 @@
 * fs.checkpoint.size：规定edits文件的最大值，一旦超过这个值则强制checkpoint，不管是否到达最大时间间隔。默认大小是64M。
 
   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/checkpiont.png"/></div>
+
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/checkPoint%E8%BF%87%E7%A8%8B.png"/></div>
   
 ### 六、Datanode
 
