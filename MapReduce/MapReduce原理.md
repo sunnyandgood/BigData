@@ -160,5 +160,6 @@
         hello cat
         hello tom
         [root@hadoop01 /]# hdfs dfs -put /words /
-        [root@hadoop01 /]# hdfs dfs jar WordCount.jar 
+        [root@hadoop01 /]# hadoop jar WordCount.jar 
+
 
