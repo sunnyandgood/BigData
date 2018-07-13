@@ -145,3 +145,21 @@
           job.waitForCompletion(true);		
         }
       }
+
+* 操作
+
+        [root@hadoop01 /]# cd /mnt/softWare/hadoop-2.2.0/sbin/
+        [root@hadoop01 sbin]# ./start-dfs.sh 
+        [root@hadoop01 sbin]# ./start-yarn.sh
+        [root@hadoop01 sbin]# cd / 
+        [root@hadoop01 /]# vim /words
+        [root@hadoop01 /]# cat /words 
+        hello tom
+        hello kittty
+        hello jerry
+        hello cat
+        hello tom
+        [root@hadoop01 /]# hdfs dfs -put /words /
+        [root@hadoop01 /]# hadoop jar WordCount.jar 
+
+
