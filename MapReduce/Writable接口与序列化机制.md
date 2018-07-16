@@ -42,7 +42,140 @@ MR的任意key必须实现WritableComparable接口
   
    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/WritableComparable%E6%8E%A5%E5%8F%A3.png"/></div>  
   
-### 五、序列化与反序列化例子
+
+### 五、常用的Writable实现类
+  
+  Text一般认为它等价于java.lang.String的Writable。针对UTF-8序列。
+
+   >例:
+   
+      Text test = new Text("test");
+      IntWritable one = new IntWritable(1);
+
+  
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB.png"/></div>
+  
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB%E8%A7%A3%E6%9E%90.png"/></div>
+  
+### 六、自定义Writable类
+
+* Writable
+
+   * write 是把每个对象序列化到输出流
+
+   * readFields是把输入流字节反序列化
+
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E8%87%AA%E5%AE%9A%E4%B9%89Writable%E7%B1%BB.png"/></div>
+
+* 实现WritableComparable.
+
+* Java值对象的比较：一般需要重写toString(),hashCode(),equals()方法
+  
+  
+### 七、自定义WritableKpi
+
+### 八、MapReduce输入的处理类
+
+* FileInputFormat:        
+
+     * FileInputFormat是所有以文件作为数据源的InputFormat实现的基类，FileInputFormat保存作为job输入的所有文件，并实现了对输入文件计算splits的方法。至于获得记录的方法是有不同的子类——TextInputFormat进行实现的。  
+
+* InputFormat：  
+  
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/InputFormat.png"/></div>
+  
+   * InputFormat 负责处理MR的输入部分.有三个作用:
+      
+      * 验证作业的输入是否规范.
+      
+      * 把输入文件切分成InputSplit.
+      
+      * 提供RecordReader 的实现类，把InputSplit读到Mapper中进行处理.
+  
+* InputSplit:
+
+   * 在执行mapreduce之前，原始数据被分割成若干split，每个split作为一个map任务的输入，在map执行过程中split会被分解成一个个记录（key-value对），map会依次处理每一个记录。
+   * FileInputFormat只划分比HDFS block大的文件，所以FileInputFormat划分的结果是这个文件或者是这个文件中的一部分.                
+   * 如果一个文件的大小比block小，将不会被划分，这也是Hadoop处理大文件的效率要比处理很多小文件的效率高的原因。
+   * 当Hadoop处理很多小文件（文件大小小于hdfs block大小）的时候，由于FileInputFormat不会对小文件进行划分，所以每一个小文件都会被当做一个split并分配一个map任务，导致效率底下。
+
+ * 例如：一个1G的文件，会被划分成16个64MB的split，并分配16个map任务处理，而10000个100kb的文件会被10000个map任务处理。  
+
+
+* TextInputFormat:
+
+   * TextInputformat是默认的处理类，处理普通文本文件。
+
+   * 文件中每一行作为一个记录，他将每一行在文件中的起始偏移量作为key，每一行的内容作为value。
+
+   * 默认以\n或回车键作为一行记录。
+
+   * TextInputFormat继承了FileInputFormat。
+
+
+### 九、InputFormat类的层次结构
+  
+ <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/InputFormat%E7%B1%BB%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png"/></div>
+
+### 十、其他输入类
+
+* CombineFileInputFormat
+     
+     * 相对于大量的小文件来说，hadoop更合适处理少量的大文件。
+     * CombineFileInputFormat可以缓解这个问题，它是针对小文件而设计的。
+
+* KeyValueTextInputFormat
+
+     * 当输入数据的每一行是两列，并用tab分离的形式的时候，KeyValueTextInputformat处理这种格式的文件非常适合。
+
+* NLineInputformat    
+
+     * NLineInputformat可以控制在每个split中数据的行数。
+
+* SequenceFileInputformat 
+
+     * 当输入文件格式是sequencefile的时候，要使用SequenceFileInputformat作为输入。
+
+### 十一、自定义输入格式
+
+* 继承FileInputFormat基类。
+
+* 重写里面的getSplits(JobContext context)方法。
+
+* 重写createRecordReader(InputSplit split,TaskAttemptContext context)方法。
+
+### 十二、Hadoop的输出
+
+* TextOutputformat 
+    
+    * 默认的输出格式，key和value中间值用tab隔开的。 
+
+* SequenceFileOutputformat 
+    
+    * 将key和value以sequencefile格式输出。 
+
+* SequenceFileAsOutputFormat 
+    
+    * 将key和value以原始二进制的格式输出。 
+
+* MapFileOutputFormat 
+    
+    * 将key和value写入MapFile中。由于MapFile中的key是有序的，所以写入的时候必须保证记录是按key值顺序写入的。 
+
+* MultipleOutputFormat 
+    
+    * 默认情况下一个reducer会产生一个输出，但是有些时候我们想一个reducer产生多个输出，MultipleOutputFormat和MultipleOutputs可以实现这个功能。
+
+### 十三、思考题
+
+* MapReduce框架的结构是什么
+
+* Map在整个MR框架中作用是什么
+
+* Reduce在整个MR框架中作用是什么
+
+
+### 十四、序列化与反序列化例子
 
 >数据
 
@@ -229,6 +362,3 @@ MR的任意key必须实现WritableComparable接口
             }
          }
   
-  
-  
- <div align="center"><img src=""/></div>
