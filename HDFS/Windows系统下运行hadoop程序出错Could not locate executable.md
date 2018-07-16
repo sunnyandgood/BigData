@@ -24,5 +24,6 @@ winutils.exe是在Windows系统上需要的hadoop调试环境工具，里面包�
    * 在系统变量path里增加%HADOOP_HOME%\bin
       
    * 重启电脑，使环境变量配置生效，上述问题即可解决。
+   
 
 
