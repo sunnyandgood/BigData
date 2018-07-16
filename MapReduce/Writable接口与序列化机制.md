@@ -76,11 +76,11 @@ MR的任意key必须实现WritableComparable接口
 
 ### 八、MapReduce输入的处理类
 
-* FileInputFormat:        
+* 1、FileInputFormat:        
 
      * FileInputFormat是所有以文件作为数据源的InputFormat实现的基类，FileInputFormat保存作为job输入的所有文件，并实现了对输入文件计算splits的方法。至于获得记录的方法是有不同的子类——TextInputFormat进行实现的。  
 
-* InputFormat：  
+* 2、InputFormat：  
   
   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/InputFormat.png"/></div>
   
@@ -92,17 +92,17 @@ MR的任意key必须实现WritableComparable接口
       
       * 提供RecordReader 的实现类，把InputSplit读到Mapper中进行处理.
   
-* InputSplit:
+* 3、InputSplit:
 
    * 在执行mapreduce之前，原始数据被分割成若干split，每个split作为一个map任务的输入，在map执行过程中split会被分解成一个个记录（key-value对），map会依次处理每一个记录。
    * FileInputFormat只划分比HDFS block大的文件，所以FileInputFormat划分的结果是这个文件或者是这个文件中的一部分.                
    * 如果一个文件的大小比block小，将不会被划分，这也是Hadoop处理大文件的效率要比处理很多小文件的效率高的原因。
    * 当Hadoop处理很多小文件（文件大小小于hdfs block大小）的时候，由于FileInputFormat不会对小文件进行划分，所以每一个小文件都会被当做一个split并分配一个map任务，导致效率底下。
 
- * 例如：一个1G的文件，会被划分成16个64MB的split，并分配16个map任务处理，而10000个100kb的文件会被10000个map任务处理。  
+   * 例如：一个1G的文件，会被划分成16个64MB的split，并分配16个map任务处理，而10000个100kb的文件会被10000个map任务处理。  
 
 
-* TextInputFormat:
+* 4、TextInputFormat:
 
    * TextInputformat是默认的处理类，处理普通文本文件。
 
@@ -119,50 +119,50 @@ MR的任意key必须实现WritableComparable接口
 
 ### 十、其他输入类
 
-* CombineFileInputFormat
+* 1、CombineFileInputFormat
      
      * 相对于大量的小文件来说，hadoop更合适处理少量的大文件。
      * CombineFileInputFormat可以缓解这个问题，它是针对小文件而设计的。
 
-* KeyValueTextInputFormat
+* 2、KeyValueTextInputFormat
 
      * 当输入数据的每一行是两列，并用tab分离的形式的时候，KeyValueTextInputformat处理这种格式的文件非常适合。
 
-* NLineInputformat    
+* 3、NLineInputformat    
 
      * NLineInputformat可以控制在每个split中数据的行数。
 
-* SequenceFileInputformat 
+* 4、SequenceFileInputformat 
 
      * 当输入文件格式是sequencefile的时候，要使用SequenceFileInputformat作为输入。
 
 ### 十一、自定义输入格式
 
-* 继承FileInputFormat基类。
+* 1、继承FileInputFormat基类。
 
-* 重写里面的getSplits(JobContext context)方法。
+* 2、重写里面的getSplits(JobContext context)方法。
 
-* 重写createRecordReader(InputSplit split,TaskAttemptContext context)方法。
+* 3、重写createRecordReader(InputSplit split,TaskAttemptContext context)方法。
 
 ### 十二、Hadoop的输出
 
-* TextOutputformat 
+* 1、TextOutputformat 
     
     * 默认的输出格式，key和value中间值用tab隔开的。 
 
-* SequenceFileOutputformat 
+* 2、SequenceFileOutputformat 
     
     * 将key和value以sequencefile格式输出。 
 
-* SequenceFileAsOutputFormat 
+* 3、SequenceFileAsOutputFormat 
     
     * 将key和value以原始二进制的格式输出。 
 
-* MapFileOutputFormat 
+* 4、MapFileOutputFormat 
     
     * 将key和value写入MapFile中。由于MapFile中的key是有序的，所以写入的时候必须保证记录是按key值顺序写入的。 
 
-* MultipleOutputFormat 
+* 5、MultipleOutputFormat 
     
     * 默认情况下一个reducer会产生一个输出，但是有些时候我们想一个reducer产生多个输出，MultipleOutputFormat和MultipleOutputs可以实现这个功能。
 
