@@ -28,7 +28,7 @@
 
 * Hadoop节点间通信。
 
-  <div align="center"><img src="../img/Hadoop%E8%8A%82%E7%82%B9%E9%97%B4%E9%80%9A%E4%BF%A1.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/Hadoop%E8%8A%82%E7%82%B9%E9%97%B4%E9%80%9A%E4%BF%A1.png"/></div>
   
   
 ### 四、Writable接口  
