@@ -27,3 +27,24 @@
 * 序列化在分布式环境的两大作用：进程间通信，永久存储。
 
 * Hadoop节点间通信。
+
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/Hadoop%E8%8A%82%E7%82%B9%E9%97%B4%E9%80%9A%E4%BF%A1.png"/></div>
+  
+  
+### 四、Writable接口  
+  
+Writable接口, 是根据 DataInput 和 DataOutput 实现的简单、有效的序列化对象.
+MR的任意Key和Value必须实现Writable接口.
+  
+   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/Writable%E6%8E%A5%E5%8F%A3.png"/></div>  
+  
+MR的任意key必须实现WritableComparable接口
+  
+   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/WritableComparable%E6%8E%A5%E5%8F%A3.png"/></div>  
+  
+  
+  
+  
+  
+  
+ <div align="center"><img src=""/></div>
