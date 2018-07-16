@@ -27,3 +27,16 @@
 * 序列化在分布式环境的两大作用：进程间通信，永久存储。
 
 * Hadoop节点间通信。
+
+  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/Hadoop%E8%8A%82%E7%82%B9%E9%97%B4%E9%80%9A%E4%BF%A1.png"/></div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ <div align="center"><img src=""/></div>
