@@ -20,12 +20,15 @@ public class MRClient {
 		job.setMapperClass(WordCountMapper.class);
 		job.setMapOutputKeyClass(Text.class);
 		job.setMapOutputValueClass(LongWritable.class);
-		FileInputFormat.setInputPaths(job, "hdfs://hadoop01:9000/words");
+		FileInputFormat.setInputPaths(job, "c:/data.txt");
 		
 		job.setReducerClass(WordCountReducer.class);
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(LongWritable.class);
-		FileOutputFormat.setOutputPath(job,new Path("hdfs://hadoop01:9000/out"));
+		FileOutputFormat.setOutputPath(job,new Path("c:/out"));
+		
+		job.setCombinerClass(WordCountReducer.class);
+		
 		//提交作业，参数：true为显示计算过程，false不显示计算过程
 		job.waitForCompletion(true);
 		
