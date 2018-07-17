@@ -223,7 +223,7 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/MapReduceFrameworkArchitecture.png"/></div>
 
-### 例子：实现WordCountApp
+### 十四、例子：实现WordCountApp
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/wordCount.png"/></div>
 
