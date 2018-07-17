@@ -38,14 +38,16 @@
       }
 
       @Test
-      public void testCopyFromLocalFile() throws IllegalArgumentException, IOException, InterruptedException, URISyntaxException {
+      public void testCopyFromLocalFile() throws IllegalArgumentException, IOException, InterruptedException, 
+      URISyntaxException {
         FileSystem fSystem = FileSystem.get(new URI("hdfs://192.168.1.101:9000"),new Configuration(),"root");
         fSystem.copyFromLocalFile(new Path("d:/testFile.jpg"), new Path("/test1/file"));
       }
 
 
       @Test
-      public void testDelete() throws IllegalArgumentException, IOException, InterruptedException, URISyntaxException {
+      public void testDelete() throws IllegalArgumentException, IOException, InterruptedException, 
+      URISyntaxException {
         FileSystem fSystem = FileSystem.get(new URI("hdfs://192.168.1.101:9000"),new Configuration(),"root");
         boolean flag = fSystem.delete(new Path("/test1"),true);
         /**
