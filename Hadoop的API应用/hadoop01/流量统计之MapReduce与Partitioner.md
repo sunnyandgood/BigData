@@ -1,4 +1,4 @@
-# 流量统计之MapReduce与Partitioner
+# [流量统计之MapReduce与Partitioner](https://github.com/sunnyandgood/BigData/tree/master/Hadoop%E7%9A%84API%E5%BA%94%E7%94%A8/hadoop01/src/com/mr/data/count/action)
 
 ## [Writable接口与序列化机制](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/Writable%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6.md)
 
@@ -145,7 +145,8 @@
         public static class DataCountMapper extends Mapper<LongWritable, Text, Text, DataBean>{
 
           @Override
-          protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, DataBean>.Context context)
+          protected void map(LongWritable key, Text value, 
+          Mapper<LongWritable, Text, Text, DataBean>.Context context)
               throws IOException, InterruptedException {
             String hang=value.toString();
             String[] strings=hang.split("\t");
@@ -163,7 +164,8 @@
         public static class DataCountReducer extends Reducer<Text, DataBean, Text, DataBean>{
 
           @Override
-          protected void reduce(Text k2, Iterable<DataBean> v2, Reducer<Text, DataBean, Text, DataBean>.Context context)
+          protected void reduce(Text k2, Iterable<DataBean> v2, 
+          Reducer<Text, DataBean, Text, DataBean>.Context context)
               throws IOException, InterruptedException {
             long upSum=0;
             long downSum=0;
