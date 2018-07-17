@@ -36,11 +36,11 @@
 Writable接口, 是根据 DataInput 和 DataOutput 实现的简单、有效的序列化对象.
 MR的任意Key和Value必须实现Writable接口.
   
-   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/Writable%E6%8E%A5%E5%8F%A3.png"/></div>  
+   <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/Writable%E6%8E%A5%E5%8F%A3.png"/></div>  
   
 MR的任意key必须实现WritableComparable接口
   
-   <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/WritableComparable%E6%8E%A5%E5%8F%A3.png"/></div>  
+   <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/WritableComparable%E6%8E%A5%E5%8F%A3.png"/></div>  
   
 
 ### 五、常用的Writable实现类
@@ -53,9 +53,9 @@ MR的任意key必须实现WritableComparable接口
       IntWritable one = new IntWritable(1);
 
   
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB.png"/></div>
   
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB%E8%A7%A3%E6%9E%90.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/%E5%B8%B8%E7%94%A8%E7%9A%84Writable%E5%AE%9E%E7%8E%B0%E7%B1%BB%E8%A7%A3%E6%9E%90.png"/></div>
   
 ### 六、自定义Writable类
 
@@ -65,7 +65,7 @@ MR的任意key必须实现WritableComparable接口
 
    * readFields是把输入流字节反序列化
 
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/%E8%87%AA%E5%AE%9A%E4%B9%89Writable%E7%B1%BB.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/%E8%87%AA%E5%AE%9A%E4%B9%89Writable%E7%B1%BB.png"/></div>
 
 * 实现WritableComparable.
 
@@ -82,7 +82,7 @@ MR的任意key必须实现WritableComparable接口
 
 * 2、InputFormat：  
   
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/InputFormat.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/InputFormat.png"/></div>
   
    * InputFormat 负责处理MR的输入部分.有三个作用:
       
@@ -115,7 +115,7 @@ MR的任意key必须实现WritableComparable接口
 
 ### 九、InputFormat类的层次结构
   
- <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/MapReduce/img/InputFormat%E7%B1%BB%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png"/></div>
+ <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/MapReduce/img/InputFormat%E7%B1%BB%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png"/></div>
 
 ### 十、其他输入类
 
@@ -328,7 +328,8 @@ MR的任意key必须实现WritableComparable接口
             public static class DataCountMapper extends Mapper<LongWritable, Text, Text, DataBean>{
 
                @Override
-               protected void map(LongWritable key, Text value, Mapper<LongWritable, Text, Text, DataBean>.Context context)
+               protected void map(LongWritable key, Text value, 
+               Mapper<LongWritable, Text, Text, DataBean>.Context context)
                      throws IOException, InterruptedException {
                   String hang=value.toString();
                   String[] strings=hang.split("\t");
@@ -346,7 +347,8 @@ MR的任意key必须实现WritableComparable接口
             public static class DataCountReducer extends Reducer<Text, DataBean, Text, DataBean>{
 
                @Override
-               protected void reduce(Text k2, Iterable<DataBean> v2, Reducer<Text, DataBean, Text, DataBean>.Context context)
+               protected void reduce(Text k2, Iterable<DataBean> v2, 
+               Reducer<Text, DataBean, Text, DataBean>.Context context)
                      throws IOException, InterruptedException {
                   long upSum=0;
                   long downSum=0;
