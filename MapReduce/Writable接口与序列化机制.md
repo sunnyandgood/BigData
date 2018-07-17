@@ -305,7 +305,8 @@ MR的任意key必须实现WritableComparable接口
 
          public class DataCount {
 
-          public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+            public static void main(String[] args) throws IOException, ClassNotFoundException, 
+            InterruptedException {
                // TODO Auto-generated method stub
                Job job=Job.getInstance(new Configuration());
 
