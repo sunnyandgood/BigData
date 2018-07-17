@@ -52,7 +52,7 @@
 >Map/Reduce分布式计算系统
 
 
-<div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop%E6%A1%86%E6%9E%B6%E7%9A%84%E7%BB%84%E6%88%90.png"/></div>
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop%E6%A1%86%E6%9E%B6%E7%9A%84%E7%BB%84%E6%88%90.png"/></div>
 
 * 1、什么是HDFS分布式文件系统
     * HDFS是一个的文件系统，可以创建、移动、删除和重命名文件。
@@ -79,7 +79,7 @@
     
     * 在主服务器上的NameNode是HDFS分布式文件系统的主守护进程，分布在其他机器上的DataNode从进程定时向主进程NameNode发送报告，报告节点数据和磁盘的情况。NameNode进程向不同的DataNode节点发送指令，要求节点下载数据并管理数据。
     
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/HDFS%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
     
  * 3、什么是MapReduce(分布式计算系统)
  
@@ -103,7 +103,7 @@
         
         * JobTracker进程负责调度一个作业的所有任务的执行，这些任务会分配到不同的节点上。JobTracker主进程监控所有从节点的TaskTracker进程的作业执行情况，重新执行失败的任务。TaskTracker执行JobTracker指定的任务。当一个Job(数据分析作业)提交时，JobTracker接收到提交的任作业后，将作业执行需要的配置信息和其他数据信息分发给相应的TaskTracker。同时要调度任务并监控TaskTracker的执行。
         
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop1.0%E7%89%88%E6%9C%AC%E7%9A%84MapReduce%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop1.0%E7%89%88%E6%9C%AC%E7%9A%84MapReduce%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
 
 * 5、YARN(分布式计算系统)
 
@@ -117,13 +117,13 @@
         
         * NodeManager是集群中每个节点上的管理进程，职责是对节点中的资源进行管理并与ResourceManager保持通信，报告节点的各种状态信息。与ResourceManager共同管理整个集群资源，资源包括内存、CPU等。
 
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop2.0%E7%89%88%E6%9C%AC%E7%9A%84MapReduceV2(YARN)%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop2.0%E7%89%88%E6%9C%AC%E7%9A%84MapReduceV2(YARN)%E7%BB%93%E6%9E%84%E5%9B%BE.png"/></div>
 
 * 6、Hadoop2.0在Hadoop1.0上的改变
 
     * YARN将JobTracker分为两个组件：ResourceManager和ApplicationMaster。ResourceManager作为资源管理和调度不需要关心应用程序的执行和监控。而与应用程序相关的是ApplicationMaster。
     
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop2.0%E5%9C%A8Hadoop1.0%E4%B8%8A%E7%9A%84%E6%94%B9%E5%8F%98.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop2.0%E5%9C%A8Hadoop1.0%E4%B8%8A%E7%9A%84%E6%94%B9%E5%8F%98.png"/></div>
     
     * ResourceManager进程运行在主节点上，作为集群资源的管理者和总调度，不在需要关心应用程序的执行和监控。ApplicationMaster进程运行在从节点上，主要管理应用程序的执行和应用程序的生命周期，当应用程序执行结束，ApplicationMaster的生命周期结束。
 
@@ -137,11 +137,11 @@
 
     * Hadoop2.0和Hadoop1.0的结构图
     
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop2.0%E5%92%8CHadoop1.0%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE1.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop2.0%E5%92%8CHadoop1.0%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE1.png"/></div>
     
     * 不同应用对应不同的ApplicationMaster。只需要增加不同计算框架的ApplicationMaster实现即可实现多种框架使用YARN，如MapReduce、MPI和图计算等。实现上是把所有与应用程序相关的代码都放到ApplicationMaster类中。并提供不同的接口满足不同用户的需求。 
 
-        <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop2.0%E5%92%8CHadoop1.0%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE2.png"/></div>
+        <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop2.0%E5%92%8CHadoop1.0%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE2.png"/></div>
   
 
-<div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/Hadoop%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E5%9B%BE.png"/></div>
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/Hadoop%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E5%9B%BE.png"/></div>
