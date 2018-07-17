@@ -24,7 +24,7 @@
 	<classpathentry kind="lib" path="lib/hadoop-annotations-2.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop-auth-2.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop-common-2.4.1-tests.jar"/>
-	<classpathentry kind="lib" path="lib/hadoop-common-2.4.1.jar" sourcepath="lib/hadoop-common-2.4.1.jar"/>
+	<classpathentry kind="lib" path="lib/hadoop-common-2.4.1.jar" sourcepath="F:/工具/安装包/大数据/hadoop-2.2.0-src"/>
 	<classpathentry kind="lib" path="lib/hadoop-hdfs-2.4.1-tests.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop-hdfs-2.4.1.jar"/>
 	<classpathentry kind="lib" path="lib/hadoop-hdfs-nfs-2.4.1.jar"/>
