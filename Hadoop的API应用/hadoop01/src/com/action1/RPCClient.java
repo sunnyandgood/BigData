@@ -8,7 +8,7 @@ import org.apache.hadoop.ipc.RPC;
 
 public class RPCClient {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws IOException {
 		
 		Barty proxy = RPC
 				/**获取代理对象，
