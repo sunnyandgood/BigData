@@ -4,11 +4,11 @@
 * DataNode
 * Secondary NameNode
 
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%20Architecure.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/HDFS%20Architecure.png"/></div>
   
 * 元数据存储细节  
     
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/%E5%85%83%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%BB%86%E8%8A%82.png"/></div>   
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/%E5%85%83%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E7%BB%86%E8%8A%82.png"/></div>   
   
 ### 一、NameNode
 
@@ -56,9 +56,9 @@
 
 * fs.checkpoint.size：规定edits文件的最大值，一旦超过这个值则强制checkpoint，不管是否到达最大时间间隔。默认大小是64M。
 
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/checkpiont.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/checkpiont.png"/></div>
 
-  <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/checkPoint%E8%BF%87%E7%A8%8B.png"/></div>
+  <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/checkPoint%E8%BF%87%E7%A8%8B.png"/></div>
   
 ### 六、Datanode
 
