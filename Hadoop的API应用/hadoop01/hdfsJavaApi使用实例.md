@@ -68,6 +68,6 @@
 
       @Test
       public void test() throws IOException, InterruptedException, URISyntaxException {
-        FileSystem fSystem = FileSystem.get(new URI("hdfs://192.168.1.101:9000"),new Configuration(),"root");		
+        FileSystem fSystem = FileSystem.get(new URI("hdfs://192.168.1.101:9000"),new Configuration(),"root");
       }	
     }
