@@ -1,8 +1,18 @@
-# [序列化-流量统计之MapReduce与Partitioner](https://github.com/sunnyandgood/BigData/tree/master/Hadoop%E7%9A%84API%E5%BA%94%E7%94%A8/hadoop01/src/com/mr/data/count/action)
+# Partitioner编程
 
-## [Writable接口与序列化机制](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/Writable%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6.md)
+### Partitioner编程简介
 
-### 一、DataBean类
+* Partitioner是partitioner的基类，如果需要定制partitioner也需要继承该类。
+
+* HashPartitioner是mapreduce的默认partitioner。计算方法是which reducer=(key.hashCode() & Integer.MAX_VALUE) % numReduceTasks，得到当前的目的reducer。
+
+* (例子以jar形式运行)
+
+
+
+### 例子：
+
+>DataBean类
 
       package com.mr.data.count.action;
 
@@ -97,7 +107,7 @@
 
       }
       
-### 二、DataCount类
+>DataCount类
 
       package com.mr.data.count.action;
 
@@ -216,20 +226,6 @@
         }
       }
 
-### 三、数据
+>数据
 
-      1363157985066	13726230503	2481	24681	200
-      1363157995052	13826544101	264	0	200
-      1363157991076	13926435656	132	1512	200
-      1363154400022	13926251106	240	0	200
-      1363157993044	18211575961	1527	2106	200
-      1363157995074	84138413	4116	1432	200
-      1363157993055	13560439658	1116	954	200
-      1363157995033	15920133257	3156	2936	200
-      1363157983019	13719199419	240	0	200
-      1363157984041	13660577991	6960	690	200
-      1363157973098	15013685858	3659	3538	200
-      1363157986029	15989002119	1938	180	200
-      1363157992093	13560439658	918	4938	200
-      1363157986041	13480253104	180	180	200
-      1363157984040	13602846565	1938	2910	200
+     
