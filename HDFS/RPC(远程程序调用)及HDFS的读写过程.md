@@ -25,7 +25,7 @@
 * 8、失败的数据节点将被记录，以后不再连接。
 
 
-     <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%E8%AF%BB%E8%BF%87%E7%A8%8B.png"/></div>
+     <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/HDFS%E8%AF%BB%E8%BF%87%E7%A8%8B.png"/></div>
 
 
           public static void main(String[] args) throws Exception {
@@ -54,7 +54,7 @@
 
 * 7、如果数据节点在写入的过程中失败，关闭pipeline，将ack queue中的数据块放入data queue的开始，当前的数据块在已经写入的数据节点中被元数据节点赋予新的标示，则错误节点重启后能够察觉其数据块是过时的，会被删除。失败的数据节点从pipeline中移除，另外的数据块则写入pipeline中的另外两个数据节点。元数据节点则被通知此数据块是复制块数不足，将来会再创建第三份备份。
  
-    <div align="center"><img src="https://github.com/sunnyandgood/BigBata/blob/master/HDFS/img/HDFS%E5%86%99%E8%BF%87%E7%A8%8B.png"/></div>
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HDFS/img/HDFS%E5%86%99%E8%BF%87%E7%A8%8B.png"/></div>
 
 
      	FileSystem fs=null;
