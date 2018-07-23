@@ -36,36 +36,3 @@
 * Zookeeper采用松耦合交互方式
 
 * Zookeeper是一个资源库
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div align="center"><img src=""/></div>
