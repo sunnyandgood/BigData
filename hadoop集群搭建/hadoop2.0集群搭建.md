@@ -69,7 +69,7 @@
 			最后向该文件写入ID
 			echo 1 > /hadoop/zookeeper-3.4.5/tmp/myid
 		
-	* 1.3将配置好的zookeeper拷贝到其他节点(首先分别在hadoop05、hadoop06根目录下创建一个itcast目录：mkdir /hadoop)
+	* 1.3将配置好的zookeeper拷贝到其他节点(首先分别在hadoop05、hadoop06根目录下创建一个hadoop目录：mkdir /hadoop)
 	
 			scp -r /hadoop/zookeeper-3.4.5/ hadoop05:/hadoop/
 			scp -r /hadoop/zookeeper-3.4.5/ hadoop06:/hadoop/
