@@ -1,4 +1,4 @@
-# hadoop集群搭建
+# hadoop1.0集群搭建
 
 
 掌握Hadoop集群的搭建过程
