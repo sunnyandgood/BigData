@@ -73,48 +73,54 @@
 
 * 2、解压
 
-	tar -xzvf /zookeeper-3.4.5.tar.gz -C /mnt/softWare/
+	   tar -xzvf /zookeeper-3.4.5.tar.gz -C /mnt/softWare/
 
 * 3、配置（先在一台节点上配置）
-	3.1添加一个zoo.cfg配置文件
-	$ZOOKEEPER/conf
-	mv zoo_sample.cfg zoo.cfg
+
+	* 3.1、添加一个zoo.cfg配置文件
 	
-	3.2修改配置文件（zoo.cfg）
+		$zookeeper/conf/
+		mv zoo_sample.cfg zoo.cfg
+	
+	* 3.2、修改配置文件（zoo.cfg）
+	
 		dataDir=/mnt/softWare/zookeeper-3.4.5/data
 		
 		server.4=hadoop04:2888:3888
 		server.5=hadoop05:2888:3888
 		server.6=hadoop06:2888:3888
 	
-	3.3在（dataDir=/mnt/softWare/zookeeper-3.4.5/data）创建一个myid文件，里面内容是server.N中的N（server.2里面内容为2）
+	* 3.3、在（dataDir=/mnt/softWare/zookeeper-3.4.5/data）创建一个myid文件，里面内容是server.N中的N（server.2里面内容为2）
 		echo "4" > myid
 
 		mkdir data
 		vim myid
 
-	3.4、修改主机映射
+	* 3.4、修改主机映射
+	
 		vim /etc/hosts
 		192.168.1.104 hadoop04
 		192.168.1.105 hadoop05
 		192.168.1.106 hadoop06
 
 	
-	3.5将配置好的zk拷贝到其他节点 
+	* 3.5、将配置好的zk拷贝到其他节点 
+	
 		[root@hadoop04 zookeeper-3.4.5]# scp -r /mnt/softWare/zookeeper-3.4.5 root@hadoop05:/mnt/softWare
 		[root@hadoop04 zookeeper-3.4.5]# scp -r /mnt/softWare/zookeeper-3.4.5 root@hadoop06:/mnt/softWare
 	
-	3.6注意：在其他节点上一定要修改myid的内容
+	* 3.6、注意：在其他节点上一定要修改myid的内容
+	
 		在itcast06应该讲myid的内容改为6 （echo "6" > myid）
 		在itcast07应该讲myid的内容改为7 （echo "7" > myid）
 		
-* 4、启动集群
-	分别启动zk
-		./zkServer.sh start
+* 4、启动集群（分别启动zk）
+
+        ./zkServer.sh start
 
 * 5、测试leader自动切换
 
-[root@hadoop06 bin]# jps
-2385 Jps
-2293 QuorumPeerMain
-[root@hadoop06 bin]# kill -9 2293
+		[root@hadoop06 bin]# jps
+		2385 Jps
+		2293 QuorumPeerMain
+		[root@hadoop06 bin]# kill -9 2293
