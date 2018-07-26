@@ -193,9 +193,37 @@
 
 ### 十七、Zookeeper示例代码
 
-<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/Zookeeper示例代码1.png"/></div>
-
-<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/Zookeeper示例代码2.png"/></div>
+      // 创建一个与服务器的连接
+       ZooKeeper zk = new ZooKeeper("localhost:" + CLIENT_PORT, 
+              ClientBase.CONNECTION_TIMEOUT, new Watcher() { 
+                  // 监控所有被触发的事件
+                  public void process(WatchedEvent event) { 
+                      System.out.println("已经触发了" + event.getType() + "事件！"); 
+                  } 
+              }); 
+       // 创建一个目录节点
+       zk.create("/testRootPath", "testRootData".getBytes(), Ids.OPEN_ACL_UNSAFE,
+         CreateMode.PERSISTENT); 
+       // 创建一个子目录节点
+       zk.create("/testRootPath/testChildPathOne", "testChildDataOne".getBytes(),
+         Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT); 
+       System.out.println(new String(zk.getData("/testRootPath",false,null))); 
+       // 取出子目录节点列表
+       System.out.println(zk.getChildren("/testRootPath",true)); 
+       // 修改子目录节点数据
+       zk.setData("/testRootPath/testChildPathOne","modifyChildDataOne".getBytes(),-1); 
+       System.out.println("目录节点状态：["+zk.exists("/testRootPath",true)+"]"); 
+       // 创建另外一个子目录节点
+       zk.create("/testRootPath/testChildPathTwo", "testChildDataTwo".getBytes(), 
+         Ids.OPEN_ACL_UNSAFE,CreateMode.PERSISTENT); 
+       System.out.println(new String(zk.getData("/testRootPath/testChildPathTwo",true,null))); 
+       // 删除子目录节点
+       zk.delete("/testRootPath/testChildPathTwo",-1); 
+       zk.delete("/testRootPath/testChildPathOne",-1); 
+       // 删除父目录节点
+       zk.delete("/testRootPath",-1); 
+       // 关闭连接
+       zk.close();
 
 
 * 输出的结果如下：
@@ -212,7 +240,7 @@
 
 * 分布式应用中，通常需要有一套完整的命名规则，既能够产生唯一的名称又便于人识别和记住，通常情况下用树形的名称结构是一个理想的选择，树形的名称结构是一个有层次的目录结构，既对人友好又不会重复。
 
-* Name Service 是 Zookeeper 内置的功能，只要调用 Zookeeper 的 API 就能实现
+* Name Service 是 Zookeeper 内置的功能，只要调用 Zookeeper 的 API 就能实现。如调用 create 接口就可以很容易创建一个目录节点。
 
 ### 十九、应用场景2－配置管理
 
@@ -228,7 +256,12 @@
 
 * Zookeeper 不仅能够维护当前的集群中机器的服务状态，而且能够选出一个“总管”，让这个总管来管理集群，这就是 Zookeeper 的另一个功能 Leader Election。
 
+* 它们的实现方式都是在 Zookeeper 上创建一个 EPHEMERAL 类型的目录节点，然后每个 Server 在它们创建目录节点的父目录节点上调用 getChildren(String path, boolean watch) 方法并设置 watch 为 true，由于是 EPHEMERAL 目录节点，当创建它的 Server 死去，这个目录节点也随之被删除，所以 Children 将会变化，这时 getChildren上的 Watch 将会被调用，所以其它 Server 就知道已经有某台 Server 死去了。新增 Server 也是同样的原理。
+
+* Zookeeper 如何实现 Leader Election，也就是选出一个 Master Server。和前面的一样每台 Server 创建一个 EPHEMERAL 目录节点，不同的是它还是一个 SEQUENTIAL 目录节点，所以它是个 EPHEMERAL_SEQUENTIAL 目录节点。之所以它是 EPHEMERAL_SEQUENTIAL 目录节点，是因为我们可以给每台 Server 编号，我们可以选择当前是最小编号的 Server 为 Master，假如这个最小编号的 Server 死去，由于是 EPHEMERAL 节点，死去的 Server 对应的节点也被删除，所以当前的节点列表中又出现一个最小编号的节点，我们就选择这个节点为当前 Master。这样就实现了动态选择 Master，避免了传统意义上单 Master 容易出现单点故障的问题。
+
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景3%EF%BC%8D集群管理.png"/></div>
+
 
       zk.create("/testRootPath/testChildPath1","1".getBytes(), 
                                     Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
@@ -247,6 +280,34 @@
 * 规定编号最小的为master,所以当我们对SERVERS节点做监控的时候，得到服务器列表，只要所有集群机器逻辑认为最小编号节点为master，那么master就被选出，而这
 * 个master宕机的时候，相应的znode会消失，然后新的服务器列表就被推送到客户端，然后每个节点逻辑认为最小编号节点为master，这样就做到动态master选举。
 
+*  Leader Election 关键代码
+
+            void findLeader() throws InterruptedException { 
+                    byte[] leader = null; 
+                    try { 
+                        leader = zk.getData(root + "/leader", true, null); 
+                    } catch (Exception e) { 
+                        logger.error(e); 
+                    } 
+                    if (leader != null) { 
+                        following(); 
+                    } else { 
+                        String newLeader = null; 
+                        try { 
+                            byte[] localhost = InetAddress.getLocalHost().getAddress(); 
+                            newLeader = zk.create(root + "/leader", localhost, 
+                            ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL); 
+                        } catch (Exception e) { 
+                            logger.error(e); 
+                        } 
+                        if (newLeader != null) { 
+                            leading(); 
+                        } else { 
+                            mutex.wait(); 
+                        } 
+                    } 
+                }
+
 ### 二十一、应用场景4－共享锁
 
 * 共享锁在同一个进程中很容易实现，但是在跨进程或者在不同 Server 之间就不好实现了。Zookeeper 却很容易实现这个功能，实现方式也是需要获得锁的 Server 创建一个 EPHEMERAL_SEQUENTIAL 目录节点，然后调用 getChildren方法获取当前的目录节点列表中最小的目录节点是不是就是自己创建的目录节点，如果正是自己创建的，那么它就获得了这个锁，如果不是那么它就调用 exists(String path, boolean watch) 方法并监控 Zookeeper 上目录节点列表的变化，一直到自己创建的节点是列表中最小编号的目录节点，从而获得锁，释放锁很简单，只要删除前面它自己所创建的目录节点就行了。
@@ -254,13 +315,111 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景4%EF%BC%8D共享锁.png"/></div>
 
+* 同步锁的关键代码
+
+      void getLock() throws KeeperException, InterruptedException{ 
+              List<String> list = zk.getChildren(root, false); 
+              String[] nodes = list.toArray(new String[list.size()]); 
+              Arrays.sort(nodes); 
+              if(myZnode.equals(root+"/"+nodes[0])){ 
+                  doAction(); 
+              } 
+              else{ 
+                  waitForLock(nodes[0]); 
+              } 
+          } 
+          void waitForLock(String lower) throws InterruptedException, KeeperException {
+              Stat stat = zk.exists(root + "/" + lower,true); 
+              if(stat != null){ 
+                  mutex.wait(); 
+              } 
+              else{ 
+                  getLock(); 
+              } 
+          }
+
 ### 二十二、应用场景5－队列管理
 
-* Zookeeper 可以处理两种类型的队列：当一个队列的成员都聚齐时，这个队列才可用，否则一直等待所有成员到达，这种是同步队列；队列按照 FIFO 方式进行入队和出队操作，例如实现生产者和消费者模型
+* Zookeeper 可以处理两种类型的队列：
+
+     * 当一个队列的成员都聚齐时，这个队列才可用，否则一直等待所有成员到达，这种是同步队列；
+
+     * 队列按照 FIFO 方式进行入队和出队操作，例如实现生产者和消费者模型。
 
 * 创建一个父目录 /synchronizing，每个成员都监控目录 /synchronizing/start 是否存在，然后每个成员都加入这个队列（创建 /synchronizing/member_i 的临时目录节点），然后每个成员获取 / synchronizing 目录的所有目录节点，判断 i 的值是否已经是成员的个数，如果小于成员个数等待 /synchronizing/start 的出现，如果已经相等就创建 /synchronizing/start。
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景5%EF%BC%8D队列管理.png"/></div>
+
+* 同步队列的关键代码
+
+     * 同步队列
+     
+           void addQueue() throws KeeperException, InterruptedException{ 
+              zk.exists(root + "/start",true); 
+              zk.create(root + "/" + name, new byte[0], Ids.OPEN_ACL_UNSAFE, 
+              CreateMode.EPHEMERAL_SEQUENTIAL); 
+              synchronized (mutex) { 
+                  List<String> list = zk.getChildren(root, false); 
+                  if (list.size() < size) { 
+                      mutex.wait(); 
+                  } else { 
+                      zk.create(root + "/start", new byte[0], Ids.OPEN_ACL_UNSAFE,
+                       CreateMode.PERSISTENT); 
+                  } 
+              } 
+           }
+           
+     当队列没满是进入 wait()，然后会一直等待 Watch 的通知，Watch 的代码如下：
+     
+           public void process(WatchedEvent event) { 
+              if(event.getPath().equals(root + "/start") &&
+               event.getType() == Event.EventType.NodeCreated){ 
+                  System.out.println("得到通知"); 
+                  super.process(event); 
+                  doAction(); 
+              } 
+           }
+* FIFO 队列用 Zookeeper 实现思路如下：
+
+     在特定的目录下创建 SEQUENTIAL 类型的子目录 /queue_i，这样就能保证所有成员加入队列时都是有编号的，出队列时通过 getChildren( ) 方法可以返回当前所有的队列中的元素，然后消费其中最小的一个，这样就能保证 FIFO。
+     
+     * 生产者代码
+     
+            boolean produce(int i) throws KeeperException, InterruptedException{ 
+                    ByteBuffer b = ByteBuffer.allocate(4); 
+                    byte[] value; 
+                    b.putInt(i); 
+                    value = b.array(); 
+                    zk.create(root + "/element", value, ZooDefs.Ids.OPEN_ACL_UNSAFE, 
+                                CreateMode.PERSISTENT_SEQUENTIAL); 
+                    return true; 
+            }
+     
+     * 消费者代码
+     
+           int consume() throws KeeperException, InterruptedException{ 
+              int retvalue = -1; 
+              Stat stat = null; 
+              while (true) { 
+                  synchronized (mutex) { 
+                      List<String> list = zk.getChildren(root, true); 
+                      if (list.size() == 0) { 
+                          mutex.wait(); 
+                      } else { 
+                          Integer min = new Integer(list.get(0).substring(7)); 
+                          for(String s : list){ 
+                              Integer tempValue = new Integer(s.substring(7)); 
+                              if(tempValue < min) min = tempValue; 
+                          } 
+                          byte[] b = zk.getData(root + "/element" + min,false, stat); 
+                          zk.delete(root + "/element" + min, 0); 
+                          ByteBuffer buffer = ByteBuffer.wrap(b); 
+                          retvalue = buffer.getInt(); 
+                          return retvalue; 
+                      } 
+                  } 
+              } 
+           }
 
 # 总结
 
