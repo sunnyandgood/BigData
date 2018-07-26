@@ -84,20 +84,20 @@
 
      * 2.1解压
 	
-		tar -zxvf hadoop-2.2.0.tar.gz -C /hadoop/
+			tar -zxvf hadoop-2.2.0.tar.gz -C /hadoop/
 			
      * 2.2配置HDFS（hadoop2.0所有的配置文件都在$HADOOP_HOME/etc/hadoop目录下）
 	
-		#将hadoop添加到环境变量中
-		vim /etc/profile
-		export JAVA_HOME=/usr/java/jdk1.7.0_55
-		export HADOOP_HOME=/itcast/hadoop-2.2.0
-		export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
+			#将hadoop添加到环境变量中
+			vim /etc/profile
+			export JAVA_HOME=/usr/java/jdk1.7.0_55
+			export HADOOP_HOME=/itcast/hadoop-2.2.0
+			export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
+
+			#hadoop2.0的配置文件全部在$HADOOP_HOME/etc/hadoop下
+			cd /itcast/hadoop-2.2.0/etc/hadoop
 			
-		#hadoop2.0的配置文件全部在$HADOOP_HOME/etc/hadoop下
-		cd /itcast/hadoop-2.2.0/etc/hadoop
-			
-	* 2.2.1修改hadoo-env.sh
+		* 2.2.1修改hadoo-env.sh
 		      
 				export JAVA_HOME=/usr/java/jdk1.7.0_55
 				
