@@ -44,50 +44,61 @@
 
 * 1、安装配置zooekeeper集群
 
-		* 1.1解压
+	* 1.1解压
     
-			        tar -zxvf zookeeper-3.4.5.tar.gz -C /itcast/
+		tar -zxvf zookeeper-3.4.5.tar.gz -C /hadoop/
 
-		1.2修改配置
-			cd /itcast/zookeeper-3.4.5/conf/
-			cp zoo_sample.cfg zoo.cfg
-			vim zoo.cfg
-			修改：dataDir=/itcast/zookeeper-3.4.5/tmp
-			在最后添加：
-			server.1=itcast04:2888:3888
-			server.2=itcast05:2888:3888
-			server.3=itcast06:2888:3888
-			保存退出
-			然后创建一个tmp文件夹
-			mkdir /itcast/zookeeper-3.4.5/tmp
-			再创建一个空文件
-			touch /itcast/zookeeper-3.4.5/tmp/myid
-			最后向该文件写入ID
-			echo 1 > /itcast/zookeeper-3.4.5/tmp/myid
-		1.3将配置好的zookeeper拷贝到其他节点(首先分别在itcast05、itcast06根目录下创建一个itcast目录：mkdir /itcast)
-			scp -r /itcast/zookeeper-3.4.5/ itcast05:/itcast/
-			scp -r /itcast/zookeeper-3.4.5/ itcast06:/itcast/
-			
-			注意：修改itcast05、itcast06对应/itcast/zookeeper-3.4.5/tmp/myid内容
-			itcast05：
-				echo 2 > /itcastrf/zookeeper-3.4.5/tmp/myid
-			itcast061
-				echo 3 > /itcast/zookeeper-3.4.5/tmp/myid
+	* 1.2修改配置
 	
-	2、安装配置hadoop集群
-		2.1解压
-			tar -zxvf hadoop-2.2.0.tar.gz -C /itcast/
-		2.2配置HDFS（hadoop2.0所有的配置文件都在$HADOOP_HOME/etc/hadoop目录下）
-			#将hadoop添加到环境变量中
-			vim /etc/profile
-			export JAVA_HOME=/usr/java/jdk1.7.0_55
-			export HADOOP_HOME=/itcast/hadoop-2.2.0
-			export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
+		cd /hadoop/zookeeper-3.4.5/conf/
+		mv zoo_sample.cfg zoo.cfg
+		vim zoo.cfg
+		修改：dataDir=/itcast/zookeeper-3.4.5/tmp
+		在最后添加：
+		server.1=hadoop04:2888:3888
+		server.2=hadoop05:2888:3888
+		server.3=hadoop06:2888:3888
+		保存退出
+		
+		然后创建一个tmp文件夹
+		mkdir /hadoop/zookeeper-3.4.5/tmp
+		
+		再创建一个空文件
+		touch /hadoop/zookeeper-3.4.5/tmp/myid
+		hadoop
+		最后向该文件写入ID
+		echo 1 > /hadoop/zookeeper-3.4.5/tmp/myid
+		
+	* 1.3将配置好的zookeeper拷贝到其他节点(首先分别在hadoop05、hadoop06根目录下创建一个itcast目录：mkdir /hadoop)
+	
+		scp -r /hadoop/zookeeper-3.4.5/ hadoop05:/hadoop/
+		scp -r /hadoop/zookeeper-3.4.5/ hadoop06:/hadoop/
 			
-			#hadoop2.0的配置文件全部在$HADOOP_HOME/etc/hadoop下
-			cd /itcast/hadoop-2.2.0/etc/hadoop
+		注意：修改hadoop05、hadoop06对应/hadoop/zookeeper-3.4.5/tmp/myid内容
+		hadoop05：
+			echo 2 > /hadoop/zookeeper-3.4.5/tmp/myid
+		hadoop06：
+			echo 3 > /hadoop/zookeeper-3.4.5/tmp/myid
+	
+* 2、安装配置hadoop集群
+
+     * 2.1解压
+	
+		tar -zxvf hadoop-2.2.0.tar.gz -C /hadoop/
 			
-			2.2.1修改hadoo-env.sh
+     * 2.2配置HDFS（hadoop2.0所有的配置文件都在$HADOOP_HOME/etc/hadoop目录下）
+	
+		#将hadoop添加到环境变量中
+		vim /etc/profile
+		export JAVA_HOME=/usr/java/jdk1.7.0_55
+		export HADOOP_HOME=/itcast/hadoop-2.2.0
+		export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin
+			
+		#hadoop2.0的配置文件全部在$HADOOP_HOME/etc/hadoop下
+		cd /itcast/hadoop-2.2.0/etc/hadoop
+			
+	* 2.2.1修改hadoo-env.sh
+		      
 				export JAVA_HOME=/usr/java/jdk1.7.0_55
 				
 			2.2.2修改core-site.xml
@@ -235,7 +246,7 @@
 				ssh-keygen -t rsa
 				ssh-coyp-id -i itcast01				
 		
-		2.4将配置好的hadoop拷贝到其他节点
+	2.4将配置好的hadoop拷贝到其他节点
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.102:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.103:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.104:/mnt/softWare/
@@ -243,31 +254,31 @@
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.106:/mnt/softWare/
 		
 		###注意：严格按照下面的步骤
-		2.5启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
+	2.5启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
 			cd /mnt/softWare/zookeeper-3.4.5/bin/
 
 			./zkServer.sh start
 			#查看状态：一个leader，两个follower
 			./zkServer.sh status
 			
-		2.6启动journalnode（在hadoop01上启动所有journalnode，注意：是调用的hadoop-daemons.sh这个脚本，注意是复数s的那个脚本）
+	2.6启动journalnode（在hadoop01上启动所有journalnode，注意：是调用的hadoop-daemons.sh这个脚本，注意是复数s的那个脚本）
 			cd /mnt/softWare/hadoop-2.2.0/
 			sbin/hadoop-daemons.sh start journalnode
 			#运行jps命令检验，hadoop04、hadoop05、hadoop06上多了JournalNode进程
 		
-		2.7格式化HDFS
+	2.7格式化HDFS
 			#在hadoop01上执行命令:
 			hdfs namenode -format
 			#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/itcast/hadoop-2.2.0/tmp，然后将/itcast/hadoop-2.2.0/tmp拷贝到itcast02的/itcast/hadoop-2.2.0/下。
 			scp -r tmp/ root@hadoop02:/mnt/softWare/hadoop-2.2.0/
 		
-		2.8格式化ZK(在hadoop01上执行即可)
+	2.8格式化ZK(在hadoop01上执行即可)
 			hdfs zkfc -formatZK
 		
-		2.9启动HDFS(在hadoop01上执行)
+	2.9启动HDFS(在hadoop01上执行)
 			sbin/start-dfs.sh
 
-		2.10启动YARN(#####注意#####：是在hadoop03上执行start-yarn.sh，把namenode和resourcemanager分开是因为性能问题，因为他们都要占用大量资源，所以把他们分开了，他们分开了就要分别在不同的机器上启动)
+	2.10启动YARN(#####注意#####：是在hadoop03上执行start-yarn.sh，把namenode和resourcemanager分开是因为性能问题，因为他们都要占用大量资源，所以把他们分开了，他们分开了就要分别在不同的机器上启动)
 			sbin/start-yarn.sh
 
 	到此，hadoop2.2.0配置完毕，可以统计浏览器访问:
