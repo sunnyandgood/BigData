@@ -166,6 +166,7 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/Leader选举2.png"/></div>
 
+
 ### 十七、Zookeeper示例代码
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/Zookeeper示例代码1.png"/></div>
@@ -228,6 +229,9 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景4%EF%BC%8D共享锁.png"/>
 
+
+
+
 ### 二十二、应用场景5－队列管理
 
 * Zookeeper 可以处理两种类型的队列：当一个队列的成员都聚齐时，这个队列才可用，否则一直等待所有成员到达，这种是同步队列；队列按照 FIFO 方式进行入队和出队操作，例如实现生产者和消费者模型
@@ -236,7 +240,11 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景5%EF%BC%8D队列管理.png"/>
 
+
+
+
 # 总结
+
 
 * Zookeeper 作为 Hadoop 项目中的一个子项目，是 Hadoop 集群管理的一个必不可少的模块，它主要用来控制集群中的数据，如它管理 Hadoop 集群中的 NameNode，还有 Hbase 中 Master Election、Server 之间状态同步等。
 
