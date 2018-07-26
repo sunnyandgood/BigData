@@ -46,39 +46,39 @@
 
 	* 1.1解压
     
-		tar -zxvf zookeeper-3.4.5.tar.gz -C /hadoop/
+			tar -zxvf zookeeper-3.4.5.tar.gz -C /hadoop/
 
 	* 1.2修改配置
 	
-		cd /hadoop/zookeeper-3.4.5/conf/
-		mv zoo_sample.cfg zoo.cfg
-		vim zoo.cfg
-		修改：dataDir=/itcast/zookeeper-3.4.5/tmp
-		在最后添加：
-		server.1=hadoop04:2888:3888
-		server.2=hadoop05:2888:3888
-		server.3=hadoop06:2888:3888
-		保存退出
-		
-		然后创建一个tmp文件夹
-		mkdir /hadoop/zookeeper-3.4.5/tmp
-		
-		再创建一个空文件
-		touch /hadoop/zookeeper-3.4.5/tmp/myid
-		hadoop
-		最后向该文件写入ID
-		echo 1 > /hadoop/zookeeper-3.4.5/tmp/myid
+			cd /hadoop/zookeeper-3.4.5/conf/
+			mv zoo_sample.cfg zoo.cfg
+			vim zoo.cfg
+			修改：dataDir=/itcast/zookeeper-3.4.5/tmp
+			在最后添加：
+			server.1=hadoop04:2888:3888
+			server.2=hadoop05:2888:3888
+			server.3=hadoop06:2888:3888
+			保存退出
+
+			然后创建一个tmp文件夹
+			mkdir /hadoop/zookeeper-3.4.5/tmp
+
+			再创建一个空文件
+			touch /hadoop/zookeeper-3.4.5/tmp/myid
+			hadoop
+			最后向该文件写入ID
+			echo 1 > /hadoop/zookeeper-3.4.5/tmp/myid
 		
 	* 1.3将配置好的zookeeper拷贝到其他节点(首先分别在hadoop05、hadoop06根目录下创建一个itcast目录：mkdir /hadoop)
 	
-		scp -r /hadoop/zookeeper-3.4.5/ hadoop05:/hadoop/
-		scp -r /hadoop/zookeeper-3.4.5/ hadoop06:/hadoop/
-			
-		注意：修改hadoop05、hadoop06对应/hadoop/zookeeper-3.4.5/tmp/myid内容
-		hadoop05：
-			echo 2 > /hadoop/zookeeper-3.4.5/tmp/myid
-		hadoop06：
-			echo 3 > /hadoop/zookeeper-3.4.5/tmp/myid
+			scp -r /hadoop/zookeeper-3.4.5/ hadoop05:/hadoop/
+			scp -r /hadoop/zookeeper-3.4.5/ hadoop06:/hadoop/
+
+			注意：修改hadoop05、hadoop06对应/hadoop/zookeeper-3.4.5/tmp/myid内容
+			hadoop05：
+				echo 2 > /hadoop/zookeeper-3.4.5/tmp/myid
+			hadoop06：
+				echo 3 > /hadoop/zookeeper-3.4.5/tmp/myid
 	
 * 2、安装配置hadoop集群
 
