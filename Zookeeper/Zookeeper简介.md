@@ -175,19 +175,13 @@
 
 * 输出的结果如下：
 
-* 已经触发了 None 事件！
-
-* testRootData	[testChildPathOne] 
-
-* 目录节点状态：[5,5,1281804532336,1281804532336,0,1,0,0,12,1,6] 
-
-* 已经触发了 NodeChildrenChanged 事件！
-
-* testChildDataTwo
-
-* 已经触发了 NodeDeleted 事件！
-
-* 已经触发了 NodeDeleted 事件！
+      已经触发了 None 事件！
+      testRootData	[testChildPathOne] 
+      目录节点状态：[5,5,1281804532336,1281804532336,0,1,0,0,12,1,6] 
+      已经触发了 NodeChildrenChanged 事件！
+      testChildDataTwo
+      已经触发了 NodeDeleted 事件！
+      已经触发了 NodeDeleted 事件！
 
 ### 十八、应用场景1－统一命名服务
 
@@ -211,17 +205,19 @@
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/img/应用场景3%EF%BC%8D集群管理.png"/></div>
 
-* zk.create("/testRootPath/testChildPath1","1".getBytes(), Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+      zk.create("/testRootPath/testChildPath1","1".getBytes(), 
+                                    Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+      zk.create(“/testRootPath/testChildPath2”,“2”.getBytes(), 
+                                    Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+      zk.create("/testRootPath/testChildPath3","3".getBytes(), 
+                                    Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+      zk.create("/testRootPath/testChildPath4","4".getBytes(), 
+                                    Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+      System.out.println(zk.getChildren("/testRootPath", false));
 
-* zk.create(“/testRootPath/testChildPath2”,“2”.getBytes(), Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
+打印结果：
 
-* zk.create("/testRootPath/testChildPath3","3".getBytes(), Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
-
-* zk.create("/testRootPath/testChildPath4","4".getBytes(), Ids.OPEN_ACL_UNSAFE,CreateMode.EPHEMERAL_SEQUENTIAL);
-
-* System.out.println(zk.getChildren("/testRootPath", false));
-
-* 打印结果：[testChildPath10000000000, testChildPath20000000001, testChildPath40000000003, testChildPath30000000002]
+        [testChildPath10000000000, testChildPath20000000001, testChildPath40000000003, testChildPath30000000002]
 
 * 规定编号最小的为master,所以当我们对SERVERS节点做监控的时候，得到服务器列表，只要所有集群机器逻辑认为最小编号节点为master，那么master就被选出，而这
 * 个master宕机的时候，相应的znode会消失，然后新的服务器列表就被推送到客户端，然后每个节点逻辑认为最小编号节点为master，这样就做到动态master选举。
