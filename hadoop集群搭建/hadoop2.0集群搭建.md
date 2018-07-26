@@ -101,7 +101,8 @@
 		      
 				export JAVA_HOME=/usr/java/jdk1.7.0_55
 				
-			2.2.2修改core-site.xml
+		* 2.2.2修改core-site.xml
+		
 				<configuration>
 					<!-- 指定hdfs的nameservice为ns1 -->
 					<property>
@@ -120,7 +121,8 @@
 					</property>
 				</configuration>
 				
-			2.2.3修改hdfs-site.xml
+		* 2.2.3修改hdfs-site.xml
+		
 				<configuration>
 						<!--指定hdfs的nameservice为ns1，需要和core-site.xml中的保持一致 -->
 						<property>
@@ -192,7 +194,8 @@
 						</property>
 				</configuration>
 			
-			2.2.4修改mapred-site.xml
+		* 2.2.4修改mapred-site.xml
+		
 				<configuration>
 					<!-- 指定mr框架为yarn方式 -->
 					<property>
@@ -201,7 +204,8 @@
 					</property>
 				</configuration>	
 			
-			2.2.5修改yarn-site.xml
+		* 2.2.5修改yarn-site.xml
+		
 				<configuration>
 					<!-- 指定resourcemanager地址 -->
 					<property>
@@ -216,45 +220,52 @@
 				</configuration>
 			
 				
-			2.2.6修改slaves(slaves是指定子节点的位置，因为要在itcast01上启动HDFS、在itcast03启动yarn，所以itcast01上的slaves文件指定的是datanode的位置，itcast03上的slaves文件指定的是nodemanager的位置)
+		* 2.2.6修改slaves(slaves是指定子节点的位置，因为要在itcast01上启动HDFS、在itcast03启动yarn，所以itcast01上的slaves文件指定的是datanode的位置，itcast03上的slaves文件指定的是nodemanager的位置)
+		
 				hadoop04
 				hadoop05
 				hadoop06
 
-			2.2.7配置免密码登陆
-				#首先要配置itcast01到itcast02、itcast03、itcast04、itcast05、itcast06的免密码登陆
-				#在itcast01上生产一对钥匙
+		* 2.2.7配置免密码登陆
+		
+				#首先要配置hadoop01到hadoop02、hadoop03、hadoop04、hadoop05、hadoop06的免密码登陆
+				#在hadoop01上生产一对钥匙
 				ssh-keygen -t rsa
-				#将公钥拷贝到其他节点，包括自己
-				ssh-coyp-id itcast01
-				ssh-coyp-id itcast02
-				ssh-coyp-id itcast03
-				ssh-coyp-id itcast04
-				ssh-coyp-id itcast05
-				ssh-coyp-id itcast06
 				
-				#配置itcast03到itcast04、itcast05、itcast06的免密码登陆
+				#将公钥拷贝到其他节点，包括自己
+				ssh-coyp-id hadoop01
+				ssh-coyp-id hadoop02
+				ssh-coyp-id hadoop03
+				ssh-coyp-id hadoop04
+				ssh-coyp-id hadoop05
+				ssh-coyp-id hadoop06
+				
+				#配置hadoop03到hadoop04、hadoop05、hadoop06的免密码登陆
 				#在itcast03上生产一对钥匙
 				ssh-keygen -t rsa
-				#将公钥拷贝到其他节点
-				ssh-coyp-id itcast04
-				ssh-coyp-id itcast05
-				ssh-coyp-id itcast06
 				
-				#注意：两个namenode之间要配置ssh免密码登陆，别忘了配置itcast02到itcast01的免登陆
-				在itcast02上生产一对钥匙
+				#将公钥拷贝到其他节点
+				ssh-coyp-id hadoop04
+				ssh-coyp-id hadoop05
+				ssh-coyp-id hadoop06
+				
+				#注意：两个namenode之间要配置ssh免密码登陆，别忘了配置hadoop02到hadoop01的免登陆
+				在hadoop02上生产一对钥匙
 				ssh-keygen -t rsa
-				ssh-coyp-id -i itcast01				
+				
+				ssh-coyp-id -i hadoop01				
 		
-	2.4将配置好的hadoop拷贝到其他节点
+	* 2.4将配置好的hadoop拷贝到其他节点
+	
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.102:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.103:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.104:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.105:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.106:/mnt/softWare/
 		
-		###注意：严格按照下面的步骤
-	2.5启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
+	###注意：严格按照下面的步骤
+	* 2.5启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
+	
 			cd /mnt/softWare/zookeeper-3.4.5/bin/
 
 			./zkServer.sh start
@@ -262,32 +273,39 @@
 			./zkServer.sh status
 			
 	2.6启动journalnode（在hadoop01上启动所有journalnode，注意：是调用的hadoop-daemons.sh这个脚本，注意是复数s的那个脚本）
+	
 			cd /mnt/softWare/hadoop-2.2.0/
 			sbin/hadoop-daemons.sh start journalnode
 			#运行jps命令检验，hadoop04、hadoop05、hadoop06上多了JournalNode进程
 		
 	2.7格式化HDFS
+	
 			#在hadoop01上执行命令:
 			hdfs namenode -format
 			#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/itcast/hadoop-2.2.0/tmp，然后将/itcast/hadoop-2.2.0/tmp拷贝到itcast02的/itcast/hadoop-2.2.0/下。
 			scp -r tmp/ root@hadoop02:/mnt/softWare/hadoop-2.2.0/
 		
 	2.8格式化ZK(在hadoop01上执行即可)
+	
 			hdfs zkfc -formatZK
 		
 	2.9启动HDFS(在hadoop01上执行)
+	
 			sbin/start-dfs.sh
 
 	2.10启动YARN(#####注意#####：是在hadoop03上执行start-yarn.sh，把namenode和resourcemanager分开是因为性能问题，因为他们都要占用大量资源，所以把他们分开了，他们分开了就要分别在不同的机器上启动)
+	
 			sbin/start-yarn.sh
 
 	到此，hadoop2.2.0配置完毕，可以统计浏览器访问:
+	
 		http://192.168.1.101:50070
 		NameNode 'itcast01:9000' (active)
 		http://192.168.1.102:50070
 		NameNode 'itcast02:9000' (standby)
 	
 	验证HDFS HA
+	
 		首先向hdfs上传一个文件
 		hadoop fs -put /etc/profile /profile
 		hadoop fs -ls /
@@ -306,8 +324,9 @@
 		NameNode 'itcast01:9000' (standby)
 	
 	验证YARN：
+	
 		运行一下hadoop提供的demo中的WordCount程序：
 		hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar wordcount /profile /out
 	
-	OK，大功告成！！！
+# OK，大功告成！！！
 			
