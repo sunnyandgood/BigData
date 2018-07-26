@@ -32,9 +32,9 @@
 	sqoop import --connect jdbc:mysql://192.168.1.10:3306/itcast --username root --password 123 \
 --query 'SELECT * FROM trade_detail where id > 2 AND $CONDITIONS' --split-by trade_detail.id --target-dir '/sqoop/td3'
 		
-	注意：如果使用--query这个命令的时候，需要注意的是where后面的参数，AND $CONDITIONS这个参数必须加上
-	而且存在单引号与双引号的区别，如果--query后面使用的是双引号，那么需要在$CONDITIONS前加上\即\$CONDITIONS
-	如果设置map数量为1个时即-m 1，不用加上--split-by ${tablename.column}，否则需要加上
+		注意：如果使用--query这个命令的时候，需要注意的是where后面的参数，AND $CONDITIONS这个参数必须加上
+		而且存在单引号与双引号的区别，如果--query后面使用的是双引号，那么需要在$CONDITIONS前加上\即\$CONDITIONS
+		如果设置map数量为1个时即-m 1，不用加上--split-by ${tablename.column}，否则需要加上
 		
 第二类：将HDFS上的数据导出到数据库中(不要忘记指定分隔符)
 
