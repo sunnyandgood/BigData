@@ -13,8 +13,8 @@
     * zookeeper的默认配置文件为zookeeper/conf/zoo_sample.cfg，需要将其修改为zoo.cfg。
     
           tickTime=2000
-          dataDir=/Users/zdandljb/zookeeper/data
-          dataLogDir=/Users/zdandljb/zookeeper/dataLog         
+          dataDir=/mnt/softWare/zookeeper/data
+          dataLogDir=/mnt/softWare/zookeeper/dataLog         
           clientPort=2181
     
     * zoo.cfg文件的内容详解
@@ -41,7 +41,7 @@
         
           Zookeeper保存数据的目录，默认情况下，Zookeeper将写数据的日志文件也保存在这个目录里。
         
-              dataDir=/home/michael/opt/zookeeper/data  
+              dataDir=/mnt/softWare/zookeeper/data  
 
         * clientPort：客户端连接端口
         
@@ -55,9 +55,9 @@
         
               server.N=YYY:A:B 
 
-              server.1=itcast05:2888:3888
-              server.2=itcast06:2888:3888
-              server.3=itcast07:2888:3888
+              server.1=hadoop04:2888:3888
+              server.2=hadoop05:2888:3888
+              server.3=hadoop06:2888:3888
 
 * 4、启动ZooKeeper的Server：
 
@@ -86,12 +86,12 @@
 	
 			dataDir=/mnt/softWare/zookeeper-3.4.5/data
 
-			server.4=hadoop04:2888:3888
-			server.5=hadoop05:2888:3888
-			server.6=hadoop06:2888:3888
+			server.1=hadoop04:2888:3888
+			server.2=hadoop05:2888:3888
+			server.3=hadoop06:2888:3888
 	
 	* 3.3、在（dataDir=/mnt/softWare/zookeeper-3.4.5/data）创建一个myid文件，里面内容是server.N中的N（server.2里面内容为2）
-		echo "4" > myid
+		echo "1" > myid
 
 			mkdir data
 			vim myid
@@ -111,8 +111,8 @@
 	
 	* 3.6、注意：在其他节点上一定要修改myid的内容
 	
-			在itcast06应该讲myid的内容改为6 （echo "6" > myid）
-			在itcast07应该讲myid的内容改为7 （echo "7" > myid）
+			在hadoop05应该讲myid的内容改为2 （echo "2" > myid）
+			在hadoop06应该讲myid的内容改为3 （echo "3" > myid）
 		
 * 4、启动集群（分别启动zk）
 
