@@ -263,48 +263,51 @@
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.105:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.106:/mnt/softWare/
 		
-	###注意：严格按照下面的步骤
-	* 2.5启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
-	
-			cd /mnt/softWare/zookeeper-3.4.5/bin/
+### 第四步、启动集群（注意：严格按照下面的步骤）
 
-			./zkServer.sh start
-			#查看状态：一个leader，两个follower
-			./zkServer.sh status
+* 1、启动zookeeper集群（分别在hadoop04、hadoop05、hadoop06上启动zk）
+	
+		cd /mnt/softWare/zookeeper-3.4.5/bin/
+
+		./zkServer.sh start
+		#查看状态：一个leader，两个follower
+		./zkServer.sh status
 			
-	2.6启动journalnode（在hadoop01上启动所有journalnode，注意：是调用的hadoop-daemons.sh这个脚本，注意是复数s的那个脚本）
+* 2、启动journalnode（在hadoop01上启动所有journalnode，注意：是调用的hadoop-daemons.sh这个脚本，注意是复数s的那个脚本）
 	
-			cd /mnt/softWare/hadoop-2.2.0/
-			sbin/hadoop-daemons.sh start journalnode
-			#运行jps命令检验，hadoop04、hadoop05、hadoop06上多了JournalNode进程
+		cd /mnt/softWare/hadoop-2.2.0/
+		sbin/hadoop-daemons.sh start journalnode
+		#运行jps命令检验，hadoop04、hadoop05、hadoop06上多了JournalNode进程
 		
-	2.7格式化HDFS
+* 3、格式化HDFS
 	
-			#在hadoop01上执行命令:
-			hdfs namenode -format
-			#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/itcast/hadoop-2.2.0/tmp，然后将/itcast/hadoop-2.2.0/tmp拷贝到itcast02的/itcast/hadoop-2.2.0/下。
-			scp -r tmp/ root@hadoop02:/mnt/softWare/hadoop-2.2.0/
+		#在hadoop01上执行命令:
+		hdfs namenode -format
+		#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/itcast/hadoop-2.2.0/tmp，然后将/itcast/hadoop-2.2.0/tmp拷贝到itcast02的/itcast/hadoop-2.2.0/下。
+		scp -r tmp/ root@hadoop02:/mnt/softWare/hadoop-2.2.0/
 		
-	2.8格式化ZK(在hadoop01上执行即可)
+* 4、格式化ZK(在hadoop01上执行即可)
 	
-			hdfs zkfc -formatZK
+		hdfs zkfc -formatZK
 		
-	2.9启动HDFS(在hadoop01上执行)
+* 5、启动HDFS(在hadoop01上执行)
 	
-			sbin/start-dfs.sh
+		sbin/start-dfs.sh
 
-	2.10启动YARN(#####注意#####：是在hadoop03上执行start-yarn.sh，把namenode和resourcemanager分开是因为性能问题，因为他们都要占用大量资源，所以把他们分开了，他们分开了就要分别在不同的机器上启动)
+* 6、启动YARN(#####注意#####：是在hadoop03上执行start-yarn.sh，把namenode和resourcemanager分开是因为性能问题，因为他们都要占用大量资源，所以把他们分开了，他们分开了就要分别在不同的机器上启动)
 	
-			sbin/start-yarn.sh
+		sbin/start-yarn.sh
 
-	到此，hadoop2.2.0配置完毕，可以统计浏览器访问:
+### 第五步、验证集群是否搭建成功
+
+* 1、到此，hadoop2.2.0配置完毕，可以统计浏览器访问:
 	
 		http://192.168.1.101:50070
 		NameNode 'itcast01:9000' (active)
 		http://192.168.1.102:50070
 		NameNode 'itcast02:9000' (standby)
 	
-	验证HDFS HA
+* 2、验证HDFS HA
 	
 		首先向hdfs上传一个文件
 		hadoop fs -put /etc/profile /profile
@@ -323,7 +326,7 @@
 		通过浏览器访问：http://192.168.1.201:50070
 		NameNode 'itcast01:9000' (standby)
 	
-	验证YARN：
+* 3、验证YARN：
 	
 		运行一下hadoop提供的demo中的WordCount程序：
 		hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.2.0.jar wordcount /profile /out
