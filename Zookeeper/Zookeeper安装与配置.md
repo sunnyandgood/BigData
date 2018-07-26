@@ -1,4 +1,4 @@
-# Zookeepe安装与配置
+# Zookeeper安装与配置
 
 ### 一、单节点模式
 
@@ -124,3 +124,21 @@
 		2385 Jps
 		2293 QuorumPeerMain
 		[root@hadoop06 bin]# kill -9 2293
+
+### 三、伪集群模式
+
+* 1、建3个文件夹，server1 server2 server3，然后每个文件夹里面解压一个zookeeper的下载包
+
+* 2、进入data目录，创建一个myid的文件，里面写入一个数字，server1,就写一个1，server2对应myid文件就写入2，server3对应myid文件就写个3
+
+* 3、在conf目录下创建一个配置文件zoo.cfg：
+
+		tickTime=2000
+		dataDir=/mnt/softWare/zookeeper/data
+		dataLogDir=xxx/zookeeper/server1/          
+		clientPort=2181				                  
+		initLimit=5 					      
+		syncLimit=2 				    		     
+		server.1=server1:2888:3888 		               	     
+		server.2=server2:2888:3888 		                          
+		server.3=server3:2888:3888
