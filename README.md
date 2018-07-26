@@ -37,6 +37,9 @@
 * [Zookeeper简介](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/Zookeeper简介.md)
 * [ZooKeeper应用场景](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/ZooKeeper应用场景.md)
 
+### [hadoop集群搭建](https://github.com/sunnyandgood/BigData/tree/master/hadoop集群搭建)
+* [hadoop1.0集群搭建](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/hadoop1.0集群搭建.md)
+* [hadoop2.0集群搭建](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/hadoop2.0集群搭建.md)
 
 
 
