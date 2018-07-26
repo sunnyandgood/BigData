@@ -255,7 +255,7 @@
 				
 				ssh-coyp-id -i hadoop01				
 		
-	* 2.4将配置好的hadoop拷贝到其他节点
+	* 2.3将配置好的hadoop拷贝到其他节点
 	
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.102:/mnt/softWare/
 			scp -r /mnt/softWare/hadoop-2.2.0/ root@192.168.1.103:/mnt/softWare/
