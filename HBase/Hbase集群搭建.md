@@ -16,23 +16,23 @@
 	
 	* 3.2vim hbase-site.xml
   
-	      <configuration>
-		<!-- 指定hbase在HDFS上存储的路径 -->
-		    <property>
-			    <name>hbase.rootdir</name>
-			    <value>hdfs://ns1/hbase</value>
-		    </property>
-		<!-- 指定hbase是分布式的 -->
-		    <property>
-			    <name>hbase.cluster.distributed</name>
-			    <value>true</value>
-		    </property>
-		<!-- 指定zk的地址，多个用“,”分割 -->
-		    <property>
-			    <name>hbase.zookeeper.quorum</name>
-			    <value>hadoop04:2181,hadoop05:2181,hadoop06:2181</value>
-		    </property>
-	      </configuration>
+		      <configuration>
+			<!-- 指定hbase在HDFS上存储的路径 -->
+			    <property>
+				    <name>hbase.rootdir</name>
+				    <value>hdfs://ns1/hbase</value>
+			    </property>
+			<!-- 指定hbase是分布式的 -->
+			    <property>
+				    <name>hbase.cluster.distributed</name>
+				    <value>true</value>
+			    </property>
+			<!-- 指定zk的地址，多个用“,”分割 -->
+			    <property>
+				    <name>hbase.zookeeper.quorum</name>
+				    <value>hadoop04:2181,hadoop05:2181,hadoop06:2181</value>
+			    </property>
+		      </configuration>
 	
 	* 3.3vim regionservers
    
@@ -43,11 +43,11 @@
 	
 	* 3.4拷贝hbase到其他节点
   
-		scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop02:/hadoop/
-		scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop03:/hadoop/
-		scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop04:/hadoop/
-		scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop05:/hadoop/
-		scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop06:/hadoop/
+			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop02:/hadoop/
+			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop03:/hadoop/
+			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop04:/hadoop/
+			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop05:/hadoop/
+			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop06:/hadoop/
     
 * 4、将配置好的HBase拷贝到每一个节点并同步时间。
 
