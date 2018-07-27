@@ -10,36 +10,36 @@
 	
 	* 3.1修改hbase-env.sh
   
-      export JAVA_HOME=/usr/java/jdk1.7.0_55
-      //告诉hbase使用外部的zk 
-      export HBASE_MANAGES_ZK=false
+	      export JAVA_HOME=/usr/java/jdk1.7.0_55
+	      //告诉hbase使用外部的zk 
+	      export HBASE_MANAGES_ZK=false
 	
 	* 3.2vim hbase-site.xml
   
-      <configuration>
-        <!-- 指定hbase在HDFS上存储的路径 -->
-            <property>
-                    <name>hbase.rootdir</name>
-                    <value>hdfs://ns1/hbase</value>
-            </property>
-        <!-- 指定hbase是分布式的 -->
-            <property>
-                    <name>hbase.cluster.distributed</name>
-                    <value>true</value>
-            </property>
-        <!-- 指定zk的地址，多个用“,”分割 -->
-            <property>
-                    <name>hbase.zookeeper.quorum</name>
-                    <value>hadoop04:2181,hadoop05:2181,hadoop06:2181</value>
-            </property>
-      </configuration>
+	      <configuration>
+		<!-- 指定hbase在HDFS上存储的路径 -->
+		    <property>
+			    <name>hbase.rootdir</name>
+			    <value>hdfs://ns1/hbase</value>
+		    </property>
+		<!-- 指定hbase是分布式的 -->
+		    <property>
+			    <name>hbase.cluster.distributed</name>
+			    <value>true</value>
+		    </property>
+		<!-- 指定zk的地址，多个用“,”分割 -->
+		    <property>
+			    <name>hbase.zookeeper.quorum</name>
+			    <value>hadoop04:2181,hadoop05:2181,hadoop06:2181</value>
+		    </property>
+	      </configuration>
 	
 	* 3.3vim regionservers
    
-      hadoop03
-      hadoop04
-      hadoop05
-      hadoop06
+	      hadoop03
+	      hadoop04
+	      hadoop05
+	      hadoop06
 	
 	* 3.4拷贝hbase到其他节点
   
