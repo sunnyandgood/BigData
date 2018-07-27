@@ -6,7 +6,7 @@
 
   * 步骤二、回到windows --> 打开网络和共享中心 -> 更改适配器设置 -> 右键VMnet8 -> 属性 -> 双击IPv4 -> 设置windows的IP：192.168.2.1 子网掩码：255.255.255.0  默认网关：192.168.2.2-> 点击确定
   
-  * 步骤三、在虚拟软件上 --My Computer -> 选中虚拟机 -> 右键 -> settings -> network adapter -> host only -> ok	
+  * 步骤三、在虚拟软件上 --My Computer -> 选中虚拟机 -> 右键 -> settings -> network adapter -> NAT模式 -> ok	
 * 2、修改主机名
 
 		vim /etc/sysconfig/network
