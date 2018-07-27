@@ -2,7 +2,7 @@
 
 * 1、准备Linux环境
 
-  * 步骤一、点击VMware快捷方式，右键打开文件所在位置 -> 双击vmnetcfg.exe -> VMnet1 host-only ->修改subnet ip 设置网段：192.168.1.0 子网掩码：255.255.255.0 -> apply -> ok
+  * 步骤一、点击VMware快捷方式，右键打开文件所在位置 -> 双击vmnetcfg.exe -> VMnet8 NAT  ->修改subnet ip 设置网段：192.168.1.0 子网掩码：255.255.255.0 -> apply -> ok
 
   * 步骤二、回到windows --> 打开网络和共享中心 -> 更改适配器设置 -> 右键VMnet1 -> 属性 -> 双击IPv4 -> 设置windows的IP：192.168.1.110 子网掩码：255.255.255.0 -> 点击确定
   
