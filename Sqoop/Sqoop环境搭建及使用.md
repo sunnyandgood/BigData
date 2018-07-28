@@ -49,6 +49,8 @@ sqoop export --connect jdbc:mysql://192.168.8.120:3306/itcast --username root --
 	
 ### 三、配置mysql远程连接
 
+* Access denied for user 'root'@'localhost' (using password:YES) 解决方案
+	
 	GRANT ALL PRIVILEGES ON yan.* TO 'root'@'192.168.2.101' IDENTIFIED BY 'root' WITH GRANT OPTION;
 	FLUSH PRIVILEGES; 
 	
