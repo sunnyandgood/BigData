@@ -244,10 +244,29 @@
 
             hbase(main):017:0> put 'heros','rk001','info:dazhao','大宝剑'
             0 row(s) in 0.0100 seconds
+            
+            hbase(main):002:0> put 'heros','rk001','date:like','找基友'
+            0 row(s) in 0.1660 seconds
+
+            hbase(main):003:0> put 'heros','rk002','info:name','zhaoxin'
+            0 row(s) in 0.0080 seconds
+            
+            hbase(main):003:0> put 'heros','rk002','info:xiaozhao','sczj'
+            0 row(s) in 0.1460 seconds
      
      * scan
      
-     
+            hbase(main):004:0> scan 'heros'
+            ROW                    COLUMN+CELL                                                     
+             rk001                 column=date:like, timestamp=1532847628556, value=\xE6\x89\xBE\xE
+                                   5\x9F\xBA\xE5\x8F\x8B                                           
+             rk001                 column=info:age, timestamp=1532847161785, value=45              
+             rk001                 column=info:dazhao, timestamp=1532847248863, value=\xE5\xA4\xA7\
+                                   xE4\xBF\x9D\xE5\xAE\x9D\xE5\x89\x91                             
+             rk001                 column=info:name, timestamp=1532847103503, value=gailun         
+             rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
+             rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
+            2 row(s) in 0.1100 seconds
      
      
      
