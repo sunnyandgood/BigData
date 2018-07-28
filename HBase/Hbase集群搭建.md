@@ -92,10 +92,19 @@
 
 			hbase(main):001:0>
 	
+	 * create
+	
+			hbase(main):002:0> create 'heros' ,{NAME => 'info',VERSIONS => 3},{NAME => 'data'}
+			0 row(s) in 1.7030 seconds
+
+			=> Hbase::Table - heros
+			hbase(main):003:0>
+	
 	 * 
-	
-	
-	
+	 
+	 * 
+	 
+	 * 
 	
 	
 	
