@@ -193,3 +193,37 @@
 
 
             hbase(main):003:0>
+
+     * create 'heros', {NAME => 'info', VERSIONS => 3}, { NAME => 'date' }
+     
+            hbase(main):004:0> create 'heros', {NAME => 'info', VERSIONS => 3}, { NAME => 'date' }
+            SLF4J: Class path contains multiple SLF4J bindings.
+            SLF4J: Found binding in [jar:file:/softWare/hbase-0.96.2-hadoop2/lib/slf4j-
+            log4j12-1.6.4.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+            SLF4J: Found binding in [jar:file:/softWare/hadoop-2.2.0/share/hadoop/common/lib/slf4j-
+            log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+            SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+            0 row(s) in 1.8830 seconds
+
+            => Hbase::Table - heros
+            hbase(main):005:0> 
+            
+     * list       
+     
+            hbase(main):005:0> list
+            TABLE                                                                                  
+            heros                                                                                  
+            1 row(s) in 0.0580 seconds
+
+            => ["heros"]
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
