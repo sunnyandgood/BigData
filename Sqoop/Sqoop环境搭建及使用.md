@@ -8,9 +8,13 @@
 
 * 2、安装和配置
 	
-	tar -zxvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz -C /softWare/
-	在添加sqoop到环境变量
-	将数据库连接驱动拷贝到$SQOOP_HOME/lib里
+     * tar -zxvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz -C /softWare/
+     
+     * 在添加sqoop到环境变量
+     
+     * 将数据库连接驱动拷贝到$SQOOP_HOME/lib里
+     
+     	 * [mysql-connector-5.1.8.jar](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/mysql-connector-5.1.8.jar)
 	
 ### 二、使用
 
