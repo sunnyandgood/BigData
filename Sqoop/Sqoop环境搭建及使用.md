@@ -2,9 +2,9 @@
 
 ### 一、sqoop安装：安装在一台节点上就可以了。
 
-* 1、上传sqoop
+* 1、上传sqoop到虚拟机
 
-     * [下载sqoop](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz)
+     * [先获得sqoop](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz)
 
 * 2、安装和配置
 	
