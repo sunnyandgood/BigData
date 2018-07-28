@@ -74,3 +74,5 @@
       exprot PATH=$PATH:JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin
       source profile
 
+* 使用Hbase
+
