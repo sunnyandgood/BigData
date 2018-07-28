@@ -30,7 +30,15 @@
                   <value>file:///softWare/hbase-0.96.2-hadoop2/hbase</value>
               </property>
         </configuration>
+        
+* 配置环境变量
 
+      cd /etc/
+      vim profile
+      export HBASE_HOME=/softWare/hbase-0.96.2-hadoop2
+      exprot PATH=$PATH:JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin
+      source profile
+      
 ### 三、使用HBase
 
 * 启动HBase
@@ -65,14 +73,6 @@
         mapredcp        Dump CLASSPATH entries required by mapreduce
         version         Print the version
         CLASSNAME       Run the class named CLASSNAME
-
-* 配置环境变量
-
-      cd /etc/
-      vim profile
-      export HBASE_HOME=/softWare/hbase-0.96.2-hadoop2
-      exprot PATH=$PATH:JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin
-      source profile
 
 * 使用Hbase
 
