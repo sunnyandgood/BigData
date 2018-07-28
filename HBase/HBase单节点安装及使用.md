@@ -1,4 +1,4 @@
-# HBase单节点安装
+# HBase单节点安装及使用
 
 ### 一、上传hbase-0.96.2-hadoop2-bin.tar.gz
 
