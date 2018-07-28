@@ -79,3 +79,5 @@
 
 	    hbase-daemon.sh start master
 	
+* 8、使用操作
+
