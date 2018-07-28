@@ -67,9 +67,9 @@
       分别启动zk
         ./zkServer.sh start
       启动hbase集群
-        start-dfs.sh
+        ./start-dfs.sh
       启动hbase，在主节点上运行：
-        start-hbase.sh
+        ./start-hbase.sh
         
 * 6、通过浏览器访问hdase管理页面
 
