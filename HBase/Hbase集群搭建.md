@@ -54,11 +54,11 @@
 	
 	* 3.4拷贝hbase到其他节点
   
-			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop02:/hadoop/
-			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop03:/hadoop/
-			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop04:/hadoop/
-			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop05:/hadoop/
-			scp -r /hadoop/hbase-0.96.2-hadoop2/ hadoop06:/hadoop/
+			scp -r /softWare/hbase-0.96.2-hadoop2/ hadoop02:/softWare/
+			scp -r /softWare/hbase-0.96.2-hadoop2/ hadoop03:/softWare/
+			scp -r /softWare/hbase-0.96.2-hadoop2/ hadoop04:/softWare/
+			scp -r /softWare/hbase-0.96.2-hadoop2/ hadoop05:/softWare/
+			scp -r /softWare/hbase-0.96.2-hadoop2/ hadoop06:/softWare/
     
 * 4、将配置好的HBase拷贝到每一个节点并同步时间。
 
