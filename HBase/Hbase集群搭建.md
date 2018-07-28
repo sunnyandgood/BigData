@@ -2,7 +2,13 @@
 
 * 1、上传hbase安装包
 
+	* [获得/hbase-0.96.2-hadoop2-bin.tar.gz](https://github.com/sunnyandgood/BigData/blob/master/HBase/hbase-0.96.2-hadoop2-bin.tar.gz)
+	
+	* 上传
+
 * 2、解压
+
+		tar -zxvf hbase-0.96.2-hadoop2-bin.tar.gz -C /softWare/
 
 * 3、配置hbase集群，要修改3个文件（首先zk集群已经安装好了）
 
