@@ -43,6 +43,7 @@
 * [集群测试](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/集群测试.md)
 
 ### [Sqoop](https://github.com/sunnyandgood/BigData/tree/master/Sqoop)
+* [sqoop简介](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop简介.md)
 * [Sqoop环境搭建及使用](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/Sqoop环境搭建及使用.md)
 
 
