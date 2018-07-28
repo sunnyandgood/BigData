@@ -24,4 +24,10 @@
 
         vim /softWare/hbase-0.96.2-hadoop2/conf/hbase-site.xml
         
-        
+        <configuration>
+              <property>
+                  <name>hbase.rootdir</name>
+                  <value>file:///softWare/hbase-0.96.2-hadoop2/hbase</value>
+              </property>
+        </configuration>
+
