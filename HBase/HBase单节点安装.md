@@ -217,7 +217,22 @@
 
             => ["heros"]
 
+     * desceibe
      
+            hbase(main):009:0> describe 'heros'
+            DESCRIPTION                                              ENABLED                       
+             'heros', {NAME => 'date', DATA_BLOCK_ENCODING => 'NONE' true                          
+             , BLOOMFILTER => 'ROW', REPLICATION_SCOPE => '0', VERSI                               
+             ONS => '1', COMPRESSION => 'NONE', MIN_VERSIONS => '0',                               
+              TTL => '2147483647', KEEP_DELETED_CELLS => 'false', BL                               
+             OCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE =>                               
+              'true'}, {NAME => 'info', DATA_BLOCK_ENCODING => 'NONE                               
+             ', BLOOMFILTER => 'ROW', REPLICATION_SCOPE => '0', VERS                               
+             IONS => '3', COMPRESSION => 'NONE', MIN_VERSIONS => '0'                               
+             , TTL => '2147483647', KEEP_DELETED_CELLS => 'false', B                               
+             LOCKSIZE => '65536', IN_MEMORY => 'false', BLOCKCACHE =                               
+             > 'true'}                                                                             
+            1 row(s) in 0.1250 seconds
      
      
      
