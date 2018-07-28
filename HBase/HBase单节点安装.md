@@ -267,7 +267,23 @@
              rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
              rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
             2 row(s) in 0.1100 seconds
-     
+            
+            hbase(main):005:0> put 'heros','rk001','info:age','78'
+            0 row(s) in 0.0070 seconds
+            hbase(main):007:0> put 'heros','rk001','info:age','56'
+            0 row(s) in 0.0100 seconds
+
+            hbase(main):008:0> scan 'heros'
+            ROW                    COLUMN+CELL                                                     
+             rk001                 column=date:like, timestamp=1532847628556, value=\xE6\x89\xBE\xE
+                                   5\x9F\xBA\xE5\x8F\x8B                                           
+             rk001                 column=info:age, timestamp=1532848066460, value=56              
+             rk001                 column=info:dazhao, timestamp=1532847248863, value=\xE5\xA4\xA7\
+                                   xE4\xBF\x9D\xE5\xAE\x9D\xE5\x89\x91                             
+             rk001                 column=info:name, timestamp=1532847103503, value=gailun         
+             rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
+             rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
+            2 row(s) in 0.0480 seconds
      
      
      
