@@ -304,5 +304,44 @@
                    rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
                    rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
                   2 row(s) in 0.0500 seconds
-     
+                  
+        * 加值后再scan 'heros',{RAW => true,VERSIONS => 3}
+        
+                  hbase(main):010:0> put 'heros','rk001','info:age','18'
+                  0 row(s) in 0.0070 seconds
+
+                  hbase(main):011:0> scan 'heros',{RAW => true,VERSIONS => 3}
+                  ROW                    COLUMN+CELL                                                     
+                   rk001                 column=date:like, timestamp=1532847628556, value=\xE6\x89\xBE\xE
+                                         5\x9F\xBA\xE5\x8F\x8B                                           
+                   rk001                 column=info:age, timestamp=1532848697823, value=18              
+                   rk001                 column=info:age, timestamp=1532848066460, value=56              
+                   rk001                 column=info:age, timestamp=1532848049048, value=78              
+                   rk001                 column=info:dazhao, timestamp=1532847248863, value=\xE5\xA4\xA7\
+                                         xE4\xBF\x9D\xE5\xAE\x9D\xE5\x89\x91                             
+                   rk001                 column=info:name, timestamp=1532847103503, value=gailun         
+                   rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
+                   rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
+                  2 row(s) in 0.0400 seconds
+        
+        * scan 'heros',{RAW => true,VERSIONS => 10}
+        
+                  hbase(main):012:0> scan 'heros',{RAW => true,VERSIONS => 10}
+                  ROW                    COLUMN+CELL                                                     
+                   rk001                 column=date:like, timestamp=1532847628556, value=\xE6\x89\xBE\xE
+                                         5\x9F\xBA\xE5\x8F\x8B                                           
+                   rk001                 column=info:age, timestamp=1532848697823, value=18              
+                   rk001                 column=info:age, timestamp=1532848066460, value=56              
+                   rk001                 column=info:age, timestamp=1532848049048, value=78              
+                   rk001                 column=info:age, timestamp=1532847161785, value=45              
+                   rk001                 column=info:dazhao, timestamp=1532847248863, value=\xE5\xA4\xA7\
+                                         xE4\xBF\x9D\xE5\xAE\x9D\xE5\x89\x91                             
+                   rk001                 column=info:name, timestamp=1532847103503, value=gailun         
+                   rk002                 column=info:name, timestamp=1532847674775, value=zhaoxin        
+                   rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
+                  2 row(s) in 0.0270 seconds
+        
+        
+        
+        
      
