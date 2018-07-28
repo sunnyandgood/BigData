@@ -341,7 +341,10 @@
                    rk002                 column=info:xiaozhao, timestamp=1532847896217, value=sczj       
                   2 row(s) in 0.0270 seconds
         
-        
+     * quit
+     
+            hbase(main):014:0> quit
+            [root@hadoop01 ~]#
         
         
      
