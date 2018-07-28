@@ -236,6 +236,15 @@
      
      * put
      
+            hbase(main):015:0> put 'heros','rk001','info:name','gailun'
+            0 row(s) in 0.1210 seconds
+
+            hbase(main):016:0> put 'heros','rk001','info:age',45
+            0 row(s) in 0.0140 seconds
+
+            hbase(main):017:0> put 'heros','rk001','info:dazhao','大宝剑'
+            0 row(s) in 0.0100 seconds
+     
      * scan
      
      
