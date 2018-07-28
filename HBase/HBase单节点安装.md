@@ -98,7 +98,7 @@
               Group name: general
               Commands: status, table_help, version, whoami
 
-              Group name: ddl
+              Group name: ddl（数据库操作语言）
               Commands: alter, alter_async, alter_status, create, describe, disable, disable_all, drop, drop_all, 
               enable, enable_all, exists, get_table, is_disabled, is_enabled, list, show_filters
 
@@ -106,7 +106,7 @@
               Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, 
               list_namespace_tables
 
-              Group name: dml
+              Group name: dml（数据操作语言）
               Commands: count, delete, deleteall, get, get_counter, incr, put, scan, truncate, truncate_preserve
 
               Group name: tools
