@@ -19,7 +19,9 @@
 	
 	* 3.1修改hbase-env.sh
   
-	      export JAVA_HOME=/usr/java/jdk1.7.0_55
+	      vim /softWare/hbase-0.96.2-hadoop2/conf/hbase-env.sh
+
+	      export JAVA_HOME=/softWare/jdk1.7.0_80
 	      //告诉hbase使用外部的zk 
 	      export HBASE_MANAGES_ZK=false
 	
