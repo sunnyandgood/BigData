@@ -14,8 +14,8 @@
 
 	  注意：要把hadoop的hdfs-site.xml和core-site.xml 放到hbase/conf下
 	  	cd /softWare/hadoop-2.2.0/etc/hadoop
-		cp hdfs-site.xml /softWare/hbase-0.96.2-hadoop2/conf/
-		cp core-site.xml /softWare/hbase-0.96.2-hadoop2/conf/
+			cp hdfs-site.xml /softWare/hbase-0.96.2-hadoop2/conf/
+			cp core-site.xml /softWare/hbase-0.96.2-hadoop2/conf/
 	
 	* 3.1修改hbase-env.sh
   
