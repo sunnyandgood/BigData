@@ -117,7 +117,25 @@
 
 			hbase(main):004:0>
 	 
-	
+	 * put
+	 
+			hbase(main):004:0> hbase put 'heros','rk001','info:name','qwe' 
+			0 row(s) in 0.2480 seconds
+
+			NoMethodError: undefined method `hbase' for #<Object:0x1519a59>
+
+			hbase(main):005:0>
+	 
+	 * scan
+	 
+			hbase(main):006:0> scan 'heros'
+			ROW                        COLUMN+CELL                                                              
+			 rk001                     column=info:name, timestamp=1532853903893, value=qwe                     
+			1 row(s) in 0.2180 seconds
+
+			hbase(main):007:0>	
+	 
+	 
 	
 	
 	
