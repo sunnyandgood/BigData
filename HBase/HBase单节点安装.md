@@ -19,3 +19,9 @@
         vim /softWare/hbase-0.96.2-hadoop2/conf/hbase-env.sh
         
         export JAVA_HOME=/softWare/jdk1.7.0_80
+
+* 修改hbase-site.xml
+
+        vim /softWare/hbase-0.96.2-hadoop2/conf/hbase-site.xml
+        
+        
