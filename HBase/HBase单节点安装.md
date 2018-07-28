@@ -38,7 +38,7 @@
       cd /softWare/hbase-0.96.2-hadoop2/bin
       ./start-hbase.sh
 
-* 使用HBase
+* 查看HBase使用方法
 
       [root@hadoop01 bin]# ./hbase
       Usage: hbase [<options>] <command> [<args>]
@@ -65,3 +65,11 @@
         mapredcp        Dump CLASSPATH entries required by mapreduce
         version         Print the version
         CLASSNAME       Run the class named CLASSNAME
+
+* 配置环境变量
+
+      cd /etc/
+      vim profile
+      export HBASE_HOME=/softWare/hbase-0.96.2-hadoop2
+      exprot PATH=$PATH:JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin
+
