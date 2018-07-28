@@ -100,11 +100,28 @@
 			=> Hbase::Table - heros
 			hbase(main):003:0>
 	
-	 * 
+	 * describe
 	 
-	 * 
+			hbase(main):003:0> describe 'heros'
+			DESCRIPTION                                                       ENABLED                           
+			 'heros', {NAME => 'data', DATA_BLOCK_ENCODING => 'NONE', BLOOMFI true                              
+			 LTER => 'ROW', REPLICATION_SCOPE => '0', VERSIONS => '1', COMPRE                                   
+			 SSION => 'NONE', MIN_VERSIONS => '0', TTL => '2147483647', KEEP_                                   
+			 DELETED_CELLS => 'false', BLOCKSIZE => '65536', IN_MEMORY => 'fa                                   
+			 lse', BLOCKCACHE => 'true'}, {NAME => 'info', DATA_BLOCK_ENCODIN                                   
+			 G => 'NONE', BLOOMFILTER => 'ROW', REPLICATION_SCOPE => '0', VER                                   
+			 SIONS => '3', COMPRESSION => 'NONE', MIN_VERSIONS => '0', TTL =>                                   
+			  '2147483647', KEEP_DELETED_CELLS => 'false', BLOCKSIZE => '6553                                   
+			 6', IN_MEMORY => 'false', BLOCKCACHE => 'true'}                                                    
+			1 row(s) in 0.1130 seconds
+
+			hbase(main):004:0>
 	 
-	 * 
+	
+	
+	
+	
+	
 	
 	
 	
