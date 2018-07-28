@@ -346,5 +346,9 @@
             hbase(main):014:0> quit
             [root@hadoop01 ~]#
         
-        
-     
+### 四、停止HBase
+
+      [root@hadoop01 ~]# cd /softWare/hbase-0.96.2-hadoop2/bin/
+      [root@hadoop01 bin]# ./stop-hbase.sh 
+      stopping hbase...................
+      [root@hadoop01 bin]#     
