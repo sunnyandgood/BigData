@@ -4,7 +4,7 @@
 
 * 1、上传sqoop
 
-       * [下载sqoop](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz)
+     * [下载sqoop](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz)
 
 * 2、安装和配置
 	
