@@ -6,7 +6,7 @@
 
 * 上传
 
-### 安装HBase
+### 二、安装HBase
 
 * 解压hbase-0.96.2-hadoop2-bin.tar.gz
 
@@ -31,3 +31,9 @@
               </property>
         </configuration>
 
+### 三、使用HBase
+
+* 启动HBase
+
+      cd /softWare/hbase-0.96.2-hadoop2/bin
+      ./start-hbase.sh
