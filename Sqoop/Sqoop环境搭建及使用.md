@@ -10,7 +10,7 @@
 	
      * tar -zxvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz -C /softWare/
      
-     * 在添加sqoop到环境变量
+     * 添加sqoop到环境变量
      
      * 将数据库连接驱动拷贝到$SQOOP_HOME/lib里
      
