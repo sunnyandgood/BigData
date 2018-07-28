@@ -103,7 +103,8 @@
               enable, enable_all, exists, get_table, is_disabled, is_enabled, list, show_filters
 
               Group name: namespace
-              Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, list_namespace_tables
+              Commands: alter_namespace, create_namespace, describe_namespace, drop_namespace, list_namespace, 
+              list_namespace_tables
 
               Group name: dml
               Commands: count, delete, deleteall, get, get_counter, incr, put, scan, truncate, truncate_preserve
