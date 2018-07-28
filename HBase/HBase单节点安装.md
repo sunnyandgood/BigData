@@ -37,3 +37,31 @@
 
       cd /softWare/hbase-0.96.2-hadoop2/bin
       ./start-hbase.sh
+
+* 使用HBase
+
+      [root@hadoop01 bin]# ./hbase
+      Usage: hbase [<options>] <command> [<args>]
+      Options:
+        --config DIR    Configuration direction to use. Default: ./conf
+        --hosts HOSTS   Override the list in 'regionservers' file
+
+      Commands:
+      Some commands take arguments. Pass no args or -h for usage.
+        shell           Run the HBase shell
+        hbck            Run the hbase 'fsck' tool
+        hlog            Write-ahead-log analyzer
+        hfile           Store file analyzer
+        zkcli           Run the ZooKeeper shell
+        upgrade         Upgrade hbase
+        master          Run an HBase HMaster node
+        regionserver    Run an HBase HRegionServer node
+        zookeeper       Run a Zookeeper server
+        rest            Run an HBase REST server
+        thrift          Run the HBase Thrift server
+        thrift2         Run the HBase Thrift2 server
+        clean           Run the HBase clean up script
+        classpath       Dump hbase CLASSPATH
+        mapredcp        Dump CLASSPATH entries required by mapreduce
+        version         Print the version
+        CLASSNAME       Run the class named CLASSNAME
