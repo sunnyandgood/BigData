@@ -146,3 +146,50 @@
             The HBase shell is the (J)Ruby IRB with the above HBase-specific commands added.
             For more on the HBase Shell, see http://hbase.apache.org/docs/current/book.html
             hbase(main):002:0>  
+
+     * create
+     
+            hbase(main):002:0> create 
+
+            ERROR: wrong number of arguments (0 for 1)
+
+            Here is some help for this command:
+            Creates a table. Pass a table name, and a set of column family
+            specifications (at least one), and, optionally, table configuration.
+            Column specification can be a simple string (name), or a dictionary
+            (dictionaries are described below in main help output), necessarily 
+            including NAME attribute. 
+            Examples:
+
+            Create a table with namespace=ns1 and table qualifier=t1
+              hbase> create 'ns1:t1', {NAME => 'f1', VERSIONS => 5}
+
+            Create a table with namespace=default and table qualifier=t1
+              hbase> create 't1', {NAME => 'f1'}, {NAME => 'f2'}, {NAME => 'f3'}
+              hbase> # The above in shorthand would be the following:
+              hbase> create 't1', 'f1', 'f2', 'f3'
+              hbase> create 't1', {NAME => 'f1', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
+              hbase> create 't1', {NAME => 'f1', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' => '10'}}
+
+            Table configuration options can be put at the end.
+            Examples:
+
+              hbase> create 'ns1:t1', 'f1', SPLITS => ['10', '20', '30', '40']
+              hbase> create 't1', 'f1', SPLITS => ['10', '20', '30', '40']
+              hbase> create 't1', 'f1', SPLITS_FILE => 'splits.txt', OWNER => 'johndoe'
+              hbase> create 't1', {NAME => 'f1', VERSIONS => 5}, METADATA => { 'mykey' => 'myvalue' }
+              hbase> # Optionally pre-split the table into NUMREGIONS, using
+              hbase> # SPLITALGO ("HexStringSplit", "UniformSplit" or classname)
+              hbase> create 't1', 'f1', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit'}
+              hbase> create 't1', 'f1', {NUMREGIONS => 15, SPLITALGO => 'HexStringSplit', 
+                        CONFIGURATION => {'hbase.hregion.scan.loadColumnFamiliesOnDemand' => 'true'}}
+
+            You can also keep around a reference to the created table:
+
+              hbase> t1 = create 't1', 'f1'
+
+            Which gives you a reference to the table named 't1', on which you can then
+            call methods.
+
+
+            hbase(main):003:0>
