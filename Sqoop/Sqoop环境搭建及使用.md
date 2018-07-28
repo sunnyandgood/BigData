@@ -20,7 +20,7 @@
 
 * 第一类：数据库中的数据导入到HDFS上
 
-	sqoop import --connect jdbc:mysql://192.168.1.10:3306/itcast --username root --password 123  --table trade_detail --columns 'id, account, income, expenses'
+	sqoop import --connect jdbc:mysql://192.168.2.1:3306/yan --username root --password root  --table heros --columns 'y_id, y_name, y_weizhi, y_sex'
 		
 	* 指定输出路径、指定数据分隔符
 	
@@ -49,8 +49,8 @@ sqoop export --connect jdbc:mysql://192.168.8.120:3306/itcast --username root --
 	
 ### 三、配置mysql远程连接
 
-	GRANT ALL PRIVILEGES ON itcast.* TO 'root'@'192.168.1.201' IDENTIFIED BY '123' WITH GRANT OPTION;
+	GRANT ALL PRIVILEGES ON yan.* TO 'root'@'192.168.2.101' IDENTIFIED BY 'root' WITH GRANT OPTION;
 	FLUSH PRIVILEGES; 
 	
-	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123' WITH GRANT OPTION;
-	FLUSH PRIVILEGES
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+	FLUSH PRIVILEGES;
