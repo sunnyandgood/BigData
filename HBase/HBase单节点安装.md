@@ -147,9 +147,9 @@
             For more on the HBase Shell, see http://hbase.apache.org/docs/current/book.html
             hbase(main):002:0>  
 
-     * create
+     * create(help 'create')
      
-            hbase(main):002:0> create 
+            hbase(main):002:0> create
 
             ERROR: wrong number of arguments (0 for 1)
 
