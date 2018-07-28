@@ -83,12 +83,14 @@
 
 	 * hbase shell
 	 
-	 	[root@hadoop01 bin]# hbase shell
-		2018-07-29 01:32:53,499 INFO  [main] Configuration.deprecation: hadoop.native.lib is deprecated. 
-		Instead, use io.native.lib.available
-		HBase Shell; enter 'help<RETURN>' for list of supported commands.
-		Type "exit<RETURN>" to leave the HBase Shell
-		Version 0.96.2-hadoop2, r1581096, Mon Mar 24 16:03:18 PDT 2014
+			[root@hadoop01 bin]# hbase shell
+			2018-07-29 01:32:53,499 INFO  [main] Configuration.deprecation: hadoop.native.lib is deprecated. 
+			Instead, use io.native.lib.available
+			HBase Shell; enter 'help<RETURN>' for list of supported commands.
+			Type "exit<RETURN>" to leave the HBase Shell
+			Version 0.96.2-hadoop2, r1581096, Mon Mar 24 16:03:18 PDT 2014
+
+			hbase(main):001:0>
 	
 	 * 
 	
