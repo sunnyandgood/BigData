@@ -117,4 +117,21 @@
       xiaoming|12
       xiaoliang|13
       xiaohong|11
-      
+      hive> load data local inpath '/s.txt' into table students;
+      Copying data from file:/s.txt
+      Copying file: file:/s.txt
+      Loading data to table default.students
+      Table default.students stats: [numFiles=2, numRows=0, totalSize=76, rawDataSize=0]
+      OK
+      Time taken: 0.51 seconds
+      hive> select * from students;                             
+      OK
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      Time taken: 0.041 seconds, Fetched: 8 row(s)
