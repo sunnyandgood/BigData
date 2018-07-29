@@ -19,7 +19,17 @@
            cd /etc/
            export HIVE_HOME=/softWare/apache-hive-0.13.0-bin
            export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin
-           
+     
+     * 修改hive-default.xml.template为hive-site.xml
+     
+           cd /softWare/apache-hive-0.13.0-bin/conf
+           mv hive-default.xml.template hive-site.xml
+     
+     
+     
+     
+     
+     
 * mysql授权
 
       GRANT ALL PRIVILEGES ON hive.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
