@@ -44,7 +44,30 @@
 
      <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/物理存储2.png"></div>
 
-* 2、
+* 2、架构体系
+
+* Client  包含访问hbase 的接口，client 维护着一些cache 来加快对hbase 的访问，比如regione 的位置信息
+
+* Zookeeper
+ 
+ 	* 保证任何时候，集群中只有一个running master
+ 
+ 	* 存贮所有Region 的寻址入口	
+ 
+ 	* 实时监控Region Server 的状态，将Region server 的上线和下线信息，实时通知给Master
+ 
+ 	* 存储Hbase 的schema,包括有哪些table，每个table 有哪些column family
+
+* Master 可以启动多个HMaster，通过Zookeeper的Master Election机制保证总有一个Master运行
+
+	* 为Region server 分配region
+
+	* 负责region server 的负载均衡
+
+	* 发现失效的region server 并重新分配其上的region
+
+ 	
+
 
 
 
