@@ -104,9 +104,52 @@
 
 * 前提条件：本机或集群环境下hadoop.1.1.2已经安装成功
 
+### 七、HBase Shell
 
+* hbase提供了一个shell的终端给用户交互（#$HBASE_HOME/bin/hbase shell  ）
 
-
+<table>
+   <tr>
+      <td>名称</td>
+      <td>命令表达式</td>
+   </tr>
+   <tr>
+      <td>创建表</td>
+      <td>create '表名称', '列族名称1','列族名称2','列族名称N'</td>
+   </tr>
+   <tr>
+      <td>添加记录      </td>
+      <td>put '表名称', '行名称', '列名称:', '值'</td>
+   </tr>
+   <tr>
+      <td>查看记录</td>
+      <td>get '表名称', '行名称'</td>
+   </tr>
+   <tr>
+      <td>查看表中的记录总数</td>
+      <td>count  '表名称'</td>
+   </tr>
+   <tr>
+      <td>删除记录</td>
+      <td>delete  '表名' ,'行名称' , '列名称'</td>
+   </tr>
+   <tr>
+      <td>删除一张表</td>
+      <td>先要屏蔽该表，才能对该表进行删除，第一步 disable '表名称' 第二步  drop '表名称'</td>
+   </tr>
+   <tr>
+      <td>查看所有记录</td>
+      <td>scan "表名称"  </td>
+   </tr>
+   <tr>
+      <td>查看某个表某个列中所有数据</td>
+      <td>scan "表名称" , {COLUMNS=>'列族名称:列名称'}</td>
+   </tr>
+   <tr>
+      <td>更新记录 </td>
+      <td>就是重写一遍进行覆盖</td>
+   </tr>
+</table>
 
 
 
