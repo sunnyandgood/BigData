@@ -142,7 +142,7 @@
       Array/Map/Struct
       没有date/datetime
 
-###八、Hive的数据存储
+### 八、Hive的数据存储
 
 * Hive的数据存储基于Hadoop HDFS
 
@@ -379,7 +379,36 @@
 
 * 例：create table new_external_test as  select * from external_table1;
 
+### 十八、查询（select）
 
+	SELECT [ALL | DISTINCT] select_expr, select_expr, ...
+	   FROM table_reference 
+	   [WHERE where_condition] 
+	   [GROUP BY col_list] 
+	   [ CLUSTER BY col_list | [DISTRIBUTE BY col_list] [SORT BY col_list] | [ORDER BY col_list] ]
+	   [LIMIT number]
+
+* 注：DISTRIBUTE BY 指定分发器（Partitioner）,多Reducer可用
+
+* 基于Partition的查询  
+
+	* 一般 SELECT 查询是全表扫描。但如果是分区表，查询就可以利用分区剪枝（input pruning）的特性，类似“分区索引“”，只扫描一个表中它关心的那一部分。Hive 当前的实现是，只有分区断言（Partitioned by）出现在离 FROM 子句最近的那个WHERE 子句中，才会启用分区剪枝。例如，如果 page_views 表（按天分区）使用 date 列分区，以下语句只会读取分区为‘2018-03-01’的数据。
+
+			 SELECT page_views.*  FROM page_views  WHERE page_views.date >= '2018-03-01' 
+					       AND page_views.date <= '2018-03-01'
+
+* LIMIT Clause 
+
+	* Limit 可以限制查询的记录数。查询的结果是随机选择的。下面的查询语句从 t1 表中随机查询5条记录：
+	
+			SELECT * FROM t1 LIMIT 5
+
+* Top N查询
+
+	* 下面的查询语句查询销售记录最大的 5 个销售代表。
+	
+			SET mapred.reduce.tasks = 1  
+				    SELECT * FROM sales SORT BY amount DESC LIMIT 5
 
 
 
