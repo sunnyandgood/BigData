@@ -111,6 +111,8 @@
       NULL	NULL
       Time taken: 0.111 seconds, Fetched: 4 row(s)
 
+
+
       [root@hadoop03 /]# vim s.txt
       xiaoming|12
       xiaoliang|13
