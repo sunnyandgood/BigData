@@ -89,6 +89,19 @@
       0
       Time taken: 70.546 seconds, Fetched: 1 row(s)
 
+* 加载本地数据到Hive（load data local inpath '/s.txt' into table students）
+      
+      [root@hadoop01 /]# vim s.txt
+      xiaoming        12
+      xiaoliang       13
+      xiaohong        11
 
+      hive> load data local inpath '/s.txt' into table students;
+      Copying data from file:/s.txt
+      Copying file: file:/s.txt
+      Loading data to table default.students
+      Table default.students stats: [numFiles=1, numRows=0, totalSize=38, rawDataSize=0]
+      OK
+      Time taken: 1.066 seconds
 
 
