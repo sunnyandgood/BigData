@@ -22,3 +22,34 @@
 * Hive是SQL解析引擎，它将SQL语句转译成M/R Job然后在Hadoop执行。
 
 * Hive的表其实就是HDFS的目录/文件夹，按表名把文件夹分开。如果是分区表，则分区值是子文件夹，可以直接在M/R Job里使用这些数据。
+
+* 总结：
+
+### 二、Hive的系统架构
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Hive/img/Hive的系统架构.png"/></div>
+
+* 用户接口，包括 CLI，JDBC/ODBC，WebUI
+
+* 元数据存储，通常是存储在关系数据库如 mysql, derby 中
+
+* 解释器、编译器、优化器、执行器
+
+* Hadoop：用 HDFS 进行存储，利用 MapReduce 进行计算
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
