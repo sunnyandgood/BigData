@@ -109,7 +109,7 @@
       Logging initialized using configuration in jar:file:/softWare/apache-hive-0.13.0-bin/lib/hive-common-0.13.0.jar!/hive-log4j.properties
       hive> 
 
-### 四、使用hive
+### 四、使用hive（表描述在hive数据库的TBLS表中，表中的字段在COLUMNS_V2表中）
 
 * 建表(默认是内部表)
 
