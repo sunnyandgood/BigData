@@ -1,5 +1,7 @@
 # Hive集群搭建及操作
 
+* 在Hive中：表对应HDFS的目录（或文件夹）；表中的数据对应HDFS的文件。
+
 ### 一、上传
 
 * [获得apache-hive-0.13.0-bin.tar.gz](https://github.com/sunnyandgood/BigData/blob/master/Hive/apache-hive-0.13.0-bin.tar.gz)
