@@ -234,6 +234,22 @@
             11	qlqshi	wangluowenxue
             Time taken: 0.076 seconds, Fetched: 18 row(s)
      
+     * where查询
+     
+            hive> select * from book where booktype='wangluowenxue';
+            OK
+            1	zhaohuanwansui	wangluowenxue
+            2	douluodalu	wangluowenxue
+            3	doupochangqiong	wangluowenxue
+            4	qindi	wangluowenxue
+            5	jiushen	wangluowenxue
+            6	binhuomochu	wangluowenxue
+            7	shanlaingshishen	wangluowenxue
+            8	guangzhizi	wangluowenxue
+            9	tunshixinkong	wangluowenxue
+            10	shenmu	wangluowenxue
+            11	qlqshi	wangluowenxue
+            Time taken: 0.268 seconds, Fetched: 11 row(s)
       
 * 2、不能手动分区（手动创建分区不能用select查看）
   
