@@ -1,12 +1,12 @@
 # 安装MySQL
 
-### 上传MySQL
+### 一、上传MySQL
 
 * [获得MyQSL](https://github.com/sunnyandgood/BigData/tree/master/Hive/mysql安装包)
 
 * 上传
 
-### 安装MySQL
+### 二、安装MySQL
 
 * 卸载自带mysql
 
@@ -177,3 +177,7 @@
 
       mysql> 
 
+### 三、mysql授权
+
+      GRANT ALL PRIVILEGES ON hive.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+	FLUSH PRIVILEGES;
