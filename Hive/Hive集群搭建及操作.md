@@ -111,7 +111,7 @@
 
 ### 四、使用hive
 
-* 建表
+* 建表(默认是内部表)
 
       hive> create table heros (id bigint,name string,age int,height double) row format delimited fields terminated by '\t';
       OK
