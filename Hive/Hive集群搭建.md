@@ -25,7 +25,31 @@
            cd /softWare/apache-hive-0.13.0-bin/conf
            mv hive-default.xml.template hive-site.xml
      
+     * 修改hive-site.xml文件
      
+           <property>
+              <name>javax.jdo.option.ConnectionURL</name>
+              <value>jdbc:mysql://hadoop05:3306/hive?createDatabaseIfNotExist=true</value>
+              <description>JDBC connect string for a JDBC metastore</description>
+            </property>
+
+            <property>
+              <name>javax.jdo.option.ConnectionDriverName</name>
+              <value>com.mysql.jdbc.Driver</value>
+              <description>Driver class name for a JDBC metastore</description>
+            </property>
+
+            <property>
+              <name>javax.jdo.option.ConnectionUserName</name>
+              <value>root</value>
+              <description>username to use against metastore database</description>
+            </property>
+
+            <property>
+              <name>javax.jdo.option.ConnectionPassword</name>
+              <value>123</value>
+              <description>password to use against metastore database</description>
+            </property>
      
      
      
