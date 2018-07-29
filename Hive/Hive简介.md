@@ -410,7 +410,88 @@
 			SET mapred.reduce.tasks = 1  
 				    SELECT * FROM sales SORT BY amount DESC LIMIT 5
 
+### 十九、表连接
 
+* 导入ac信息表
+
+		hive> create table acinfo (name string,acip string)  row format 
+				delimited fields terminated by '\t' stored as TEXTFILE;
+		hive> load data local inpath '/home/acinfo/ac.dat' into table acinfo; 
+
+* 内连接
+
+		select b.name,a.* from dim_ac a join acinfo b on (a.ac=b.acip) limit 10;
+
+* 左外连接
+
+		select b.name,a.* from dim_ac a left outer join acinfo b on a.ac=b.acip limit 10;
+
+### 二十、Java客户端
+
+* Hive远程服务启动#hive --service hiveserver >/dev/null  2>/dev/null &
+
+* JAVA客户端相关代码
+
+		Class.forName("org.apache.hadoop.hive.jdbc.HiveDriver");
+		Connection con = DriverManager.getConnection("jdbc:hive://192.168.1.102:10000/wlan_dw", "", "");
+		Statement stmt = con.createStatement();
+		String querySQL="SELECT * FROM wlan_dw.dim_m order by flux desc limit 10";
+
+		ResultSet res = stmt.executeQuery(querySQL);  
+
+		while (res.next()) {
+		System.out.println(res.getString(1) +"\t" +res.getLong(2)+"\t" +
+			res.getLong(3)+"\t" +res.getLong(4)+"\t" +res.getLong(5));
+		}
+
+### 二十一、UDF
+
+* 1、UDF函数可以直接应用于select语句，对查询结构做格式化处理后，再输出内容。
+
+* 2、编写UDF函数的时候需要注意一下几点：
+
+	* a）自定义UDF需要继承org.apache.hadoop.hive.ql.UDF。
+
+	* b）需要实现evaluate函数，evaluate函数支持重载。
+
+
+* 3、步骤
+
+	* a）把程序打包放到目标机器上去；
+
+	* b）进入hive客户端，添加jar包：hive>add jar /run/jar/udf_test.jar;
+
+	* c）创建临时函数：hive>CREATE TEMPORARY FUNCTION add_example AS 'hive.udf.Add';
+
+	* d）查询HQL语句：
+
+		SELECT add_example(8, 9) FROM scores;
+		SELECT add_example(scores.math, scores.art) FROM scores;
+		SELECT add_example(6, 7, 8, 6.8) FROM scores;
+
+	* e）销毁临时函数：hive> DROP TEMPORARY FUNCTION add_example;
+	
+* 注：UDF只能实现一进一出的操作，如果需要实现多进一出，则需要实现UDAF
+
+### 二十二、为什么选择Hive？
+
+* 基于Hadoop的大数据的计算/扩展能力
+
+* 支持SQL like查询语言
+
+* 统一的元数据管理
+
+* 简单编程
+
+### 二十三、总结
+
+* MapReduce程序计算KPI
+
+* HBASE详单查询
+
+* HIVE数据仓库多维分析
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Hive/img/Hive总结.png"/></div>
 
 
 
