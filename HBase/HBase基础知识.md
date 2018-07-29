@@ -66,10 +66,42 @@
 
 	* 发现失效的region server 并重新分配其上的region
 
- 	
+* 3、HBase的逻辑梳理
+
+   * HBase中有两张特殊的Table，-ROOT-和.META.
+	
+     * -ROOT- ：记录了.META.表的Region信息，-ROOT-只有一个region
+		
+     * .META. ：记录了用户创建的表的Region信息，.META.可以有多个regoin
+
+    * Zookeeper中记录了-ROOT-表的location
+
+    * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-表，接着访问.META.表，最后才能找到用户数据的位置去访问
 
 
+### 四、Region Server
 
+* 维护Master 分配给它的region，处理对这些region 的IO 请求
+
+* 负责切分在运行过程中变得过大的region
+
+可以看出，client 访问hbase 上数据的过程并不需要master 参与，寻址访问先zookeeper再regionserver，数据读写访问regioneserver。HRegionServer主要负责响应用户I/O请求，向HDFS文件系统中读写数据，是HBase中最核心的模块。 	
+
+### 五、系统架构
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/系统架构.png"></div>
+
+### 六、HBASE与相关软件
+
+* hadoop-2.2.0
+
+* hbase-0.96.2-hadoop2
+
+* JDK7
+
+* RHEL6.3
+
+* 前提条件：本机或集群环境下hadoop.1.1.2已经安装成功
 
 
 
