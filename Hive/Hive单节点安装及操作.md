@@ -48,10 +48,15 @@
       students
       Time taken: 0.082 seconds, Fetched: 1 row(s)
 
+* # Hive单节点安装及操作
 
+      hive> describe students;
+      OK
+      s_id                	int                 	                    
+      s_name              	string              	                    
+      Time taken: 0.306 seconds, Fetched: 2 row(s)
 
-
-
+* 
 
 
 
