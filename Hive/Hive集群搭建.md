@@ -6,7 +6,7 @@
 
 * 上传
 
-### 二、安装Hive
+### 二、安装Hive（Hive只在一个节点上安装即可）
 
 * 解压apache-hive-0.13.0-bin.tar.gz
 
@@ -87,7 +87,10 @@
 
       mysql>
 
+### 三、启动hive
 
+      cd /softWare/apache-hive-0.13.0-bin/bin
+      ./hive
 
 
 
