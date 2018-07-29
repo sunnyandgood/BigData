@@ -151,7 +151,40 @@
    </tr>
 </table>
 
+### 八、HBASE Shell的DDL操作（数据库操作语言））
 
+* 1、创建表
+
+		>create 'users','user_id','address','info'
+		表users,有三个列族user_id,address,info
+
+* 2、列出全部表
+
+		>list 
+
+* 3、得到表的描述
+
+		>describe 'users'
+
+* 创建表
+
+		>create 'users_tmp','user_id','address','info'
+
+* 删除表
+
+		>disable 'users_tmp'
+		>drop 'users_tmp'
+
+-----------------------------------------------------------------
+* 其他操作
+
+		#$HBASE_HOME/bin/hbase shell
+		…… 
+		>quit 
+
+		>exists 'users'
+		>is_enabled 'users'
+		>is_disabled 'users
 
 
 
