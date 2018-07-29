@@ -78,5 +78,5 @@
 
 * 停止
 
-#cd $HBASE_HOME/bin
-#./stop-hbase.sh
+      #cd $HBASE_HOME/bin
+      #./stop-hbase.sh
