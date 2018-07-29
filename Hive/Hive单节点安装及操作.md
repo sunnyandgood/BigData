@@ -135,3 +135,48 @@
       NULL	NULL
       NULL	NULL
       Time taken: 0.041 seconds, Fetched: 8 row(s)
+
+* 加载本地数据到Hive（load data local inpath '/t.txt' into table teacher;）
+
+      hive> create table teacher (t_id int,t_name string) row format delimited fields terminated by '\t'; 
+      OK
+      Time taken: 0.094 seconds
+      hive> show tables;
+      OK
+      students
+      teacher
+      Time taken: 0.025 seconds, Fetched: 2 row(s)
+      hive> load data local inpath '/t.txt' into table teacher;                                          
+      Copying data from file:/t.txt
+      Copying file: file:/t.txt
+      Loading data to table default.teacher
+      Table default.teacher stats: [numFiles=1, numRows=0, totalSize=31, rawDataSize=0]
+      OK
+      Time taken: 0.334 seconds
+      hive> select * from teacher;                                                                       
+      OK
+      NULL	45
+      NULL	35
+      NULL	56
+      NULL	NULL
+      Time taken: 0.083 seconds, Fetched: 4 row(s)
+      
+      
+      hive> load data local inpath '/t.txt' into table teacher;
+      Copying data from file:/t.txt
+      Copying file: file:/t.txt
+      Loading data to table default.teacher
+      Table default.teacher stats: [numFiles=2, numRows=0, totalSize=62, rawDataSize=0]
+      OK
+      Time taken: 0.896 seconds
+      hive> select * from teacher;                             
+      OK
+      NULL	45
+      NULL	35
+      NULL	56
+      NULL	NULL
+      45	zhangsan
+      35	lisi
+      65	wangwu
+      NULL	NULL
+      Time taken: 0.038 seconds, Fetched: 8 row(s)
