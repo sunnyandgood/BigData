@@ -68,15 +68,15 @@
 
 * 3、HBase的逻辑梳理
 
-   * HBase中有两张特殊的Table，-ROOT-和.META.
+   * HBase中有两张特殊的Table，-ROOT-(hbase:namespace)和.META.(hbase:meta)
 	
-     * -ROOT- ：记录了.META.表的Region信息，-ROOT-只有一个region
+     * -ROOT-(hbase:namespace) ：记录了.META.(hbase:meta)表的Region信息，-ROOT-(hbase:namespace)只有一个region
 		
-     * .META. ：记录了用户创建的表的Region信息，.META.可以有多个regoin
+     * .META.(hbase:meta) ：记录了用户创建的表的Region信息，.META.(hbase:meta)可以有多个regoin
 
-    * Zookeeper中记录了-ROOT-表的location
+    * Zookeeper中记录了-ROOT-(hbase:namespace)表的location
 
-    * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-表，接着访问.META.表，最后才能找到用户数据的位置去访问
+    * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-(hbase:namespace)表，接着访问.META.(hbase:meta)表，最后才能找到用户数据的位置去访问
 
     <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/table.png"/></div>
 
