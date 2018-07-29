@@ -46,7 +46,10 @@
 * [sqoop简介](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop简介.md)
 * [Sqoop环境搭建及使用](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/Sqoop环境搭建及使用.md)
 
-
+### [HBase](https://github.com/sunnyandgood/BigData/tree/master/HBase)
+* [HBase单节点安装及使用](https://github.com/sunnyandgood/BigData/blob/master/HBase/HBase单节点安装及使用.md)
+* [Hbase集群搭建](https://github.com/sunnyandgood/BigData/blob/master/HBase/Hbase集群搭建.md)
+* [HbaseShell](https://github.com/sunnyandgood/BigData/blob/master/HBase/HbaseShell.md)
 
 
 ### [Linux](https://github.com/sunnyandgood/BigData/tree/master/Linux%20)

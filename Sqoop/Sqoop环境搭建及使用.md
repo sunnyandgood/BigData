@@ -8,15 +8,19 @@
 
 * 2、安装和配置
 	
-	tar -zxvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz -C /softWare/
-	在添加sqoop到环境变量
-	将数据库连接驱动拷贝到$SQOOP_HOME/lib里
+     * tar -zxvf sqoop-1.4.4.bin__hadoop-2.0.4-alpha.tar.gz -C /softWare/
+     
+     * 添加sqoop到环境变量
+     
+     * 将数据库连接驱动拷贝到$SQOOP_HOME/lib里
+     
+     	 * [mysql-connector-5.1.8.jar](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/mysql-connector-5.1.8.jar)
 	
 ### 二、使用
 
 * 第一类：数据库中的数据导入到HDFS上
 
-	sqoop import --connect jdbc:mysql://192.168.1.10:3306/itcast --username root --password 123  --table trade_detail --columns 'id, account, income, expenses'
+	sqoop import --connect jdbc:mysql://192.168.2.1:3306/yan --username root --password root  --table heros --columns 'y_id, y_name, y_weizhi, y_sex'
 		
 	* 指定输出路径、指定数据分隔符
 	
@@ -45,8 +49,10 @@ sqoop export --connect jdbc:mysql://192.168.8.120:3306/itcast --username root --
 	
 ### 三、配置mysql远程连接
 
-	GRANT ALL PRIVILEGES ON itcast.* TO 'root'@'192.168.1.201' IDENTIFIED BY '123' WITH GRANT OPTION;
+> * Access denied for user 'root'@'localhost' (using password:YES) 解决方案
+	
+	GRANT ALL PRIVILEGES ON yan.* TO 'root'@'192.168.2.101' IDENTIFIED BY 'root' WITH GRANT OPTION;
 	FLUSH PRIVILEGES; 
 	
-	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123' WITH GRANT OPTION;
-	FLUSH PRIVILEGES
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+	FLUSH PRIVILEGES;
