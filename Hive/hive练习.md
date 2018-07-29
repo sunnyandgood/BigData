@@ -76,6 +76,32 @@
       2	timo	34	120
       3	taitan	89	200
       Time taken: 0.092 seconds, Fetched: 5 row(s)
+      
+      
+      hive> select sum(age) from heros2;
+      Total jobs = 1
+      Launching Job 1 out of 1
+      Number of reduce tasks determined at compile time: 1
+      In order to change the average load for a reducer (in bytes):
+        set hive.exec.reducers.bytes.per.reducer=<number>
+      In order to limit the maximum number of reducers:
+        set hive.exec.reducers.max=<number>
+      In order to set a constant number of reducers:
+        set mapreduce.job.reduces=<number>
+      Starting Job = job_1532882569615_0003, Tracking URL = http://hadoop03:8088/proxy/application_1532882569615_0003/
+      Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532882569615_0003
+      Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+      2018-07-29 19:25:28,595 Stage-1 map = 0%,  reduce = 0%
+      2018-07-29 19:25:43,162 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.9 sec
+      2018-07-29 19:25:53,029 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.14 sec
+      MapReduce Total cumulative CPU time: 5 seconds 140 msec
+      Ended Job = job_1532882569615_0003
+      MapReduce Jobs Launched: 
+      Job 0: Map: 1  Reduce: 1   Cumulative CPU: 5.14 sec   HDFS Read: 322 HDFS Write: 4 SUCCESS
+      Total MapReduce CPU Time Spent: 5 seconds 140 msec
+      OK
+      970
+      Time taken: 43.236 seconds, Fetched: 1 row(s)
 
 ### 三、分区表
 
