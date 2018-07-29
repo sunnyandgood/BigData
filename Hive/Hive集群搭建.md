@@ -91,8 +91,19 @@
 
       cd /softWare/apache-hive-0.13.0-bin/bin
       ./hive
+      
+-----------------操作------------------------
 
+      [root@hadoop03 bin]# ./hive
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.reduce.tasks is deprecated. Instead, use mapreduce.job.reduces
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.min.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.reduce.tasks.speculative.execution is deprecated. Instead, use mapreduce.reduce.speculative
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.min.split.size.per.node is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize.per.node
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.input.dir.recursive is deprecated. Instead, use mapreduce.input.fileinputformat.input.dir.recursive
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.min.split.size.per.rack is deprecated. Instead, use mapreduce.input.fileinputformat.split.minsize.per.rack
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.max.split.size is deprecated. Instead, use mapreduce.input.fileinputformat.split.maxsize
+      18/07/29 17:36:04 INFO Configuration.deprecation: mapred.committer.job.setup.cleanup.needed is deprecated. Instead, use mapreduce.job.committer.setup.cleanup.needed
 
-
+      Logging initialized using configuration in jar:file:/softWare/apache-hive-0.13.0-bin/lib/hive-common-0.13.0.jar!/hive-log4j.properties
 
 
