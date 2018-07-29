@@ -5,3 +5,7 @@
 * [获得MyQSL](https://github.com/sunnyandgood/BigData/tree/master/Hive/mysql安装包)
 
 * 上传
+
+### 安装MySQL
+
+* 
