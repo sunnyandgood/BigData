@@ -36,4 +36,21 @@
          INSERT INTO `money` VALUES ('7', '800', '0', 'lisi@163,com');
          INSERT INTO `money` VALUES ('8', '500000', '0', 'maqi');
  
- 
+### 二、在hive中创建两张表
+
+* account表
+
+       hive> create table account (account_id string,account_name string,account_vip int) 
+                row format delimited fields terminated by '\t';      
+       OK
+       Time taken: 0.17 seconds
+
+* money表
+
+       hive> create table money (m_id string,m_income double,m_paid double,account_name string) 
+                            row format delimited fields terminated by '\t';
+       OK
+       Time taken: 0.138 seconds
+
+
+
