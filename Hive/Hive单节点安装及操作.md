@@ -32,7 +32,11 @@
       default
       Time taken: 0.042 seconds, Fetched: 1 row(s)
 
+* use default(数据库名)
 
+      hive> use default;
+      OK
+      Time taken: 0.027 seconds
 
 
 
