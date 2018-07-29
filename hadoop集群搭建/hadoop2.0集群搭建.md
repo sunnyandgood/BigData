@@ -283,7 +283,8 @@
 	
 		#在hadoop01上执行命令:
 		hdfs namenode -format
-		#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/hadoop/hadoop-2.2.0/tmp，然后将/hadoop/hadoop-2.2.0/tmp拷贝到hadoop02的/hadoop/hadoop-2.2.0/下。
+		#格式化后会在根据core-site.xml中的hadoop.tmp.dir配置生成个文件，这里我配置的是/hadoop/hadoop-2.2.0/tmp，
+						然后将/hadoop/hadoop-2.2.0/tmp拷贝到hadoop02的/hadoop/hadoop-2.2.0/下。
 		scp -r tmp/ root@hadoop02:/mnt/softWare/hadoop-2.2.0/
 		
 * 4、格式化ZK(在hadoop01上执行即可)
