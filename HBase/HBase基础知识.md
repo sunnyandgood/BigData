@@ -78,6 +78,7 @@
 
     * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-表，接着访问.META.表，最后才能找到用户数据的位置去访问
 
+    <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/table.png"/></div>
 
 ### 四、Region Server
 
