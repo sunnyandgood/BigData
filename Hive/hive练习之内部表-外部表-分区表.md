@@ -140,9 +140,48 @@
             OK
             Time taken: 0.134 seconds
      
+     * 上传文件到'hadoop03:/'目录下
      
+            vim book.txt
+            1       zhaohuanwansui
+            2       douluodalu
+            3       doupochangqiong
+            4       qindi
+            5       jiushen
+            6       binhuomochu
+            7       shanlaingshishen
+            8       guangzhizi
+            9       tunshixinkong
+            10      shenmu
+            11      qlqshi
+            scp book.txt hadoop03:/
      
+     * 加载数据book表的bookType分区表中
      
+            hive> load data local inpath '/book.txt' into table book partition (bookType='wangluowenxue');
+            Copying data from file:/book.txt
+            Copying file: file:/book.txt
+            Loading data to table default.book partition (booktype=wangluowenxue)
+            Partition default.book{booktype=wangluowenxue} stats: [numFiles=1, numRows=0, totalSize=148, rawDataSize=0]
+            OK
+            Time taken: 0.702 seconds
+     
+     * 查看数据
+     
+            hive> select * from book;
+            OK
+            1	zhaohuanwansui	wangluowenxue
+            2	douluodalu	wangluowenxue
+            3	doupochangqiong	wangluowenxue
+            4	qindi	wangluowenxue
+            5	jiushen	wangluowenxue
+            6	binhuomochu	wangluowenxue
+            7	shanlaingshishen	wangluowenxue
+            8	guangzhizi	wangluowenxue
+            9	tunshixinkong	wangluowenxue
+            10	shenmu	wangluowenxue
+            11	qlqshi	wangluowenxue
+            Time taken: 0.114 seconds, Fetched: 11 row(s)
      
      
      
