@@ -62,7 +62,32 @@
       OK
       Time taken: 0.32 seconds
 
+* select count(*) from students
 
+      hive> select count(*) from students;
+      Total jobs = 1
+      Launching Job 1 out of 1
+      Number of reduce tasks determined at compile time: 1
+      In order to change the average load for a reducer (in bytes):
+        set hive.exec.reducers.bytes.per.reducer=<number>
+      In order to limit the maximum number of reducers:
+        set hive.exec.reducers.max=<number>
+      In order to set a constant number of reducers:
+        set mapreduce.job.reduces=<number>
+      Starting Job = job_1532882569615_0001, Tracking URL = http://hadoop03:8088/proxy/application_1532882569615_0001/
+      Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532882569615_0001
+      Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+      2018-07-29 15:36:29,344 Stage-1 map = 0%,  reduce = 0%
+      2018-07-29 15:36:52,819 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 5.01 sec
+      2018-07-29 15:37:11,736 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 6.99 sec
+      MapReduce Total cumulative CPU time: 6 seconds 990 msec
+      Ended Job = job_1532882569615_0001
+      MapReduce Jobs Launched: 
+      Job 0: Map: 1  Reduce: 1   Cumulative CPU: 6.99 sec   HDFS Read: 251 HDFS Write: 2 SUCCESS
+      Total MapReduce CPU Time Spent: 6 seconds 990 msec
+      OK
+      0
+      Time taken: 70.546 seconds, Fetched: 1 row(s)
 
 
 
