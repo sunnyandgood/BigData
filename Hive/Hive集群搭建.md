@@ -19,8 +19,11 @@
            cd /etc/
            export HIVE_HOME=/softWare/apache-hive-0.13.0-bin
            export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin
+           
+* mysql授权
 
-
+      GRANT ALL PRIVILEGES ON hive.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+      FLUSH PRIVILEGES;
 
 
 
