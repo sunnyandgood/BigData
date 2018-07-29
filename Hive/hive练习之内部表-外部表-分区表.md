@@ -131,7 +131,7 @@
       
 ### 三、分区表（普通表和分区表区别：有大量数据增加的需要建分区表）
 
-* 1、内部表之分区表
+* 1、内部表之分区表（load加载）
 
      * 创建一个book表，以bookType分区
      
@@ -183,11 +183,46 @@
             11	qlqshi	wangluowenxue
             Time taken: 0.114 seconds, Fetched: 11 row(s)
      
+     * 手动创建booktype=jiaoyu目录
      
+            hdfs dfs -mkdir /user/hive/warehouse/book/booktype=jiaoyu
      
+     * 上传数据到/user/hive/warehouse/book/booktype=jiaoyu目录下
+      
+            vim book.jy
+            1       yuwen
+            2       shuxue
+            3       yingyu
+            4       shehui
+            5       jisuanji
+            6       makeshi
+            7       shenwu
+            hdfs dfs -put /book.jy /user/hive/warehouse/book/booktype=jiaoyu/
      
+* 2、内部表之分区表（手动创建分区）
+  
+     * 创建heros1表
      
+            hive> create table heros1 (id bigint,name string,age int,height double) 
+                                          row format delimited fields terminated by '\t';                               
+            OK
+            Time taken: 0.07 seconds
      
+     * 在heros表中创建hero目录，并上传数据
+     
+            vim heros.txt            
+            1       gailun  56      180.6
+            2       timo    34      120.3
+            3       taitan  89      200.5
+
+            hdfs dfs -mkdir /user/hive/warehouse/heros1/hero/
+            hdfs dfs -put /heros.txt /user/hive/warehouse/heros1/hero/
+     
+     * 查看数据
+     
+            hive> select * from heros1;
+            OK
+            Time taken: 0.079 seconds
      
      
 
