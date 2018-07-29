@@ -19,5 +19,14 @@
 
       [root@hadoop03 /]# hdfs dfs -put /heros.txt /heros.avi /user/hive/warehouse/heros/
 
+* 查看
 
+      hive> select * from heros;           
+      OK
+      4	jiqi	900	170.9
+      5	dachongzi	200	300.8
+      1	gailun	56	180.6
+      2	timo	34	120.3
+      3	taitan	89	200.5
+      Time taken: 0.135 seconds, Fetched: 5 row(s)
 
