@@ -1,6 +1,7 @@
 # hive练习之内部表-外部表-分区表
 
 >内部表和外部表的区别在于：内部表删除时连数据也删除，外部表仅删除表不删除数据。
+>普通表和分区表区别：有大量数据增加的需要建分区表。
 
 ### 一、内部表
 
@@ -100,7 +101,8 @@
         set hive.exec.reducers.max=<number>
       In order to set a constant number of reducers:
         set mapreduce.job.reduces=<number>
-      Starting Job = job_1532882569615_0003, Tracking URL = http://hadoop03:8088/proxy/application_1532882569615_0003/
+      Starting Job = job_1532882569615_0003, Tracking URL = 
+                              http://hadoop03:8088/proxy/application_1532882569615_0003/
       Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532882569615_0003
       Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
       2018-07-29 19:25:28,595 Stage-1 map = 0%,  reduce = 0%
@@ -126,9 +128,28 @@
       OK
       Time taken: 0.186 seconds
       
-### 三、分区表
+### 三、分区表（普通表和分区表区别：有大量数据增加的需要建分区表）
 
+* 1、内部表之分区表
 
+     * 创建一个book表，以bookType分区
+     
+            hive> create table book (id bigint,name string) partitioned by (bookType string) 
+                                                row format delimited fields terminated by '\t';
+            OK
+            Time taken: 0.134 seconds
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
 
 
 
