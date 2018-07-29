@@ -49,8 +49,12 @@
       timo	120.3	34
       Time taken: 83.914 seconds, Fetched: 5 row(s)
 
+* 统计heros表中单词数量
 
-### 二、外部表
+      cd /softWare/hadoop-2.2.0/share/hadoop/mapreduce
+      hadoop jar hadoop-mapreduce-examples-2.2.0.jar wordcount /user/hive/warehouse/heros /heroswcout
+
+### 二、外部表(在/user/hive/warehouse目录下不显示，只知道其路径)
 
 * 建一个heros2表指向'/sqoop/td2'
 
