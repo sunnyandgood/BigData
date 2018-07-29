@@ -166,11 +166,11 @@
 
 		>describe 'users'
 
-* 创建表
+* 4、创建表
 
 		>create 'users_tmp','user_id','address','info'
 
-* 删除表
+* 5、删除表
 
 		>disable 'users_tmp'
 		>drop 'users_tmp'
@@ -185,6 +185,78 @@
 		>exists 'users'
 		>is_enabled 'users'
 		>is_disabled 'users
+
+### 九、HBASE Shell的DML操作（数据操作语言）
+
+* 1、添加记录
+
+		put 'users','xiaoming','info:age','24';
+		put 'users','xiaoming','info:birthday','1987-06-17';
+		put 'users','xiaoming','info:company','alibaba';
+		put 'users','xiaoming','address:contry','china';
+		put 'users','xiaoming','address:province','zhejiang';
+		put 'users','xiaoming','address:city','hangzhou';
+		put 'users','zhangyifei','info:birthday','1987-4-17';
+		put 'users','zhangyifei','info:favorite','movie';
+		put 'users','zhangyifei','info:company','alibaba';
+		put 'users','zhangyifei','address:contry','china';
+		put 'users','zhangyifei','address:province','guangdong';
+		put 'users','zhangyifei','address:city','jieyang';
+		put 'users','zhangyifei','address:town','xianqiao';
+
+
+* 2、获取一条记录
+
+	* 1.取得一个id的所有数据
+
+			>get 'users','xiaoming'
+
+	* 2.获取一个id，一个列族的所有数据
+	
+			>get 'users','xiaoming','info'
+
+	* 3.获取一个id，一个列族中一个列的所有数据
+
+			get 'users','xiaoming','info:age'
+
+* 3、更新记录
+
+		>put 'users','xiaoming','info:age' ,'29'
+		>get 'users','xiaoming','info:age'
+		>put 'users','xiaoming','info:age' ,'30'
+		>get 'users','xiaoming','info:age'
+
+* 4、获取单元格数据的版本数据
+
+		>get 'users','xiaoming',{COLUMN=>'info:age',VERSIONS=>1}
+		>get 'users','xiaoming',{COLUMN=>'info:age',VERSIONS=>2}
+		>get 'users','xiaoming',{COLUMN=>'info:age',VERSIONS=>3}
+
+* 5、获取单元格数据的某个版本数据
+
+		〉get 'users','xiaoming',{COLUMN=>'info:age',TIMESTAMP=>1364874937056}
+
+* 6、全表扫描
+
+		>scan 'users'
+
+* 7、删除xiaoming值的'info:age'字段
+
+		>delete 'users','xiaoming','info:age'
+		>get 'users','xiaoming'
+
+* 8、删除整行
+
+		>deleteall 'users','xiaoming'
+
+* 9、统计表的行数
+
+		>count 'users'
+
+* 10、清空表
+
+		>truncate 'users'
+
 
 
 
