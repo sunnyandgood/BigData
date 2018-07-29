@@ -145,5 +145,5 @@
         'transient_lastDdlTime'='1532911433')
       Time taken: 0.211 seconds, Fetched: 15 row(s)
 
-* 
+
       
