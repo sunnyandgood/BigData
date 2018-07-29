@@ -1,4 +1,4 @@
-# Hive集群搭建
+# Hive集群搭建及操作
 
 ### 一、上传
 
@@ -107,3 +107,41 @@
       Logging initialized using configuration in jar:file:/softWare/apache-hive-0.13.0-bin/lib/hive-common-0.13.0.jar!/hive-log4j.properties
       hive> 
 
+### 四、使用hive
+
+* 建表
+
+      hive> create table heros (id bigint,name string,age int,height double) row format delimited fields terminated by '\t';
+      OK
+      Time taken: 0.992 seconds
+      
+* 查看有哪些表
+
+      hive> show tables;
+      OK
+      heros
+      Time taken: 0.117 seconds, Fetched: 1 row(s)
+
+* 查看建表信息
+
+      hive> show create table heros;
+      OK
+      CREATE  TABLE `heros`(
+        `id` bigint, 
+        `name` string, 
+        `age` int, 
+        `height` double)
+      ROW FORMAT DELIMITED 
+        FIELDS TERMINATED BY '\t' 
+      STORED AS INPUTFORMAT 
+        'org.apache.hadoop.mapred.TextInputFormat' 
+      OUTPUTFORMAT 
+        'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+      LOCATION
+        'hdfs://ns1/user/hive/warehouse/heros'
+      TBLPROPERTIES (
+        'transient_lastDdlTime'='1532911433')
+      Time taken: 0.211 seconds, Fetched: 15 row(s)
+
+* 
+      
