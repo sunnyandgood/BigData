@@ -107,6 +107,11 @@
       970
       Time taken: 43.236 seconds, Fetched: 1 row(s)
 
+* 统计heros表中单词数量
+
+      cd /softWare/hadoop-2.2.0/share/hadoop/mapreduce
+      hadoop jar hadoop-mapreduce-examples-2.2.0.jar wordcount /sqoop/td2 /sqooptd2wcout
+
 ### 三、分区表
 
 
