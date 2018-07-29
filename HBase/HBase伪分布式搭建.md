@@ -23,3 +23,37 @@
             export PATH=$JAVA_HOME/bin:$PATH:$HADOOP_HOME/bin:$HBASE_HOME/bin
             保存退出
             #source /etc/profile
+            
+
+     * 修改$HBASE_HOME/conf/hbase-env.sh文件 
+     
+            export JAVA_HOME=/usr/local/jdk
+            export HBASE_MANAGES_ZK=true
+            保存后退出
+
+     * 修改$HBASE_HOME/conf/hbase-site.xml
+     
+            <property>
+              <name>hbase.rootdir</name>
+              <value>hdfs://hadoop0:9000/hbase</value>
+            </property>
+            <property>
+              <name>hbase.cluster.distributed</name>
+              <value>true</value>
+            </property>
+            <property>
+              <name>hbase.zookeeper.quorum</name>
+              <value>hadoop0</value>
+            </property>
+            <property>
+              <name>dfs.replication</name>
+              <value>1</value>
+            </property>
+      
+     * 注意：$HBASE_HOME/conf/hbase-site.xml的hbase.rootdir的主机和端口号与$HADOOP_HOME/conf/core-site.xml的fs.default.name的主机和端口号一致
+
+     * 修改$HBASE_HOME/conf/regionservers
+     
+           在$HBASE_HOME/conf/regionservers文件增加
+           localhost
+           保存退出
