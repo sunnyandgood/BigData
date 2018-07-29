@@ -103,5 +103,11 @@
       Table default.students stats: [numFiles=1, numRows=0, totalSize=38, rawDataSize=0]
       OK
       Time taken: 1.066 seconds
-
+      hive> select * from students;
+      OK
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      NULL	NULL
+      Time taken: 0.111 seconds, Fetched: 4 row(s)
 
