@@ -68,15 +68,15 @@
 
 * 3、HBase的逻辑梳理
 
-   * HBase中有两张特殊的Table，-ROOT-和.META.
+   * HBase中有两张特殊的Table，-ROOT-(hbase:namespace)和.META.(hbase:meta)
 	
-     * -ROOT- ：记录了.META.表的Region信息，-ROOT-只有一个region
+     * -ROOT-(hbase:namespace) ：记录了.META.(hbase:meta)表的Region信息，-ROOT-(hbase:namespace)只有一个region
 		
-     * .META. ：记录了用户创建的表的Region信息，.META.可以有多个regoin
+     * .META.(hbase:meta) ：记录了用户创建的表的Region信息，.META.(hbase:meta)可以有多个regoin
 
-    * Zookeeper中记录了-ROOT-表的location
+    * Zookeeper中记录了-ROOT-(hbase:namespace)表的location
 
-    * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-表，接着访问.META.表，最后才能找到用户数据的位置去访问
+    * Client访问用户数据之前需要首先访问zookeeper，然后访问-ROOT-(hbase:namespace)表，接着访问.META.(hbase:meta)表，最后才能找到用户数据的位置去访问
 
     <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/table.png"/></div>
 
@@ -350,11 +350,163 @@
 		}
 
 
+### 十一、练习——详单入库
+
+* 1、题目要求(一)
+
+	* HBASE表定义为：
+
+			>create 'wlan_log', 'cf'
+
+	* 源文件数据增加一个字段rowkey
+
+			RowKey设计：
+			msisdn:日期时间串（yyyyMMddHHmmss）
+
+	<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/详单入库.png"></div>
+
+* 2、解题方法
+
+	 * 1>HBASE结合MapReduce批量导入
+	
+		static class BatchImportMapper extends Mapper<LongWritable, Text, LongWritable, Text>{
+			SimpleDateFormat dateformat1=new SimpleDateFormat("yyyyMMddHHmmss");
+			Text v2 = new Text();
+
+			protected void map(LongWritable key, Text value, Context context) throws 
+			java.io.IOException ,InterruptedException {
+				final String[] splited = value.toString().split("\t");
+				try {
+					final Date date = new Date(Long.parseLong(splited[0].trim()));
+					final String dateFormat = dateformat1.format(date);
+					String rowKey = splited[1]+":"+dateFormat;
+					v2.set(rowKey+"\t"+value.toString());
+					context.write(key, v2);
+				} catch (NumberFormatException e) {
+					final Counter counter = context.getCounter("BatchImport", "ErrorFormat");
+					counter.increment(1L);
+					System.out.println("出错了"+splited[0]+" "+e.getMessage());
+				}
+			};
+		}
 
 
+		static class BatchImportReducer extends TableReducer<LongWritable, Text, NullWritable>{
+			protected void reduce(LongWritable key, java.lang.Iterable<Text> values, Context context) 
+			throws java.io.IOException ,InterruptedException {
+				for (Text text : values) {
+					final String[] splited = text.toString().split("\t");
+
+					final Put put = new Put(Bytes.toBytes(splited[0]));
+					put.add(Bytes.toBytes("cf"), Bytes.toBytes("date"), Bytes.toBytes(splited[1]));
+					//省略其他字段，调用put.add(....)即可
+					context.write(NullWritable.get(), put);
+				}
+			};
+		}
 
 
+		public static void main(String[] args) throws Exception {
+			final Configuration configuration = new Configuration();
+			//设置zookeeper
+			configuration.set("hbase.zookeeper.quorum", "hadoop0");
+			//设置hbase表名称
+			configuration.set(TableOutputFormat.OUTPUT_TABLE, "wlan_log");
+			//将该值改大，防止hbase超时退出
+			configuration.set("dfs.socket.timeout", "180000");
 
+			final Job job = new Job(configuration, "HBaseBatchImport");
+
+			job.setMapperClass(BatchImportMapper.class);
+			job.setReducerClass(BatchImportReducer.class);
+			//设置map的输出，不设置reduce的输出类型
+			job.setMapOutputKeyClass(LongWritable.class);
+			job.setMapOutputValueClass(Text.class);
+
+			job.setInputFormatClass(TextInputFormat.class);
+			//不再设置输出路径，而是设置输出格式类型
+			job.setOutputFormatClass(TableOutputFormat.class);
+
+			FileInputFormat.setInputPaths(job, "hdfs://hadoop0:9000/input");
+
+			job.waitForCompletion(true);
+		}
+
+
+* 3、查询
+
+		（1）按RowKey查询
+		（2）按手机号码查询
+		（3）按手机号码的区域查询
+
+	* 查询手机13450456688的所有上网记录
+
+			查询手机13450456688的所有上网记录
+			public static void scan(String tableName) throws IOException{
+				HTable table = new HTable(getConfiguration(), tableName);
+				Scan scan = new Scan();
+				scan.setStartRow(Bytes.toBytes("13450456688:/"));
+				scan.setStopRow(Bytes.toBytes("13450456688::"));
+				ResultScanner scanner = table.getScanner(scan);
+				int i=0;
+				for (Result result : scanner) {
+					System.out.println("Scan: "+i+++" "+result);
+				}
+			}
+
+	<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/查询记录.png"></div>
+	
+	* 查询134号段的所有上网记录
+
+			查询134号段的所有上网记录
+			public static void scanPeriod(String tableName) throws IOException{
+					HTable table = new HTable(getConfiguration(), tableName);
+					Scan scan = new Scan();
+					scan.setStartRow(Bytes.toBytes("134/"));
+					scan.setStopRow( Bytes.toBytes("134:"));
+					scan.setMaxVersions(1);
+					ResultScanner scanner = table.getScanner(scan);
+					int i=0;
+					for (Result result : scanner) {
+						System.out.println("Scan: "+i+++" "+result);
+					}
+			}
+
+	
+	<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/查询记录2.png"></div>
+	
+	
+### 十二、思考
+
+* HBASE是什么数据库，与普通RDBMS有什么区别
+
+* HBASE的结构
+
+* HBASE的常用命令
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/ASCII码表.png"></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 
