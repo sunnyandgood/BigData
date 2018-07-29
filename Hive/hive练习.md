@@ -52,10 +52,32 @@
 
 ### 二、外部表
 
+* 建一个heros2表指向'/sqoop/td2'
 
+      hive> create external table heros2 (id string,name string,weizhi string,age int) 
+                row format delimited fields terminated by '\t' location '/sqoop/td2';
+      OK
+      Time taken: 0.242 seconds
+      hive> select * from heros2;
+      OK
+      Time taken: 0.084 seconds
 
+* 上传文件到'/sqoop/td2'目录下
 
+      [root@hadoop03 /]# hdfs dfs -put /heros.txt /heros.avi /sqoop/td2/
 
+* 查看
+
+      hive> select * from heros2;
+      OK
+      4	jiqi	900	170
+      5	dachongzi	200	300
+      1	gailun	56	180
+      2	timo	34	120
+      3	taitan	89	200
+      Time taken: 0.092 seconds, Fetched: 5 row(s)
+
+### 三、分区表
 
 
 
