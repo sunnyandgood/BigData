@@ -57,3 +57,26 @@
            在$HBASE_HOME/conf/regionservers文件增加
            localhost
            保存退出
+
+### 三、使用
+
+* 先启动Hadoop，后启动HBASE
+
+      #cd $HBASE_HOME/bin
+      #./start-hbase.sh
+      查看hdfs目录，发现在根目录下多了一个hbase的目录
+      #hadoop fs -ls /
+
+
+* jps
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/jps.png"/></div>
+
+* Web Console(http://hadoop0:60010/master-status)
+
+<div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/HBase/img/60010.png"/></div>
+
+* 停止
+
+#cd $HBASE_HOME/bin
+#./stop-hbase.sh
