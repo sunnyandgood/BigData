@@ -241,7 +241,7 @@
 				ssh-coyp-id hadoop06
 				
 				#配置hadoop03到hadoop04、hadoop05、hadoop06的免密码登陆
-				#在itcast03上生产一对钥匙
+				#在hadoop03上生产一对钥匙
 				ssh-keygen -t rsa
 				
 				#将公钥拷贝到其他节点
