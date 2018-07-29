@@ -53,8 +53,331 @@
 
 * Hive 的数据存储在 HDFS 中，大部分的查询由 MapReduce 完成（包含 * 的查询，比如 select * from table 不会生成 MapRedcue 任务）
 
+### 四、Hive的运行模式
+
+* Hive的运行模式即任务的执行环境
+
+* 分为本地与集群两种
+
+   * 我们可以通过mapred.job.tracker 来指明
+
+         设置方式：
+         hive > SET mapred.job.tracker=local
+
+### 五、Hive的启动方式
+
+* 1、hive 命令行模式，直接输入#/hive/bin/hive的执行程序，或者输入 #hive --service cli 
+
+* 2、 hive web界面的 (端口号9999) 启动方式
+
+      #hive --service hwi &
+      用于通过浏览器来访问hive
+      http://hadoop0:9999/hwi/
+
+* 3、 hive 远程服务 (端口号10000) 启动方式
+
+      #hive --service hiveserver &
+
+### 六、Hive与传统数据库
+
+<table>
+   <tr>
+      <td>查询语言</td>
+      <td>HiveQL</td>
+      <td>SQL</td>
+   </tr>
+   <tr>
+      <td>数据存储位置</td>
+      <td>HDFS</td>
+      <td>Raw Device or 本地FS</td>
+   </tr>
+   <tr>
+      <td>数据格式</td>
+      <td>用户定义</td>
+      <td>系统决定</td>
+   </tr>
+   <tr>
+      <td>数据更新</td>
+      <td>不支持</td>
+      <td>支持</td>
+   </tr>
+   <tr>
+      <td>索引</td>
+      <td>新版本有，但弱</td>
+      <td>有</td>
+   </tr>
+   <tr>
+      <td>执行</td>
+      <td>MapReduce</td>
+      <td>Executor</td>
+   </tr>
+   <tr>
+      <td>执行延迟</td>
+      <td>高</td>
+      <td>低</td>
+   </tr>
+   <tr>
+      <td>可扩展性</td>
+      <td>高</td>
+      <td>低</td>
+   </tr>
+   <tr>
+      <td>数据规模</td>
+      <td>大</td>
+      <td>小</td>
+   </tr>
+</table>
+
+### 七、Hive的数据类型
+
+* 基本数据类型
+
+      tinyint/smallint/int/bigint
+      float/double
+      boolean
+      string
+
+* 复杂数据类型
+
+      Array/Map/Struct
+      没有date/datetime
+
+###八、Hive的数据存储
+
+* Hive的数据存储基于Hadoop HDFS
+
+* Hive没有专门的数据存储格式
+
+* 存储结构主要包括：数据库、文件、表、视图
+
+* Hive默认可以直接加载文本文件（TextFile），还支持sequence file 、RC file
+
+* 创建表时，指定Hive数据的列分隔符与行分隔符，Hive即可解析数据
+
+### 九、Hive的数据模型-数据库
+
+* 类似传统数据库的DataBase
+
+* 默认数据库"default"
+
+   * 使用#hive命令后，不使用hive>use <数据库名>，系统默认的数据库。可以显式使用hive> use default;
+
+* 创建一个新库
+
+      hive > create database test_dw;
+
+### 十、Hive的数据模型-表
+
+* Table 内部表
+
+* Partition  分区表
+
+* External Table 外部表
+
+* Bucket  Table 桶表 
+
+### 十一、Hive的数据模型-内部表
+
+* 与数据库中的 Table 在概念上是类似
+
+* 每一个 Table 在 Hive 中都有一个相应的目录存储数据。例如，一个表 test，它在 HDFS 中的路径为：/ warehouse/test。 warehouse是在 hive-site.xml 中由 ${hive.metastore.warehouse.dir} 指定的数据仓库的目录
+
+* 所有的 Table 数据（不包括 External Table）都保存在这个目录中。
+
+* 删除表时，元数据与数据都会被删除
+
+* 内部表的使用
+
+   * 创建数据文件inner_table.dat
+
+   * 创建表
+   
+         hive>create table inner_table (key string);
+
+   * 加载数据
+   
+         hive>load data local inpath '/root/inner_table.dat' into table inner_table;
+
+   * 查看数据
+   
+         select * from inner_table
+         select count(*) from inner_table
+
+   * 删除表 
+   
+         drop table inner_table
 
 
+### 十二、Hive的数据模型-分区表
+
+* Partition 对应于数据库的 Partition 列的密集索引
+
+* 在 Hive 中，表中的一个 Partition 对应于表下的一个目录，所有的 Partition 的数据都存储在对应的目录中
+
+      例如：test表中包含 date 和 city 两个 Partition，
+      则对应于date=20180729, city = bj 的 HDFS 子目录为：
+      /warehouse/test/date=20130201/city=bj
+      对应于date=20180729, city=sh 的HDFS 子目录为；
+      /warehouse/test/date=20180729/city=sh
+
+* 分区表
+
+      CREATE TABLE tmp_table #表名
+      (
+      title   string, # 字段名称 字段类型
+      minimum_bid     double,
+      quantity        bigint,
+      have_invoice    bigint
+      )COMMENT '注释：XXX' #表注释
+       PARTITIONED BY(pt STRING) #分区表字段（如果你文件非常之大的话，采用分区表可以快过滤出按分区字段划分的数据）
+       ROW FORMAT DELIMITED 
+         FIELDS TERMINATED BY '\001'   # 字段是用什么分割开的
+      STORED AS SEQUENCEFILE; #用哪种方式存储数据，SEQUENCEFILE是hadoop自带的文件压缩格式
+
+* 一些相关命令
+
+      SHOW TABLES; # 查看所有的表
+      SHOW TABLES '*TMP*'; #支持模糊查询
+      SHOW PARTITIONS TMP_TABLE; #查看表有哪些分区
+      DESCRIBE TMP_TABLE; #查看表结构
+
+* 分区表的使用
+
+   * 创建数据文件partition_table.dat
+
+   * 创建表
+   
+         create table partition_table(rectime string,msisdn string) partitioned by(daytime string,city string)
+         row format delimited fields terminated by '\t' stored as TEXTFILE;
+
+   * 加载数据到分区
+   
+         load data local inpath '/home/partition_table.dat' into table partition_table partition
+         (daytime='2013-02-01',city='bj');
+
+   * 查看数据
+   
+         select * from partition_table
+         select count(*) from partition_table
+
+   * 删除表 
+   
+         drop table partition_table
+
+   * 通过load data 加载数据
+   
+         alter table partition_table add partition (daytime='2018-07-29',city='bj');
+
+   * 元数据，数据文件删除，但目录daytime=2013-02-04还在
+   
+         alter table partition_table drop partition (daytime='2018-07-29',city='bj')
+
+### 十三、Hive的数据模型—桶表
+
+* 桶表是对数据进行哈希取值，然后放到不同文件中存储。
+
+* 创建表
+	
+         create table bucket_table(id string) clustered by(id) into 4 buckets;		
+
+* 加载数据
+	
+         set hive.enforce.bucketing = true;
+         insert into table bucket_table select name from stu;	
+         insert overwrite table bucket_table select name from stu;
+
+* 数据加载到桶表时，会对字段取hash值，然后与桶的数量取模。把数据放到对应的文件中。
+
+
+* 抽样查询
+	
+         select * from bucket_table tablesample(bucket 1 out of 4 on id);
+
+### 十四、Hive的数据模型-外部表
+
+* 指向已经在 HDFS 中存在的数据，可以创建 Partition
+
+* 它和 内部表 在元数据的组织上是相同的，而实际数据的存储则有较大的差异
+
+* 内部表 的创建过程和数据加载过程（这两个过程可以在同一个语句中完成），在加载数据的过程中，实际数据会被移动到数据仓库目录中；之后对数据对访问将会直接在数据仓库目录中完成。删除表时，表中的数据和元数据将会被同时删除
+
+* 外部表 只有一个过程，加载数据和创建表同时完成，并不会移动到数据仓库目录中，只是与外部数据建立一个链接。当删除一个 外部表 时，仅删除该链接
+
+* 外部表
+
+         CREATE EXTERNAL TABLE page_view
+         ( viewTime INT, 
+           userid BIGINT,
+           page_url STRING, 	
+          referrer_url STRING, 							
+           ip STRING COMMENT 'IP Address of the User',
+           country STRING COMMENT 'country of origination‘
+         )
+             COMMENT 'This is the staging page view table'
+             ROW FORMAT DELIMITED FIELDS TERMINATED BY '44' LINES 	TERMINATED BY '12'
+             STORED AS TEXTFILE
+             LOCATION 'hdfs://centos:9000/user/data/staging/page_view';
+
+* 外部表的使用
+
+   * 创建数据文件external_table.dat
+
+   * 创建表
+   
+            hive>create external table external_table1 (key string) ROW FORMAT DELIMITED 
+                                   FIELDS TERMINATED BY '\t' location '/home/external';
+            在HDFS创建目录/home/external
+            #hadoop fs -put /home/external_table.dat /home/external
+
+   * 加载数据
+
+            LOAD DATA INPATH '/home/external_table1.dat' INTO TABLE external_table1;
+
+   * 查看数据
+
+            select * from external_table
+            select count(*) from external_table
+
+   * 删除表 
+
+            drop table external_table
+
+### 十五、视图操作
+
+* 视图的创建
+
+      CREATE VIEW v1 AS select * from t1;
+
+### 十六、表的操作
+
+* 表的修改
+
+      alter table target_tab add columns (cols,string)
+
+* 表的删除
+
+      drop table
+
+### 十七、导入数据
+
+* 当数据被加载至表中时，不会对数据进行任何转换。Load 操作只是将数据复制/移动至 Hive 表对应的位置。
+
+      LOAD DATA [LOCAL] INPATH 'filepath' [OVERWRITE]   
+            INTO TABLE tablename    
+            [PARTITION (partcol1=val1, partcol2=val2 ...)]
+
+* 把一个Hive表导入到另一个已建Hive表
+
+      INSERT OVERWRITE TABLE tablename [PARTITION (partcol1=val1, 
+            partcol2=val2 ...)] select_statement FROM from_statement
+
+* CTAS
+
+      CREATE [EXTERNAL] TABLE [IF NOT EXISTS] table_name 
+         (col_name data_type, ...)	…
+         AS SELECT …
+
+* 例：create table new_external_test as  select * from external_table1;
 
 
 
