@@ -54,6 +54,12 @@
       cd /softWare/hadoop-2.2.0/share/hadoop/mapreduce
       hadoop jar hadoop-mapreduce-examples-2.2.0.jar wordcount /user/hive/warehouse/heros /heroswcout
 
+* 删除heros表(表连数据全删除了)
+
+      hive> drop table heros; 
+      OK
+      Time taken: 1.166 seconds
+
 ### 二、外部表(在/user/hive/warehouse目录下不显示，只知道其路径)
 
 * 建一个heros2表指向'/sqoop/td2'
@@ -112,6 +118,12 @@
       cd /softWare/hadoop-2.2.0/share/hadoop/mapreduce
       hadoop jar hadoop-mapreduce-examples-2.2.0.jar wordcount /sqoop/td2 /sqooptd2wcout
 
+* 删除heros2表（仅删除表，不删除数据）
+
+      hive> drop table heros2;
+      OK
+      Time taken: 0.186 seconds
+      
 ### 三、分区表
 
 
