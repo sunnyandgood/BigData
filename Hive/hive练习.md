@@ -1,6 +1,6 @@
 # hive练习
 
-### 
+### 内部表
 
 * 建一个heros表
 
@@ -30,3 +30,21 @@
       3	taitan	89	200.5
       Time taken: 0.135 seconds, Fetched: 5 row(s)
 
+      hive> select name,height,age from heros order height desc;
+      ........................
+      Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+      2018-07-29 18:40:29,391 Stage-1 map = 0%,  reduce = 0%
+      2018-07-29 18:41:16,351 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 27.53 sec
+      2018-07-29 18:41:26,049 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 29.29 sec
+      MapReduce Total cumulative CPU time: 29 seconds 290 msec
+      Ended Job = job_1532882569615_0002
+      MapReduce Jobs Launched: 
+      Job 0: Map: 1  Reduce: 1   Cumulative CPU: 29.29 sec   HDFS Read: 354 HDFS Write: 81 SUCCESS
+      Total MapReduce CPU Time Spent: 29 seconds 290 msec
+      OK
+      dachongzi	300.8	200
+      taitan	200.5	89
+      gailun	180.6	56
+      jiqi	170.9	900
+      timo	120.3	34
+      Time taken: 83.914 seconds, Fetched: 5 row(s)
