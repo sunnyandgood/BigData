@@ -52,5 +52,10 @@
        OK
        Time taken: 0.138 seconds
 
+### 三、将Windows中mysq的数据直接导入到hive当中
 
+* 将sqoop拷贝到hadoop03（运行着hive）上
 
+       [root@hadoop01 softWare]# scp -r sqoop-1.4.4.bin__hadoop-2.0.4-alpha/ hadoop03:/softWare/
+
+sqoop import --connect jdbc:mysql://192.168.2.1:3306/yan --username root --password root --table account  --hive-import --hive-overwrite --hive-table account --fields-terminated-by '\t'
