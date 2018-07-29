@@ -185,7 +185,7 @@
             11	qlqshi	wangluowenxue
             Time taken: 0.114 seconds, Fetched: 11 row(s)
 
-     -----------------------手动创建（不能用select查看）-------------------------
+     ---------------------手动创建（不能用select查看，需要alter加载）-------------------------
 
      * 手动创建booktype=jiaoyu目录
      
@@ -203,7 +203,39 @@
             7       shenwu
             hdfs dfs -put /book.jy /user/hive/warehouse/book/booktype=jiaoyu/
      
-* 2、内部表之分区表（手动创建分区不能用select查看）
+     * alter加载数据到booktype='jiaoyu'
+      
+            hive> alter table book add partition (booktype='jiaoyu') 
+                              location '/user/hive/warehouse/book/booktype=jiaoyu';
+            OK
+            Time taken: 0.166 seconds
+      
+     * 查看
+     
+            hive> select * from book;                                                                                       
+            OK
+            1	yuwen	jiaoyu
+            2	shuxue	jiaoyu
+            3	yingyu	jiaoyu
+            4	shehui	jiaoyu
+            5	jisuanji	jiaoyu
+            6	makeshi	jiaoyu
+            7	shenwu	jiaoyu
+            1	zhaohuanwansui	wangluowenxue
+            2	douluodalu	wangluowenxue
+            3	doupochangqiong	wangluowenxue
+            4	qindi	wangluowenxue
+            5	jiushen	wangluowenxue
+            6	binhuomochu	wangluowenxue
+            7	shanlaingshishen	wangluowenxue
+            8	guangzhizi	wangluowenxue
+            9	tunshixinkong	wangluowenxue
+            10	shenmu	wangluowenxue
+            11	qlqshi	wangluowenxue
+            Time taken: 0.076 seconds, Fetched: 18 row(s)
+     
+      
+* 2、不能手动分区（手动创建分区不能用select查看）
   
      * 创建heros1表
      
@@ -227,6 +259,8 @@
             hive> select * from heros1;
             OK
             Time taken: 0.079 seconds
+     
+     
      
      
 
