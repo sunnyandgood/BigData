@@ -25,7 +25,7 @@
 
 * 总结：
 
-### 二、Hive的系统架构
+### 二、Hive的系统架构(一)
 
 <div align="center"><img src="https://github.com/sunnyandgood/BigData/blob/master/Hive/img/Hive的系统架构.png"/></div>
 
@@ -37,6 +37,21 @@
 
 * Hadoop：用 HDFS 进行存储，利用 MapReduce 进行计算
 
+### 三、Hive的系统架构（二）
+
+* 用户接口主要有三个：CLI，JDBC/ODBC和 WebUI
+
+    * CLI，即Shell命令行
+
+    * JDBC/ODBC 是 Hive 的Java，与使用传统数据库JDBC的方式类似
+
+    * WebGUI是通过浏览器访问 Hive
+
+* Hive 将元数据存储在数据库中(metastore)，目前只支持 mysql、derby。Hive 中的元数据包括表的名字，表的列和分区及其属性，表的属性（是否为外部表等），表的数据所在目录等
+
+* 解释器、编译器、优化器完成 HQL 查询语句从词法分析、语法分析、编译、优化以及查询计划（plan）的生成。生成的查询计划存储在 HDFS 中，并在随后有 MapReduce 调用执行
+
+* Hive 的数据存储在 HDFS 中，大部分的查询由 MapReduce 完成（包含 * 的查询，比如 select * from table 不会生成 MapRedcue 任务）
 
 
 
