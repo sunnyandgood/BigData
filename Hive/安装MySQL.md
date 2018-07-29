@@ -180,4 +180,66 @@
 ### 三、mysql授权
 
       GRANT ALL PRIVILEGES ON hive.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
-	FLUSH PRIVILEGES;
+      FLUSH PRIVILEGES;
+* 操作
+
+		[root@hadoop05 mysql]# mysql -u root -proot
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 9
+		Server version: 5.1.73 MySQL Community Server (GPL)
+
+		Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql> use mysql;
+		Reading table information for completion of table and column names
+		You can turn off this feature to get a quicker startup with -A
+
+		Database changed
+		mysql> show tables;
+		+---------------------------+
+		| Tables_in_mysql           |
+		+---------------------------+
+		| columns_priv              |
+		| db                        |
+		| event                     |
+		| func                      |
+		| general_log               |
+		| help_category             |
+		| help_keyword              |
+		| help_relation             |
+		| help_topic                |
+		| host                      |
+		| ndb_binlog_index          |
+		| plugin                    |
+		| proc                      |
+		| procs_priv                |
+		| servers                   |
+		| slow_log                  |
+		| tables_priv               |
+		| time_zone                 |
+		| time_zone_leap_second     |
+		| time_zone_name            |
+		| time_zone_transition      |
+		| time_zone_transition_type |
+		| user                      |
+		+---------------------------+
+		23 rows in set (0.00 sec)
+
+		mysql> select * from user
+		    -> ;
+		+-----------+------+-------------------------------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+
+		| Host      | User | Password                                  | Select_priv | Insert_priv | Update_priv | Delete_priv | Create_priv | Drop_priv | Reload_priv | Shutdown_priv | Process_priv | File_priv | Grant_priv | References_priv | Index_priv | Alter_priv | Show_db_priv | Super_priv | Create_tmp_table_priv | Lock_tables_priv | Execute_priv | Repl_slave_priv | Repl_client_priv | Create_view_priv | Show_view_priv | Create_routine_priv | Alter_routine_priv | Create_user_priv | Event_priv | Trigger_priv | ssl_type | ssl_cipher | x509_issuer | x509_subject | max_questions | max_updates | max_connections | max_user_connections |
+		+-----------+------+-------------------------------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+
+		| localhost | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            |          |            |             |              |             0 |           0 |               0 |                    0 |
+		| hadoop05  | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            |          |            |             |              |             0 |           0 |               0 |                    0 |
+		| 127.0.0.1 | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            |          |            |             |              |             0 |           0 |               0 |                    0 |
+		+-----------+------+-------------------------------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+
+		3 rows in set (0.00 sec)
+
+		mysql>
