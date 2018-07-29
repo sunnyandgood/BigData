@@ -91,7 +91,7 @@
 
 * 加载本地数据到Hive（load data local inpath '/s.txt' into table students）
       
-      [root@hadoop01 /]# vim s.txt
+      [root@hadoop03 /]# vim s.txt
       xiaoming        12
       xiaoliang       13
       xiaohong        11
@@ -111,3 +111,8 @@
       NULL	NULL
       Time taken: 0.111 seconds, Fetched: 4 row(s)
 
+      [root@hadoop03 /]# vim s.txt
+      xiaoming|12
+      xiaoliang|13
+      xiaohong|11
+      
