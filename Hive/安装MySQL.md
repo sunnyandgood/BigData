@@ -115,5 +115,65 @@
 
       [root@hadoop05 mysql]#
 
+* 测试连接
 
+      [root@hadoop05 mysql]# mysql -u root -proot
+      Welcome to the MySQL monitor.  Commands end with ; or \g.
+      Your MySQL connection id is 7
+      Server version: 5.1.73 MySQL Community Server (GPL)
+
+      Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.
+
+      Oracle is a registered trademark of Oracle Corporation and/or its
+      affiliates. Other names may be trademarks of their respective
+      owners.
+
+      Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+      mysql> show databases;
+      +--------------------+
+      | Database           |
+      +--------------------+
+      | information_schema |
+      | mysql              |
+      | test               |
+      +--------------------+
+      3 rows in set (0.00 sec)
+
+      mysql> use mysql;
+      Reading table information for completion of table and column names
+      You can turn off this feature to get a quicker startup with -A
+
+      Database changed
+      mysql> show tables;
+      +---------------------------+
+      | Tables_in_mysql           |
+      +---------------------------+
+      | columns_priv              |
+      | db                        |
+      | event                     |
+      | func                      |
+      | general_log               |
+      | help_category             |
+      | help_keyword              |
+      | help_relation             |
+      | help_topic                |
+      | host                      |
+      | ndb_binlog_index          |
+      | plugin                    |
+      | proc                      |
+      | procs_priv                |
+      | servers                   |
+      | slow_log                  |
+      | tables_priv               |
+      | time_zone                 |
+      | time_zone_leap_second     |
+      | time_zone_name            |
+      | time_zone_transition      |
+      | time_zone_transition_type |
+      | user                      |
+      +---------------------------+
+      23 rows in set (0.00 sec)
+
+      mysql> 
 
