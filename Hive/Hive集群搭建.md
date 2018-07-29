@@ -51,7 +51,9 @@
               <description>password to use against metastore database</description>
             </property>
      
+     * 将数据库连接驱动拷贝到/softWare/apache-hive-0.13.0-bin/lib里
      
+     	 * [mysql-connector-5.1.8.jar](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/mysql-connector-5.1.8.jar)
      
      
 * mysql授权
