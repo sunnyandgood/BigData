@@ -212,7 +212,7 @@
       
      * 查看
      
-            hive> select * from book;                                                                                       
+            hive> select * from book;    
             OK
             1	yuwen	jiaoyu
             2	shuxue	jiaoyu
