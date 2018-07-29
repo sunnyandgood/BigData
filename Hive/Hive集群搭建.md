@@ -28,7 +28,7 @@
       GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
       FLUSH PRIVILEGES;
       
-----------------------------------------操作---------------------------------------------------
+     -------------------------------------操作---------------------------------------------------
 
       [root@hadoop05 mysql]# mysql -u root -proot
         Welcome to the MySQL monitor.  Commands end with ; or \g.
