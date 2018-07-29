@@ -38,6 +38,15 @@
       OK
       Time taken: 0.027 seconds
 
+* create table students (s_id int,s_name string)
+
+      hive> create table students (s_id int,s_name string);
+      OK
+      Time taken: 0.536 seconds
+      hive> show tables;
+      OK
+      students
+      Time taken: 0.082 seconds, Fetched: 1 row(s)
 
 
 
