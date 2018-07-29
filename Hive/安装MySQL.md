@@ -181,6 +181,9 @@
 
       GRANT ALL PRIVILEGES ON hive.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
       FLUSH PRIVILEGES;
+      
+      GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+      FLUSH PRIVILEGES;
 * 操作
 
 		[root@hadoop05 mysql]# mysql -u root -proot
@@ -241,5 +244,11 @@
 		| 127.0.0.1 | root | *81F5E21E35407D884A6CD4A731AEBFB6AF209E1B | Y           | Y           | Y           | Y           | Y           | Y         | Y           | Y             | Y            | Y         | Y          | Y               | Y          | Y          | Y            | Y          | Y                     | Y                | Y            | Y               | Y                | Y                | Y              | Y                   | Y                  | Y                | Y          | Y            |          |            |             |              |             0 |           0 |               0 |                    0 |
 		+-----------+------+-------------------------------------------+-------------+-------------+-------------+-------------+-------------+-----------+-------------+---------------+--------------+-----------+------------+-----------------+------------+------------+--------------+------------+-----------------------+------------------+--------------+-----------------+------------------+------------------+----------------+---------------------+--------------------+------------------+------------+--------------+----------+------------+-------------+--------------+---------------+-------------+-----------------+----------------------+
 		3 rows in set (0.00 sec)
+
+		mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
+		Query OK, 0 rows affected (0.00 sec)
+
+		mysql> FLUSH PRIVILEGES;
+		Query OK, 0 rows affected (0.00 sec)
 
 		mysql>
