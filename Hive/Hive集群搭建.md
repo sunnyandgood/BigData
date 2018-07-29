@@ -105,5 +105,5 @@
       18/07/29 17:36:04 INFO Configuration.deprecation: mapred.committer.job.setup.cleanup.needed is deprecated. Instead, use mapreduce.job.committer.setup.cleanup.needed
 
       Logging initialized using configuration in jar:file:/softWare/apache-hive-0.13.0-bin/lib/hive-common-0.13.0.jar!/hive-log4j.properties
-
+      hive> 
 
