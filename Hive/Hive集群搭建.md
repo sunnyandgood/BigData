@@ -14,6 +14,11 @@
       
 * 修改配置文件
 
+     * 将hive添加到环境变量中
+     
+           cd /etc/
+           export HIVE_HOME=/softWare/apache-hive-0.13.0-bin
+           export PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin:$HADOOP_HOME/bin:$HBASE_HOME/bin:$HIVE_HOME/bin
 
 
 
