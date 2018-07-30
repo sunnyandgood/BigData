@@ -88,4 +88,7 @@
         --hive-database default \
         --hive-table money
 
+* 统计每一个账户的总收入、总支出、结余，再按照结余排序
+
+
 
