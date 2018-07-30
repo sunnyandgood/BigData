@@ -8,4 +8,5 @@
 ### [Hive集群搭建及操作](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive集群搭建及操作.md)
 ### [hive练习之内部表-外部表-分区表](https://github.com/sunnyandgood/BigData/blob/master/Hive/hive练习之内部表-外部表-分区表.md)
 ### [Hive练习之MySQL](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive练习之MySQL.md)
+### [Hive之UDF](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive之UDF.md)
 ### [MySQL分区表](https://github.com/sunnyandgood/BigData/blob/master/Hive/MySQL分区表.md)
