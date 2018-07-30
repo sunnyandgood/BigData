@@ -13,9 +13,16 @@
       tar -zxvf apache-flume-1.5.0-bin.tar.gz -C /softWare/
       mv apache-flume-1.5.0-bin/ flume-1.5.0-bin
 
+* 改名
 
+      cd /softWare/flume-1.5.0-bin/conf
+      mv flume-env.sh.template flume-env.sh
 
+* 更改配置文件
 
+     * 修改flume-env.sh文件
+     
+     
 
 
 
