@@ -58,7 +58,7 @@
 
        [root@hadoop01 softWare]# scp -r sqoop-1.4.4.bin__hadoop-2.0.4-alpha/ hadoop03:/softWare/
 
-* 将mysq当中的数据直接导入到hive当中
+* 将mysq当中的数据直接导入到hive当中(切记关闭物理机的防火墙)
 
   * account表
   
