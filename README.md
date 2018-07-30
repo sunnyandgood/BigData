@@ -70,8 +70,8 @@
 * [MySQL分区表](https://github.com/sunnyandgood/BigData/blob/master/Hive/MySQL分区表.md)
 
 ### [flume（日志收集系统）](https://github.com/sunnyandgood/BigData/tree/master/flume)
-[flume简介](https://github.com/sunnyandgood/BigData/blob/master/flume/flume简介.md)
-[flume环境搭建](https://github.com/sunnyandgood/BigData/blob/master/flume/flume环境搭建.md)
+* [flume简介](https://github.com/sunnyandgood/BigData/blob/master/flume/flume简介.md)
+* [flume环境搭建](https://github.com/sunnyandgood/BigData/blob/master/flume/flume环境搭建.md)
 
 
 
