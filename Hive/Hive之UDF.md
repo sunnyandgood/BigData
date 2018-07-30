@@ -28,11 +28,13 @@
     * d）查询HQL语句：
 
             select *,getType(booktype) from book;
+            select id,name,getType(booktype) from book;
             
 
     * e）销毁临时函数：
     
-            hive> DROP TEMPORARY FUNCTION add_example;
+            hive> DROP TEMPORARY FUNCTION getType;
+            
             
 * 注：UDF只能实现一进一出的操作，如果需要实现多进一出，则需要实现UDAF
 
@@ -128,44 +130,79 @@
 
 * 6、查询HQL语句：
 
-      hive> select *,getType(booktype) from book;
-      Total jobs = 1
-      Launching Job 1 out of 1
-      Number of reduce tasks is set to 0 since there's no reduce operator
-      Starting Job = job_1532966988105_0007, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0007/
-      Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0007
-      Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
-      2018-07-30 14:39:28,422 Stage-1 map = 0%,  reduce = 0%
-      2018-07-30 14:39:36,079 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.4 sec
-      MapReduce Total cumulative CPU time: 1 seconds 400 msec
-      Ended Job = job_1532966988105_0007
-      MapReduce Jobs Launched: 
-      Job 0: Map: 1   Cumulative CPU: 1.4 sec   HDFS Read: 510 HDFS Write: 608 SUCCESS
-      Total MapReduce CPU Time Spent: 1 seconds 400 msec
-      OK
-      1	yuwen	jiaoyu	课本
-      2	shuxue	jiaoyu	课本
-      3	yingyu	jiaoyu	课本
-      4	shehui	jiaoyu	课本
-      5	jisuanji	jiaoyu	课本
-      6	makeshi	jiaoyu	课本
-      7	shenwu	jiaoyu	课本
-      1	zhaohuanwansui	wangluowenxue	网络文学
-      2	douluodalu	wangluowenxue	网络文学
-      3	doupochangqiong	wangluowenxue	网络文学
-      4	qindi	wangluowenxue	网络文学
-      5	jiushen	wangluowenxue	网络文学
-      6	binhuomochu	wangluowenxue	网络文学
-      7	shanlaingshishen	wangluowenxue	网络文学
-      8	guangzhizi	wangluowenxue	网络文学
-      9	tunshixinkong	wangluowenxue	网络文学
-      10	shenmu	wangluowenxue	网络文学
-      11	qlqshi	wangluowenxue	网络文学
-      Time taken: 56.565 seconds, Fetched: 18 row(s)
+   * select *,getType(booktype) from book;
+   
+         hive> select *,getType(booktype) from book;
+         Total jobs = 1
+         Launching Job 1 out of 1
+         Number of reduce tasks is set to 0 since there's no reduce operator
+         Starting Job = job_1532966988105_0007, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0007/
+         Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0007
+         Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+         2018-07-30 14:39:28,422 Stage-1 map = 0%,  reduce = 0%
+         2018-07-30 14:39:36,079 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.4 sec
+         MapReduce Total cumulative CPU time: 1 seconds 400 msec
+         Ended Job = job_1532966988105_0007
+         MapReduce Jobs Launched: 
+         Job 0: Map: 1   Cumulative CPU: 1.4 sec   HDFS Read: 510 HDFS Write: 608 SUCCESS
+         Total MapReduce CPU Time Spent: 1 seconds 400 msec
+         OK
+         1	yuwen	jiaoyu	课本
+         2	shuxue	jiaoyu	课本
+         3	yingyu	jiaoyu	课本
+         4	shehui	jiaoyu	课本
+         5	jisuanji	jiaoyu	课本
+         6	makeshi	jiaoyu	课本
+         7	shenwu	jiaoyu	课本
+         1	zhaohuanwansui	wangluowenxue	网络文学
+         2	douluodalu	wangluowenxue	网络文学
+         3	doupochangqiong	wangluowenxue	网络文学
+         4	qindi	wangluowenxue	网络文学
+         5	jiushen	wangluowenxue	网络文学
+         6	binhuomochu	wangluowenxue	网络文学
+         7	shanlaingshishen	wangluowenxue	网络文学
+         8	guangzhizi	wangluowenxue	网络文学
+         9	tunshixinkong	wangluowenxue	网络文学
+         10	shenmu	wangluowenxue	网络文学
+         11	qlqshi	wangluowenxue	网络文学
+         Time taken: 56.565 seconds, Fetched: 18 row(s)
 
+   * select id,name,getType(booktype) from book;
 
-
-
+         hive> select id,name,getType(booktype) from book;
+         Total jobs = 1
+         Launching Job 1 out of 1
+         Number of reduce tasks is set to 0 since there's no reduce operator
+         Starting Job = job_1532966988105_0008, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0008/
+         Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0008
+         Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+         2018-07-30 14:43:28,955 Stage-1 map = 0%,  reduce = 0%
+         2018-07-30 14:43:36,627 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.39 sec
+         MapReduce Total cumulative CPU time: 1 seconds 390 msec
+         Ended Job = job_1532966988105_0008
+         MapReduce Jobs Launched: 
+         Job 0: Map: 1   Cumulative CPU: 1.39 sec   HDFS Read: 510 HDFS Write: 405 SUCCESS
+         Total MapReduce CPU Time Spent: 1 seconds 390 msec
+         OK
+         1	yuwen	课本
+         2	shuxue	课本
+         3	yingyu	课本
+         4	shehui	课本
+         5	jisuanji	课本
+         6	makeshi	课本
+         7	shenwu	课本
+         1	zhaohuanwansui	网络文学
+         2	douluodalu	网络文学
+         3	doupochangqiong	网络文学
+         4	qindi	网络文学
+         5	jiushen	网络文学
+         6	binhuomochu	网络文学
+         7	shanlaingshishen	网络文学
+         8	guangzhizi	网络文学
+         9	tunshixinkong	网络文学
+         10	shenmu	网络文学
+         11	qlqshi	网络文学
+         Time taken: 36.267 seconds, Fetched: 18 row(s)
 
 
 
