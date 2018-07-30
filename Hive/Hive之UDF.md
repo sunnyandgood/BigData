@@ -17,7 +17,9 @@
 
     * a）把程序打包放到目标机器上去；
 
-    * b）进入hive客户端，添加jar包：hive>add jar /run/jar/udf_test.jar;
+    * b）进入hive客户端，添加jar包：
+    
+            hive>add jar /hiveUDF.jar;
 
     * c）创建临时函数：hive>CREATE TEMPORARY FUNCTION add_example AS 'hive.udf.Add';
 
@@ -78,13 +80,44 @@
           7       shenwu
          hive> load data local inpath '/book.jy' into table book partition (bookType='jiaoyu');
 
+* 2、Java代码
 
+         package com.edu.hive.udf;
 
+         import java.util.HashMap;
+         import java.util.Map;
 
+         import org.apache.hadoop.io.Text;
+         import org.apache.hadoop.hive.ql.exec.UDF;
 
+         public class HiveUDF extends UDF{
+            private static Map<String, String> map = new HashMap<>();
 
+            static {
+               map.put("wangluowenxue", "网络文学");
+               map.put("jiaoyu", "课本");
+            }
 
+            private Text text = new Text();
 
+            public Text evaluate(Text bookType) {
+               String booktype = bookType.toString();
+               String value = map.get(booktype);
+               if(value == null) {
+                  value = "其他";
+               }
+               text.set(value);
+               return text;
+            }
+         }
+
+* 3、打包上传到虚拟机
+
+* 4、添加jar包（在hive命令行里面执行）
+
+      hive> add jar /hiveUDF.jar;
+      Added /hiveUDF.jar to class path
+      Added resource: /hiveUDF.jar
 
 
 
