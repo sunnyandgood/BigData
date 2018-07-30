@@ -208,7 +208,8 @@
 
 * 7、将查询结果保存到HDFS中
 
-      create table result row format delimited fields terminated by '\t' as select id,name,getType(booktype) from book;
+      create table result row format delimited fields terminated by '\t' 
+                              as select id,name,getType(booktype) from book;
 
 * 8、销毁临时函数：
 
