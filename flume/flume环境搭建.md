@@ -55,8 +55,15 @@
 
       cd /softWare/flume-1.5.0-bin/
       bin/flume-ng agent -n a4 -c conf -f conf/a4.conf -Dflume.root.logger=INFO,console
-      
-* 7、a4.conf的内容
+
+* 7、将数据放进logs里
+
+      cp /access_2013_05_30.log /logs/
+
+
+
+
+* 、a4.conf的内容
 
       #定义agent名， source、channel、sink的名称
       a4.sources = r1
