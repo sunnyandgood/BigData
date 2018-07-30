@@ -40,7 +40,9 @@
 
       mv /softWare/hadoop-2.2.0/share/hadoop/common/hadoop-common-2.2.0.jar /softWare/flume-1.5.0-bin/lib/
 
+* 4、上传commons-configuration-1.6.jar到flume的lib目录下
 
+      mv /softWare/hadoop-2.2.0/share/hadoop/common/lib/commons-configuration-1.6.jar /softWare/flume-1.5.0-bin/lib/
 
 
 
