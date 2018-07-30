@@ -23,6 +23,7 @@
      * 修改flume-env.sh文件
      
             vim flume-env.sh
+            
             JAVA_HOME=/softWare/jdk1.7.0_80     
 
 
