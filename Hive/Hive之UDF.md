@@ -19,11 +19,11 @@
 
     * b）进入hive客户端，添加jar包：
     
-            hive>add jar /hiveUDF.jar;
+            hive> add jar /hiveUDF.jar;
 
     * c）创建临时函数：
     
-            hive>create temporary function getType as 'com.edu.hive.udf.HiveUDF';
+            hive> create temporary function getType as 'com.edu.hive.udf.HiveUDF';
 
     * d）查询HQL语句：
 
@@ -33,7 +33,7 @@
 
     * e）销毁临时函数：
     
-            hive> DROP TEMPORARY FUNCTION getType;
+            hive> drop temporary function getType;
             
             
 * 注：UDF只能实现一进一出的操作，如果需要实现多进一出，则需要实现UDAF
@@ -206,9 +206,13 @@
          11	qlqshi	网络文学
          Time taken: 36.267 seconds, Fetched: 18 row(s)
 
+* 7、销毁临时函数：
 
-
-
+      hive> drop temporary function getType;       
+      OK
+      Time taken: 0.018 seconds
+      hive> select id,name,getType(name) from book;
+      FAILED: SemanticException [Error 10011]: Line 1:15 Invalid function 'getType'
 
 
 
