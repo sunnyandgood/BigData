@@ -58,26 +58,34 @@
 
        [root@hadoop01 softWare]# scp -r sqoop-1.4.4.bin__hadoop-2.0.4-alpha/ hadoop03:/softWare/
 
-sqoop import 
---connect jdbc:mysql://192.168.2.1:3306/yan 
---username root 
---password root 
---table account  
---hive-import 
---target-dir /user/hive/warehouse/account 
---fields-terminated-by '\t'
+* 将mysq当中的数据直接导入到hive当中
+
+  * account表
+  
+         ./sqoop import \
+         --connect jdbc:mysql://192.168.2.1:3306/yan \
+         --username root \
+         --password root \
+         --table account \
+         --fields-terminated-by '\t' \
+         --delete-target-dir \
+         --num-mappers 1 \
+         --hive-import \
+         --hive-database default \
+         --hive-table account
+  
+  * money表
+
+         ./sqoop import \
+         --connect jdbc:mysql://192.168.2.1:3306/yan \
+         --username root \
+         --password root \
+         --table money \
+         --fields-terminated-by '\t' \
+         --delete-target-dir \
+         --num-mappers 1 \
+         --hive-import \
+         --hive-database default \
+         --hive-table money
 
 
-
-
- ./sqoop import \
---connect jdbc:mysql://192.168.2.1:3306/yan \
---username root \
---password root \
---table account \
---fields-terminated-by '\t' \
---delete-target-dir \
---num-mappers 1 \
---hive-import \
---hive-database default \
---hive-table account
