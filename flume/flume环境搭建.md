@@ -115,3 +115,19 @@
       #组装source、channel、sink
       a4.sources.r1.channels = c1
       a4.sinks.k1.channel = c1
+
+### 三、使用（tail -F /a.log）
+
+* 1、创建a.log文件并写入内容
+
+      # cd /
+      # touch a.log
+      # vim a.log
+
+      111111111111111111
+      
+* 2、执行
+
+      # cd /softWare/flume-1.5.0-bin/
+      # tail -F /a.log
+      1111111111111111111111
