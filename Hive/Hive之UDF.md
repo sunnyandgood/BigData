@@ -206,7 +206,11 @@
          11	qlqshi	网络文学
          Time taken: 36.267 seconds, Fetched: 18 row(s)
 
-* 7、销毁临时函数：
+* 7、将查询结果保存到HDFS中
+
+      create table result row format delimited fields terminated by '\t' as select id,name,getType(booktype) from book;
+
+* 8、销毁临时函数：
 
       hive> drop temporary function getType;       
       OK
