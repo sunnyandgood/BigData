@@ -49,5 +49,46 @@
 
 * 5、创建a4.conf里`a4.sources.r1.spoolDir = /flumelogs`指定的`/flumelogs`目录
       
-      mkdir /flumelogs
+      mkdir /logs
 
+* 6、启动
+
+      cd /softWare/flume-1.5.0-bin/
+      bin/flume-ng agent -n a4 -c conf -f conf/a4.conf -Dflume.root.logger=INFO,console
+      
+* 7、a4.conf的内容
+
+      #定义agent名， source、channel、sink的名称
+      a4.sources = r1
+      a4.channels = c1
+      a4.sinks = k1
+
+      #具体定义source
+      a4.sources.r1.type = spooldir
+      a4.sources.r1.spoolDir = /logs
+
+      #具体定义channel
+      a4.channels.c1.type = memory
+      a4.channels.c1.capacity = 10000
+      a4.channels.c1.transactionCapacity = 100
+
+      #定义拦截器，为消息添加时间戳
+      a4.sources.r1.interceptors = i1
+      a4.sources.r1.interceptors.i1.type = org.apache.flume.interceptor.TimestampInterceptor$Builder
+
+
+      #具体定义sink
+      a4.sinks.k1.type = hdfs
+      a4.sinks.k1.hdfs.path = hdfs://ns1/flume/%Y%m%d
+      a4.sinks.k1.hdfs.filePrefix = events-
+      a4.sinks.k1.hdfs.fileType = DataStream
+      #不按照条数生成文件
+      a4.sinks.k1.hdfs.rollCount = 0
+      #HDFS上的文件达到128M时生成一个文件
+      a4.sinks.k1.hdfs.rollSize = 134217728
+      #HDFS上的文件达到60秒生成一个文件
+      a4.sinks.k1.hdfs.rollInterval = 60
+
+      #组装source、channel、sink
+      a4.sources.r1.channels = c1
+      a4.sinks.k1.channel = c1
