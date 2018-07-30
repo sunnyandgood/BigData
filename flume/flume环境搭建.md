@@ -1,12 +1,12 @@
 # flume环境搭建
 
-### 上传
+### 一、上传
 
 * [获得apache-flume-1.5.0-bin.tar.gz](https://github.com/sunnyandgood/BigData/blob/master/flume/apache-flume-1.5.0-bin.tar.gz)
 
 * 上传
 
-### 安装
+### 二、安装
 
 * 解压并重命名
 
@@ -26,9 +26,11 @@
             
             JAVA_HOME=/softWare/jdk1.7.0_80     
 
+### 三、启动
 
+* 1、上传a4.conf到flume的conf目录下
 
-
+      mv /a4.conf /softWare/flume-1.5.0-bin/conf/
 
 
 
