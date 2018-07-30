@@ -136,7 +136,8 @@
          Total jobs = 1
          Launching Job 1 out of 1
          Number of reduce tasks is set to 0 since there's no reduce operator
-         Starting Job = job_1532966988105_0007, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0007/
+         Starting Job = job_1532966988105_0007, Tracking URL = http://hadoop03:8088/proxy/application_
+         1532966988105_0007/
          Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0007
          Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
          2018-07-30 14:39:28,422 Stage-1 map = 0%,  reduce = 0%
@@ -173,7 +174,8 @@
          Total jobs = 1
          Launching Job 1 out of 1
          Number of reduce tasks is set to 0 since there's no reduce operator
-         Starting Job = job_1532966988105_0008, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0008/
+         Starting Job = job_1532966988105_0008, Tracking URL = http://hadoop03:8088/proxy/application_
+         1532966988105_0008/
          Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0008
          Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
          2018-07-30 14:43:28,955 Stage-1 map = 0%,  reduce = 0%
