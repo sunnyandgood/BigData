@@ -10,7 +10,7 @@
 
     * a）自定义UDF需要继承import org.apache.hadoop.hive.ql.exec.UDF。
 
-    * b）需要实现evaluate函数，evaluate函数支持重载。
+    * b）需要定义并实现evaluate函数，evaluate函数支持重载。
 
 
 * 3、步骤
