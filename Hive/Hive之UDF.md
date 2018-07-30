@@ -8,7 +8,7 @@
 
 * 2、编写UDF函数的时候需要注意一下几点：
 
-    * a）自定义UDF需要继承org.apache.hadoop.hive.ql.UDF。
+    * a）自定义UDF需要继承import org.apache.hadoop.hive.ql.exec.UDF。
 
     * b）需要实现evaluate函数，evaluate函数支持重载。
 
