@@ -233,27 +233,27 @@
 				ssh-keygen -t rsa
 				
 				#将公钥拷贝到其他节点，包括自己
-				ssh-coyp-id hadoop01
-				ssh-coyp-id hadoop02
-				ssh-coyp-id hadoop03
-				ssh-coyp-id hadoop04
-				ssh-coyp-id hadoop05
-				ssh-coyp-id hadoop06
+				ssh-copy-id hadoop01
+				ssh-copy-id hadoop02
+				ssh-copy-id hadoop03
+				ssh-copy-id hadoop04
+				ssh-copy-id hadoop05
+				ssh-copy-id hadoop06
 				
 				#配置hadoop03到hadoop04、hadoop05、hadoop06的免密码登陆
 				#在hadoop03上生产一对钥匙
 				ssh-keygen -t rsa
 				
 				#将公钥拷贝到其他节点
-				ssh-coyp-id hadoop04
-				ssh-coyp-id hadoop05
-				ssh-coyp-id hadoop06
+				ssh-copy-id hadoop04
+				ssh-copy-id hadoop05
+				ssh-copy-id hadoop06
 				
 				#注意：两个namenode之间要配置ssh免密码登陆，别忘了配置hadoop02到hadoop01的免登陆
 				在hadoop02上生产一对钥匙
 				ssh-keygen -t rsa
 				
-				ssh-coyp-id -i hadoop01				
+				ssh-copy-id -i hadoop01				
 		
 	* 2.3将配置好的hadoop拷贝到其他节点
 	
