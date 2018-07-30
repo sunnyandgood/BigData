@@ -62,30 +62,30 @@
 
   * account表
   
-         ./sqoop import \
-         --connect jdbc:mysql://192.168.2.1:3306/yan \
-         --username root \
-         --password root \
-         --table account \
-         --fields-terminated-by '\t' \
-         --delete-target-dir \
-         --num-mappers 1 \
-         --hive-import \
-         --hive-database default \
-         --hive-table account
+        ./sqoop import \
+        --connect jdbc:mysql://192.168.2.1:3306/yan \
+        --username root \
+        --password root \
+        --table account \
+        --fields-terminated-by '\t' \
+        --delete-target-dir \
+        --num-mappers 1 \
+        --hive-import \
+        --hive-database default \
+        --hive-table account
   
   * money表
 
-         ./sqoop import \
-         --connect jdbc:mysql://192.168.2.1:3306/yan \
-         --username root \
-         --password root \
-         --table money \
-         --fields-terminated-by '\t' \
-         --delete-target-dir \
-         --num-mappers 1 \
-         --hive-import \
-         --hive-database default \
-         --hive-table money
+        ./sqoop import \
+        --connect jdbc:mysql://192.168.2.1:3306/yan \
+        --username root \
+        --password root \
+        --table money \
+        --fields-terminated-by '\t' \
+        --delete-target-dir \
+        --num-mappers 1 \
+        --hive-import \
+        --hive-database default \
+        --hive-table money
 
 
