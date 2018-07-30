@@ -28,26 +28,23 @@
 
 ### 三、启动
 
-* 1、文件下载
-
-     * [conf和lib的文件](https://github.com/sunnyandgood/BigData/blob/master/flume/conflib.zip)
-
-* 2、上传a4.conf到flume的conf目录下
+* 1、上传a4.conf到flume的conf目录下
 
       mv /a4.conf /softWare/flume-1.5.0-bin/conf/
 
-* 3、上传hadoop-common-2.2.0.jar到flume的lib目录下
+* 2、上传hadoop-common-2.2.0.jar到flume的lib目录下
 
       mv /softWare/hadoop-2.2.0/share/hadoop/common/hadoop-common-2.2.0.jar /softWare/flume-1.5.0-bin/lib/
 
-* 4、上传commons-configuration-1.6.jar到flume的lib目录下
+* 3、上传commons-configuration-1.6.jar到flume的lib目录下
 
       mv /softWare/hadoop-2.2.0/share/hadoop/common/lib/commons-configuration-1.6.jar /softWare/flume-1.5.0-bin/lib/
 
-* 5、上传hadoop-auth-2.2.0.jar到flume的lib目录下
+* 4、上传hadoop-auth-2.2.0.jar到flume的lib目录下
 
       mv /softWare/hadoop-2.2.0/share/hadoop/common/lib/hadoop-auth-2.2.0.jar /softWare/flume-1.5.0-bin/lib/
 
-* 6、创建a4.conf里`a4.sources.r1.spoolDir = /flumelogs`指定的`/flumelogs`目录
-
+* 5、创建a4.conf里`a4.sources.r1.spoolDir = /flumelogs`指定的`/flumelogs`目录
+      
+      mkdir /flumelogs
 
