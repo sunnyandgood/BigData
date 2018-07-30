@@ -28,7 +28,11 @@
 
 ### 三、启动
 
-* 1、上传a4.conf到flume的conf目录下
+* 1、文件下载
+
+     * [conf和lib的文件](https://github.com/sunnyandgood/BigData/blob/master/flume/conflib.zip)
+
+* 2、上传a4.conf到flume的conf目录下
 
       mv /a4.conf /softWare/flume-1.5.0-bin/conf/
 
