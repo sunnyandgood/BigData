@@ -32,3 +32,64 @@
             hive> DROP TEMPORARY FUNCTION add_example;
             
 * 注：UDF只能实现一进一出的操作，如果需要实现多进一出，则需要实现UDAF
+
+
+### 二、UDF之使用
+
+* 1、创建book分区表，以bookType分区
+
+   * 建表
+   
+         hive> create table book (id bigint,name string) partitioned by (bookType string) 
+                                              row format delimited fields terminated by '\t';
+         OK
+         Time taken: 0.134 seconds
+
+   * 加载数据
+   
+vim book.txt
+ 1       zhaohuanwansui
+ 2       douluodalu
+ 3       doupochangqiong
+ 4       qindi
+ 5       jiushen
+ 6       binhuomochu
+ 7       shanlaingshishen
+ 8       guangzhizi
+ 9       tunshixinkong
+ 10      shenmu
+ 11      qlqshi
+hive> load data local inpath '/book.txt' into table book partition (bookType='wangluowenxue');
+ Copying data from file:/book.txt
+ Copying file: file:/book.txt
+ Loading data to table default.book partition (booktype=wangluowenxue)
+ Partition default.book{booktype=wangluowenxue} stats: [numFiles=1, numRows=0, totalSize=148, rawDataSize=0]
+ OK
+ Time taken: 0.702 seconds   
+
+
+vim book.jy
+ 1       yuwen
+ 2       shuxue
+ 3       yingyu
+ 4       shehui
+ 5       jisuanji
+ 6       makeshi
+ 7       shenwu
+hive> load data local inpath '/book.jy' into table book partition (bookType='jiaoyu');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
