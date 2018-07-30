@@ -27,9 +27,8 @@
 
     * d）查询HQL语句：
 
-            SELECT add_example(8, 9) FROM scores;
-            SELECT add_example(scores.math, scores.art) FROM scores;
-            SELECT add_example(6, 7, 8, 6.8) FROM scores;
+            select *,getType(booktype) from book;
+            
 
     * e）销毁临时函数：
     
@@ -127,9 +126,42 @@
       OK
       Time taken: 0.081 seconds
 
-* 6、
+* 6、查询HQL语句：
 
-
+      hive> select *,getType(booktype) from book;
+      Total jobs = 1
+      Launching Job 1 out of 1
+      Number of reduce tasks is set to 0 since there's no reduce operator
+      Starting Job = job_1532966988105_0007, Tracking URL = http://hadoop03:8088/proxy/application_1532966988105_0007/
+      Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0007
+      Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 0
+      2018-07-30 14:39:28,422 Stage-1 map = 0%,  reduce = 0%
+      2018-07-30 14:39:36,079 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.4 sec
+      MapReduce Total cumulative CPU time: 1 seconds 400 msec
+      Ended Job = job_1532966988105_0007
+      MapReduce Jobs Launched: 
+      Job 0: Map: 1   Cumulative CPU: 1.4 sec   HDFS Read: 510 HDFS Write: 608 SUCCESS
+      Total MapReduce CPU Time Spent: 1 seconds 400 msec
+      OK
+      1	yuwen	jiaoyu	课本
+      2	shuxue	jiaoyu	课本
+      3	yingyu	jiaoyu	课本
+      4	shehui	jiaoyu	课本
+      5	jisuanji	jiaoyu	课本
+      6	makeshi	jiaoyu	课本
+      7	shenwu	jiaoyu	课本
+      1	zhaohuanwansui	wangluowenxue	网络文学
+      2	douluodalu	wangluowenxue	网络文学
+      3	doupochangqiong	wangluowenxue	网络文学
+      4	qindi	wangluowenxue	网络文学
+      5	jiushen	wangluowenxue	网络文学
+      6	binhuomochu	wangluowenxue	网络文学
+      7	shanlaingshishen	wangluowenxue	网络文学
+      8	guangzhizi	wangluowenxue	网络文学
+      9	tunshixinkong	wangluowenxue	网络文学
+      10	shenmu	wangluowenxue	网络文学
+      11	qlqshi	wangluowenxue	网络文学
+      Time taken: 56.565 seconds, Fetched: 18 row(s)
 
 
 
