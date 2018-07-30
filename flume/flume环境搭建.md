@@ -8,10 +8,10 @@
 
 ### 安装
 
-* 解压
+* 解压并重命名
 
-
-
+      tar -zxvf apache-flume-1.5.0-bin.tar.gz -C /softWare/
+      mv apache-flume-1.5.0-bin/ flume-1.5.0-bin
 
 
 
