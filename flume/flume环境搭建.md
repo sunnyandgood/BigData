@@ -51,30 +51,35 @@
       
       mkdir /logs
 
-* 6、上传core-site.xml 到flume的conf目录下
+* 6、上传core-site.xml到flume的conf目录下
 
       scp /softWare/hadoop-2.2.0/etc/hadoop/core-site.xml 
                   root@192.168.2.107:/softWare/flume-1.5.0-bin/conf
 
-* 7、上传hadoop-hdfs-2.2.0.jar到flume的lib目录下
+* 7、上传hdfs-site.xml到flume的conf目录下
+
+      scp /softWare/hadoop-2.2.0/etc/hadoop/hdfs-site.xml 
+                  root@192.168.2.107:/softWare/flume-1.5.0-bin/conf
+            
+* 8、上传hadoop-hdfs-2.2.0.jar到flume的lib目录下
 
       scp /softWare/hadoop-2.2.0/share/hadoop/hdfs/hadoop-hdfs-2.2.0.jar 
                         root@192.168.2.107:/softWare/flume-1.5.0-bin/lib/
 
-* 、启动
+
+
+* 9、启动
 
       cd /softWare/flume-1.5.0-bin/
       bin/flume-ng agent -n a4 -c conf -f conf/a4.conf -Dflume.root.logger=INFO,console
 
 
-* 、将数据放进logs里
+* 10、将数据放进logs里
 
       cp /access_2013_05_30.log /logs/
 
 
-
-
-* 、a4.conf的内容
+* 11、a4.conf的内容
 
       #定义agent名， source、channel、sink的名称
       a4.sources = r1
