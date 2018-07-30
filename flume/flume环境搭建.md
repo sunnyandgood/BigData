@@ -44,6 +44,10 @@
 
       mv /softWare/hadoop-2.2.0/share/hadoop/common/lib/commons-configuration-1.6.jar /softWare/flume-1.5.0-bin/lib/
 
+* 5、上传hadoop-auth-2.2.0.jar到flume的lib目录下
 
+      mv /softWare/hadoop-2.2.0/share/hadoop/common/lib/hadoop-auth-2.2.0.jar /softWare/flume-1.5.0-bin/lib/
+
+* 6、创建a4.conf里`a4.sources.r1.spoolDir = /flumelogs`指定的`/flumelogs`目录
 
 
