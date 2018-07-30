@@ -21,7 +21,9 @@
     
             hive>add jar /hiveUDF.jar;
 
-    * c）创建临时函数：hive>CREATE TEMPORARY FUNCTION add_example AS 'hive.udf.Add';
+    * c）创建临时函数：
+    
+            hive>create temporary function getType as 'com.edu.hive.udf.HiveUDF';
 
     * d）查询HQL语句：
 
@@ -118,6 +120,26 @@
       hive> add jar /hiveUDF.jar;
       Added /hiveUDF.jar to class path
       Added resource: /hiveUDF.jar
+
+* 5、创建临时函数：
+
+      hive> create temporary function getType as 'com.edu.hive.udf.HiveUDF';
+      OK
+      Time taken: 0.081 seconds
+
+* 6、
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
