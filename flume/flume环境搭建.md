@@ -26,7 +26,7 @@
             
             JAVA_HOME=/softWare/jdk1.7.0_80     
 
-### 三、启动
+### 三、启动（bin/flume-ng agent -n a4 -c conf -f conf/a4.conf -Dflume.root.logger=INFO,console）
 
 * 1、上传a4.conf到flume的conf目录下
 
