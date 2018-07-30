@@ -88,7 +88,38 @@
         --hive-database default \
         --hive-table money
 
+### 四、练习hive中的sql语句（HQL）
+
 * 统计每一个账户的总收入、总支出、结余，再按照结余排序
 
+     * select a.account_name name,t.sumIncom ,t.sumPaid,t.jieYu from account a join (select account_name,sum(m_income ) sumIncom,sum(m_paid ) sumPaid,(sum(m_income ) - sum(m_paid ) ) jieYu from money group by account_name) t on a.account_name = t.account_name order by t.jieYu desc;
 
-
+           hive> select a.account_name name,t.sumIncom ,t.sumPaid,t.jieYu from account a join (select account_name,
+                 sum(m_income ) sumIncom,sum(m_paid ) sumPaid,(sum(m_income ) - sum(m_paid ) ) jieYu from money 
+                           group by account_name) t on a.account_name = t.account_name order by t.jieYu desc;
+           Total jobs = 2
+           Launching Job 1 out of 2
+           Number of reduce tasks not specified. Estimated from input data size: 1
+           In order to change the average load for a reducer (in bytes):
+             set hive.exec.reducers.bytes.per.reducer=<number>
+           In order to limit the maximum number of reducers:
+             set hive.exec.reducers.max=<number>
+           In order to set a constant number of reducers:
+             set mapreduce.job.reduces=<number>
+           Starting Job = job_1532966988105_0003, Tracking URL = http://hadoop03:8088/proxy/application_
+                                                                                    1532966988105_0003/
+           Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0003
+           Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+           2018-07-30 11:27:36,196 Stage-1 map = 0%,  reduce = 0%
+           2018-07-30 11:27:44,564 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 3.04 sec
+           2018-07-30 11:28:00,014 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.19 sec
+           MapReduce Total cumulative CPU time: 5 seconds 190 msec
+           Ended Job = job_1532966988105_0003
+           ..................
+           Total MapReduce CPU Time Spent: 9 seconds 0 msec
+           OK
+           maqi	580000.0	90000.0	490000.0
+           lisi@163,com	9800.0	0.0	9800.0
+           wangwu@qq.com	14000.0	5000.0	9000.0
+           zhangsan@163.com	9000.0	400.0	8600.0
+           Time taken: 66.986 seconds, Fetched: 4 row(s) 
