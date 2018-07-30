@@ -116,10 +116,23 @@
            MapReduce Total cumulative CPU time: 5 seconds 190 msec
            Ended Job = job_1532966988105_0003
            ..................
+           Starting Job = job_1532966988105_0004, Tracking URL = http://hadoop03:8088/proxy/application_
+                                                                                  1532966988105_0004/
+           Kill Command = /softWare/hadoop-2.2.0/bin/hadoop job  -kill job_1532966988105_0004
+           Hadoop job information for Stage-3: number of mappers: 1; number of reducers: 1
+           2018-07-30 11:28:15,536 Stage-3 map = 0%,  reduce = 0%
+           2018-07-30 11:28:22,876 Stage-3 map = 100%,  reduce = 0%, Cumulative CPU 2.59 sec
+           2018-07-30 11:28:31,229 Stage-3 map = 100%,  reduce = 100%, Cumulative CPU 3.81 sec
+           MapReduce Total cumulative CPU time: 3 seconds 810 msec
+           Ended Job = job_1532966988105_0004
+           MapReduce Jobs Launched: 
+           Job 0: Map: 1  Reduce: 1   Cumulative CPU: 5.19 sec   HDFS Read: 419 HDFS Write: 309 SUCCESS
+           Job 1: Map: 1  Reduce: 1   Cumulative CPU: 3.81 sec   HDFS Read: 661 HDFS Write: 135 SUCCESS
            Total MapReduce CPU Time Spent: 9 seconds 0 msec
            OK
            maqi	580000.0	90000.0	490000.0
            lisi@163,com	9800.0	0.0	9800.0
            wangwu@qq.com	14000.0	5000.0	9000.0
            zhangsan@163.com	9000.0	400.0	8600.0
-           Time taken: 66.986 seconds, Fetched: 4 row(s) 
+           Time taken: 66.986 seconds, Fetched: 4 row(s)
+           
