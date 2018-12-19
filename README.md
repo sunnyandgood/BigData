@@ -21,68 +21,68 @@
 * [RPC(Remote Procedure Call远程程序调用)及HDFS的读写过程](./HDFS/RPC(远程程序调用)及HDFS的读写过程.md)
 * [Windows系统下运行hadoop、spark程序出错Could not locate executablenull\bin\winutils.exe in the Hadoop binaries](./HDFS/Windows系统下运行hadoop程序出错Could%20not%20locate%20executable.md)
 
-### [MapReduce](https://github.com/sunnyandgood/BigData/tree/master/MapReduce)
+### [MapReduce](./MapReduce)
 
-* [MapReduce原理](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/MapReduce%E5%8E%9F%E7%90%86.md)
+* [MapReduce原理](./MapReduce/MapReduce原理.md)
     * MapReduce执行过程
     * 数据类型与格式
-* [Writable接口与序列化机制](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/Writable%E6%8E%A5%E5%8F%A3%E4%B8%8E%E5%BA%8F%E5%88%97%E5%8C%96%E6%9C%BA%E5%88%B6.md)
-* [Partitioner编程](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/Partitioner编程.md)
-* [自定义排序编程](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/自定义排序编程.md)
-* [Combiners编程](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/Combiners编程.md)
-* [常见的MapReduce算法](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/常见的MapReduce算法.md)
-* [倒排索引](https://github.com/sunnyandgood/BigData/blob/master/MapReduce/倒排索引.md)
+* [Writable接口与序列化机制](./MapReduce/Writable接口与序列化机制.md)
+* [Partitioner编程](./MapReduce/Partitioner编程.md)
+* [自定义排序编程](./MapReduce/自定义排序编程.md)
+* [Combiners编程](./MapReduce/Combiners编程.md)
+* [常见的MapReduce算法](./MapReduce/常见的MapReduce算法.md)
+* [倒排索引](./MapReduce/倒排索引.md)
 
-### [Zookeeper](https://github.com/sunnyandgood/BigData/tree/master/Zookeeper)
-* [Zookeeper概述](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/Zookeeper%E6%A6%82%E8%BF%B0.md)
-* [Zookeeper安装与配置](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/Zookeeper安装与配置.md)
-* [Zookeeper简介](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/Zookeeper简介.md)
-* [ZooKeeper应用场景](https://github.com/sunnyandgood/BigData/blob/master/Zookeeper/ZooKeeper应用场景.md)
+### [Zookeeper](./Zookeeper)
+* [Zookeeper概述](./Zookeeper/Zookeeper%E6%A6%82%E8%BF%B0.md)
+* [Zookeeper安装与配置](./Zookeeper/Zookeeper安装与配置.md)
+* [Zookeeper简介](./Zookeeper/Zookeeper简介.md)
+* [ZooKeeper应用场景](./Zookeeper/ZooKeeper应用场景.md)
 
-### [hadoop集群搭建](https://github.com/sunnyandgood/BigData/tree/master/hadoop集群搭建)
-* [hadoop1.0集群搭建](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/hadoop1.0集群搭建.md)
-* [hadoop2.0集群搭建](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/hadoop2.0集群搭建.md)
-* [集群测试](https://github.com/sunnyandgood/BigData/blob/master/hadoop集群搭建/集群测试.md)
+### [hadoop集群搭建](./hadoop集群搭建)
+* [hadoop1.0集群搭建](./hadoop集群搭建/hadoop1.0集群搭建.md)
+* [hadoop2.0集群搭建](./hadoop集群搭建/hadoop2.0集群搭建.md)
+* [集群测试](./hadoop集群搭建/集群测试.md)
 
-### [Sqoop](https://github.com/sunnyandgood/BigData/tree/master/Sqoop)
-* [sqoop简介](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/sqoop简介.md)
-* [Sqoop环境搭建及使用](https://github.com/sunnyandgood/BigData/blob/master/Sqoop/Sqoop环境搭建及使用.md)
+### [Sqoop](./Sqoop)
+* [sqoop简介](./Sqoop/sqoop简介.md)
+* [Sqoop环境搭建及使用](./Sqoop/Sqoop环境搭建及使用.md)
 
-### [HBase](https://github.com/sunnyandgood/BigData/tree/master/HBase)
+### [HBase](./HBase)
 * [Apache官方文档](https://abloz.com/hbase/book.html)
-* [HBase基础知识](https://github.com/sunnyandgood/BigData/blob/master/HBase/HBase基础知识.md)
-* [HBase单节点安装及使用](https://github.com/sunnyandgood/BigData/blob/master/HBase/HBase单节点安装及使用.md)
-* [HBase伪分布式搭建](https://github.com/sunnyandgood/BigData/blob/master/HBase/HBase伪分布式搭建.md)
-* [Hbase集群搭建](https://github.com/sunnyandgood/BigData/blob/master/HBase/Hbase集群搭建.md)
-* [HbaseShell](https://github.com/sunnyandgood/BigData/blob/master/HBase/HbaseShell.md)
+* [HBase基础知识](./HBase/HBase基础知识.md)
+* [HBase单节点安装及使用](./HBase/HBase单节点安装及使用.md)
+* [HBase伪分布式搭建](./HBase/HBase伪分布式搭建.md)
+* [Hbase集群搭建](./HBase/Hbase集群搭建.md)
+* [HbaseShell](./HBase/HbaseShell.md)
 
-### [Hive](https://github.com/sunnyandgood/BigData/tree/master/Hive)
+### [Hive](./Hive)
 
 使用hive（表描述在hive数据库的TBLS表中，表中的字段在COLUMNS_V2表中，表的id在CDS表中，存储HDFS上的路径在SDS表中）
 
-* [Hive简介](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive简介.md)
-* [Hive单节点安装及操作](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive单节点安装及操作.md)
-* [安装MySQL](https://github.com/sunnyandgood/BigData/blob/master/Hive/安装MySQL.md)
-* [Hive集群搭建及操作](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive集群搭建及操作.md)
-* [hive练习之内部表-外部表-分区表](https://github.com/sunnyandgood/BigData/blob/master/Hive/hive练习之内部表-外部表-分区表.md)
-* [Hive练习之MySQL](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive练习之MySQL.md)
-* [Hive之UDF](https://github.com/sunnyandgood/BigData/blob/master/Hive/Hive之UDF.md)
-* [MySQL分区表](https://github.com/sunnyandgood/BigData/blob/master/Hive/MySQL分区表.md)
+* [Hive简介](./Hive/Hive简介.md)
+* [Hive单节点安装及操作](./Hive/Hive单节点安装及操作.md)
+* [安装MySQL](./Hive/安装MySQL.md)
+* [Hive集群搭建及操作](./Hive/Hive集群搭建及操作.md)
+* [hive练习之内部表-外部表-分区表](./Hive/hive练习之内部表-外部表-分区表.md)
+* [Hive练习之MySQL](./Hive/Hive练习之MySQL.md)
+* [Hive之UDF](./Hive/Hive之UDF.md)
+* [MySQL分区表](./Hive/MySQL分区表.md)
 
-### [flume（日志收集系统）](https://github.com/sunnyandgood/BigData/tree/master/flume)
-* [flume简介](https://github.com/sunnyandgood/BigData/blob/master/flume/flume简介.md)
-* [flume环境搭建](https://github.com/sunnyandgood/BigData/blob/master/flume/flume环境搭建.md)
+### [flume（日志收集系统）](./flume)
+* [flume简介](./flume/flume简介.md)
+* [flume环境搭建](./flume/flume环境搭建.md)
 
-### [脚本-定时器](https://github.com/sunnyandgood/BigData/tree/master/脚本-定时器)
-* [脚本](https://github.com/sunnyandgood/BigData/blob/master/脚本-定时器/脚本.md)
-* [定时器](https://github.com/sunnyandgood/BigData/blob/master/脚本-定时器/定时器.md)
-
-
+### [脚本-定时器](./脚本-定时器)
+* [脚本](./脚本-定时器/脚本.md)
+* [定时器](./脚本-定时器/定时器.md)
 
 
 
 
-### [Linux](https://github.com/sunnyandgood/BigData/tree/master/Linux%20)
+
+
+### [Linux](./Linux%20)
 
 
 * [Linux版本介绍](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%9A%84%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D.md)
