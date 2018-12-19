@@ -1,5 +1,5 @@
 # BigBata
-* [大数据简介](./BigData/%E5%A4%A7%E6%95%B0%E6%8D%AE%E7%AE%80%E4%BB%8B.md)
+* [大数据简介](./大数据简介.md)
 
 ### Hbase是数据库，Hive是数据仓库
 
