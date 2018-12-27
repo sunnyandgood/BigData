@@ -1,14 +1,14 @@
-* [Linux版本介绍](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%9A%84%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D.md)
-* [Linux 文件系统](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F.md)
-* [xshell 快捷键使用大全](https://github.com/sunnyandgood/BigData/blob/master/Linux/xshell%20%E5%BF%AB%E6%8D%B7%E9%94%AE%E4%BD%BF%E7%94%A8%E5%A4%A7%E5%85%A8.md)
-* [Linux系统组成](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%B3%BB%E7%BB%9F%E7%BB%84%E6%88%90.md)
+* [Linux版本介绍](./Linux的版本介绍.md)
+* [Linux 文件系统](./Linux 文件系统.md)
+* [xshell 快捷键使用大全](./xshell 快捷键使用大全.md)
+* [Linux系统组成](./Linux系统组成.md)
 
 
 * [Linux 命令大全](http://www.runoob.com/linux/linux-command-manual.html)
 
 
-* [Linux 系统的权限管理](https://github.com/sunnyandgood/BigData/tree/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86)
-   * [Linux 安全机制](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%20%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6.md)
+* [Linux 系统的权限管理](./Linux 系统的权限管理)
+   * [Linux 安全机制](./Linux 系统的权限管理/Linux%20安全机制.md)
    * [Linux用户管理](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.md)
    * [Linux用户组管理](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86.md)
    * [Linux文件权限说明](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E.md)
