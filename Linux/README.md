@@ -8,7 +8,7 @@
 
 
 * [Linux 系统的权限管理](./Linux%20系统的权限管理)
-   * [Linux 安全机制](./Linux 系统的权限管理/Linux%20安全机制.md)
+   * [Linux 安全机制](./Linux%20系统的权限管理/Linux%20安全机制.md)
    * [Linux用户管理](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86.md)
    * [Linux用户组管理](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E7%94%A8%E6%88%B7%E7%BB%84%E7%AE%A1%E7%90%86.md)
    * [Linux文件权限说明](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%20%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/Linux%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E8%AF%B4%E6%98%8E.md)
