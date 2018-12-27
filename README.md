@@ -82,7 +82,7 @@
 
 
 
-### [Linux](./Linux%20)
+### [Linux](./Linux)
 
 
 * [Linux版本介绍](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%9A%84%E7%89%88%E6%9C%AC%E4%BB%8B%E7%BB%8D.md)
