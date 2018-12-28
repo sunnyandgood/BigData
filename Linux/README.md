@@ -16,7 +16,7 @@
    * [Linux文件所属管理](./Linux%20系统的权限管理)
 
 
-* [Linux 环境变量](./Linux%20环境变量)
+* [Linux 环境变量](./Linux环境变量)
     * [Linux环境变量的概念](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%A6%82%E5%BF%B5.md)
     * [Linux设置环境变量](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%20.md)
     * [Linux 中设置环境变量的几个文件](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/Linux%20%E4%B8%AD%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E5%87%A0%E4%B8%AA%E6%96%87%E4%BB%B6.md)
