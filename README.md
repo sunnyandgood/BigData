@@ -111,10 +111,10 @@
     * [在Linux系统上执行Java 程序](./Linux/Linux%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/%E5%9C%A8Linux%E7%B3%BB%E7%BB%9F%E4%B8%8A%E6%89%A7%E8%A1%8CJava%20%E7%A8%8B%E5%BA%8F.md)
 
   
-* [Linux要点](https://github.com/sunnyandgood/BigData/tree/master/Linux/Linux%E8%A6%81%E7%82%B9)
-    * [Linux数组变量](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E8%A6%81%E7%82%B9/Linux%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F.md)
-    * [Linux命令别名](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E8%A6%81%E7%82%B9/Linux%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D.md)
-    * [Linux umask文件创建时的权限的缺省模式](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E8%A6%81%E7%82%B9/Linux%20umask%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E6%97%B6%E7%9A%84%E6%9D%83%E9%99%90%E7%9A%84%E7%BC%BA%E7%9C%81%E6%A8%A1%E5%BC%8F.md)
+* [Linux要点](./Linux/Linux%E8%A6%81%E7%82%B9)
+    * [Linux数组变量](./Linux/Linux%E8%A6%81%E7%82%B9/Linux%E6%95%B0%E7%BB%84%E5%8F%98%E9%87%8F.md)
+    * [Linux命令别名](./Linux/Linux%E8%A6%81%E7%82%B9/Linux%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D.md)
+    * [Linux umask文件创建时的权限的缺省模式](./Linux/Linux%E8%A6%81%E7%82%B9/Linux%20umask%E6%96%87%E4%BB%B6%E5%88%9B%E5%BB%BA%E6%97%B6%E7%9A%84%E6%9D%83%E9%99%90%E7%9A%84%E7%BC%BA%E7%9C%81%E6%A8%A1%E5%BC%8F.md)
 
 
 * [Bash Shell脚本](https://github.com/sunnyandgood/BigData/tree/master/Linux/BashShell%E8%84%9A%E6%9C%AC)
