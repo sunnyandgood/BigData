@@ -134,7 +134,7 @@
     * [变量设置模式](./Linux/BashShell%E8%84%9A%E6%9C%AC/%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE%E6%A8%A1%E5%BC%8F.md)
 
 
-* [分支语句](https://github.com/sunnyandgood/BigData/tree/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5)
+* [分支语句](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5)
     * [命令的退出码](https://github.com/sunnyandgood/BigData/blob/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E5%91%BD%E4%BB%A4%E7%9A%84%E9%80%80%E5%87%BA%E7%A0%81.md)
     * [脚本中的控制结构语句](https://github.com/sunnyandgood/BigData/blob/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E8%84%9A%E6%9C%AC%E4%B8%AD%E7%9A%84%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84%E8%AF%AD%E5%8F%A5.md)
     * [if…then 语句](https://github.com/sunnyandgood/BigData/blob/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/if%E2%80%A6then%E8%AF%AD%E5%8F%A5.md)
