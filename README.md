@@ -141,8 +141,8 @@
     * [if…then…else 语句](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/if%E2%80%A6then%E2%80%A6else%E8%AF%AD%E5%8F%A5.md)
     * [多重 if 语句](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E5%A4%9A%E9%87%8D%20if%20%E8%AF%AD%E5%8F%A5.md)
     * [使用 test 命令(数值比较、字符串比较、文件比较)](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E4%BD%BF%E7%94%A8%20test%20%E5%91%BD%E4%BB%A4.md)
-    * [复合条件](https://github.com/sunnyandgood/BigData/blob/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E5%A4%8D%E5%90%88%E6%9D%A1%E4%BB%B6.md)
-    * [case 分支语句](https://github.com/sunnyandgood/BigData/blob/master/Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/case%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.md)
+    * [复合条件](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/%E5%A4%8D%E5%90%88%E6%9D%A1%E4%BB%B6.md)
+    * [case 分支语句](./Linux/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5/case%20%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5.md)
 
   
 * [循环语句](https://github.com/sunnyandgood/BigData/tree/master/Linux/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5)
