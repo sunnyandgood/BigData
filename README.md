@@ -226,5 +226,5 @@
 
     * Linux 网络类命令
         * [Linux的scp命令](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的scp命令.md)(跨主机之间的文件和目录的复制)
-        * [Linux的netstat命令](https://github.com/sunnyandgood/BigData/blob/master/Linux/Linux%E5%91%BD%E4%BB%A4/Linux的netstat命令.md)(检验主机端口的网络连接情况)
+        * [Linux的netstat命令](./Linux/Linux%E5%91%BD%E4%BB%A4/Linux的netstat命令.md)(检验主机端口的网络连接情况)
 
