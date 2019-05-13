@@ -5,7 +5,7 @@
 * Linux的发行版本可以大体分为两类：
    * 一类是商业公司维护的发行版本（以著名的Redhat（RHEL）为代表）
    * 一类是社区组织维护的发行版本（以Debian为代表）
-<div align="center"> <img src="https://github.com/sunnyandgood/BigBata/blob/master/Linux%20/img/Linux版本图.jpg" /> </div><br>
+<div align="center"> <img src="./img/Linux版本图.jpg" /> </div><br>
 
 ## 一、Linux 发行版：
 
